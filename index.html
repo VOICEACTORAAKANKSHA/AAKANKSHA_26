@@ -270,6 +270,18 @@ section{padding:96px 5%;}
 .cnc.em:hover{border-color:var(--borderh);box-shadow:0 10px 28px var(--sh);}
 .cnc.lt:hover{border-color:#39BA63;box-shadow:0 10px 28px rgba(57,186,99,.1);}
 
+/* ── WORK FILTER ── */
+function filterWork(cat,el){
+  document.querySelectorAll('.wf-tab').forEach(t=>t.classList.remove('on'));
+  el.classList.add('on');
+  document.querySelectorAll('#workGrid .pw').forEach(card=>{
+    if(cat==='all'||card.dataset.cat.includes(cat)){
+      card.classList.remove('pw-hidden');
+    } else {
+      card.classList.add('pw-hidden');
+    }
+  });
+}
 /* ── CONTACT ── */
 .ct-in{max-width:600px;margin:0 auto;text-align:center;}
 .ct-form{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:38px;margin-top:38px;text-align:left;}
@@ -460,43 +472,144 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:38px 5%;t
       <h2 class="st">Professional <em>Work</em></h2>
       <div class="gr"></div>
     </div>
-    <div class="pw-grid">
-      <div class="pw rv d1" onclick="openModal('https://www.youtube.com/embed/J5jn-vPyP3Q?autoplay=1')">
+
+    <!-- Platform filters -->
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px;" class="rv">
+      <button class="wf-tab on" onclick="filterWork('all',this)">All</button>
+      <button class="wf-tab" onclick="filterWork('dubbing',this)">🎬 Dubbing</button>
+      <button class="wf-tab" onclick="filterWork('kukufm',this)">🎧 Kuku FM</button>
+      <button class="wf-tab" onclick="filterWork('storytv',this)">📺 StoryTV</button>
+      <button class="wf-tab" onclick="filterWork('baalkatha',this)">🌙 BaalKatha</button>
+    </div>
+
+    <div class="pw-grid" id="workGrid">
+
+      <!-- KUKU FM -->
+      <div class="pw rv d1" data-cat="kukufm" onclick="window.open('https://tv.kukufm.com/show/dad-let-me-clean-the-house','_blank')">
         <div class="pw-thumb">
-          <img src="https://img.youtube.com/vi/J5jn-vPyP3Q/maxresdefault.jpg" alt="Phoenix Rising" onerror="this.src='https://img.youtube.com/vi/J5jn-vPyP3Q/mqdefault.jpg'"/>
+          <img src="https://ugc.production.linktr.ee/c9d32697-1f6e-47d3-a106-0f092d6fbcc4_96f3d53a6bb64589bd89dca37ad03c3d.webp" alt="Dad Let Me Clean" onerror="this.style.background='var(--bg3)'"/>
           <div class="pw-ovl"></div>
-          <div class="pw-badge">Dubbing</div>
-          <div class="pw-play">▶</div>
+          <div class="pw-badge">Kuku FM · Dubbing</div>
+          <div class="pw-play">↗</div>
         </div>
         <div class="pw-body">
-          <div class="pw-title">Phoenix Rising</div>
-          <p class="pw-meta">A powerful dubbing project — authentic emotion and voice breathed into every scene, every beat.</p>
+          <div class="pw-title">Dad, Let Me Clean The House</div>
+          <p class="pw-meta">Dubbing work for Kuku FM's popular short drama series — voice bringing warmth and family emotion to life.</p>
         </div>
       </div>
-      <div class="pw rv d2" onclick="openModal('https://www.youtube.com/embed/6tyQKmcnuSs?autoplay=1')">
+
+      <!-- KUKU FM AUDIO SHOW -->
+      <div class="pw rv d2" data-cat="kukufm" onclick="window.open('https://kukufm.com/show/the-last-call','_blank')">
         <div class="pw-thumb">
-          <img src="https://img.youtube.com/vi/6tyQKmcnuSs/maxresdefault.jpg" alt="Race Against Time" onerror="this.src='https://img.youtube.com/vi/6tyQKmcnuSs/mqdefault.jpg'"/>
+          <img src="https://ugc.production.linktr.ee/45506f15-e802-4188-b59b-e3eddec73e9a_190fb273a8df49e3aa830b449338b0f9.webp" alt="The Last Call" onerror="this.style.background='var(--bg3)'"/>
           <div class="pw-ovl"></div>
-          <div class="pw-badge">Dubbing</div>
-          <div class="pw-play">▶</div>
+          <div class="pw-badge">Kuku FM · Audio Show</div>
+          <div class="pw-play">↗</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">The Last Call</div>
+          <p class="pw-meta">Audio show performance on Kuku FM — raw, intimate storytelling through voice alone.</p>
+        </div>
+      </div>
+
+      <!-- STORYTV - RACE AGAINST TIME -->
+      <div class="pw rv d3" data-cat="storytv dubbing" onclick="window.open('https://app.storytv.asia/shows/1174','_blank')">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/3b72ccb9-474e-4b0c-ab2c-43bb4e13a7b7_image.png" alt="Race Against Time" onerror="this.style.background='var(--bg3)'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">StoryTV · Dubbing</div>
+          <div class="pw-play">↗</div>
         </div>
         <div class="pw-body">
           <div class="pw-title">Race Against Time</div>
-          <p class="pw-meta">High-stakes dubbing work — capturing urgency and raw tension in every single breath.</p>
+          <p class="pw-meta">High-stakes dubbing for StoryTV — India's leading short drama app. Every breath timed to perfection.</p>
         </div>
       </div>
-      <div class="pw rv d3" onclick="openModal('https://www.youtube.com/embed/mOmc7mX1RY0?autoplay=1')">
+
+      <!-- DUBBING - झप्पियों के -->
+      <div class="pw rv d1" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/mpkncpXa6lY?autoplay=1')">
         <div class="pw-thumb">
-          <img src="https://img.youtube.com/vi/mOmc7mX1RY0/maxresdefault.jpg" alt="Voice Work" onerror="this.src='https://img.youtube.com/vi/mOmc7mX1RY0/mqdefault.jpg'"/>
+          <img src="https://ugc.production.linktr.ee/8517ad86-6ba8-4411-9313-0afa35d24c6b_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/mpkncpXa6lY/mqdefault.jpg'"/>
           <div class="pw-ovl"></div>
-          <div class="pw-badge">Voice Over</div>
+          <div class="pw-badge">Dubbing</div>
           <div class="pw-play">▶</div>
         </div>
         <div class="pw-body">
-          <div class="pw-title">Voiceover Reel</div>
-          <p class="pw-meta">Range of voice work across genres — emotional depth, character range, and narrative storytelling.</p>
+          <div class="pw-title">एक दुनिया बिना… झप्पियों के</div>
+          <p class="pw-meta">A world without hugs — emotional dubbing performance exploring human connection.</p>
         </div>
       </div>
+
+      <!-- DUBBING - कुर्सियों के -->
+      <div class="pw rv d2" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/BVJGk_ohXd0?autoplay=1')">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/797e5795-d0dc-4f88-ab31-a482dea9b51c_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/BVJGk_ohXd0/mqdefault.jpg'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">Dubbing</div>
+          <div class="pw-play">▶</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">एक दुनिया बिना… कुर्सियों के</div>
+          <p class="pw-meta">A world without chairs — creative dubbing from the imaginative एक दुनिया बिना series.</p>
+        </div>
+      </div>
+
+      <!-- DUBBING - जेबों के -->
+      <div class="pw rv d3" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/x-J-ZmHKeC4?autoplay=1')">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/a3565a1d-52c0-420d-99f5-e8c75805f769_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/x-J-ZmHKeC4/mqdefault.jpg'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">Dubbing</div>
+          <div class="pw-play">▶</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">एक दुनिया बिना… जेबों के</div>
+          <p class="pw-meta">A world without pockets — thoughtful, playful dubbing performance with character and depth.</p>
+        </div>
+      </div>
+
+      <!-- BAALKATHA - Night Sky -->
+      <div class="pw rv d1" data-cat="baalkatha">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/3145cec8-a412-4c04-bcf1-8ae96158478b_hqdefault.jpeg" alt="BaalKatha" onerror="this.style.background='var(--bg3)'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">BaalKatha · Voiceover</div>
+          <div class="pw-play">🌙</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">The Night the Sky Listened</div>
+          <p class="pw-meta">Calming bedtime story for kids — a gentle, soothing voice performance for BaalKatha.</p>
+        </div>
+      </div>
+
+      <!-- BAALKATHA - Block at Bottom -->
+      <div class="pw rv d2" data-cat="baalkatha">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/c92c0687-d1fb-4023-bc22-da3f4eecfad1_hqdefault.jpeg" alt="BaalKatha" onerror="this.style.background='var(--bg3)'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">BaalKatha · Voiceover</div>
+          <div class="pw-play">🧱</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">The Block at the Bottom</div>
+          <p class="pw-meta">A rhyming bedtime moral story for kids — warm, expressive storytelling voice.</p>
+        </div>
+      </div>
+
+      <!-- BAALKATHA - Lantern -->
+      <div class="pw rv d3" data-cat="baalkatha">
+        <div class="pw-thumb">
+          <img src="https://ugc.production.linktr.ee/5a9fd980-b6cf-4bf3-a0e7-f3b5cdace197_hqdefault.jpeg" alt="BaalKatha Lantern" onerror="this.style.background='var(--bg3)'"/>
+          <div class="pw-ovl"></div>
+          <div class="pw-badge">BaalKatha · Voiceover</div>
+          <div class="pw-play">🪔</div>
+        </div>
+        <div class="pw-body">
+          <div class="pw-title">The Lantern Who Wanted to Fly</div>
+          <p class="pw-meta">Heart-touching kids story — a delicate, imaginative voice performance full of wonder.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -766,7 +879,10 @@ function renderYT(){
     </div>`
   :`<div class="yc rv ${i===0?'':'d'+Math.min(i,5)}" onclick="openModal('https://www.youtube.com/embed/${v.id}?autoplay=1')">
       <div class="ytw">
-        <img class="yti" src="https://img.youtube.com/vi/${v.id}/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/${v.id}/mqdefault.jpg'" alt="${v.title}" loading="lazy"/>
+        <img class="yti"
+          src="https://img.youtube.com/vi/${v.id}/maxresdefault.jpg"
+          onerror="this.src='https://img.youtube.com/vi/${v.id}/hqdefault.jpg'"
+          alt="${v.title}" loading="lazy"/>
         ${v.latest?'<div class="lp">★ Latest</div>':''}
         ${v.shorts?'<div class="sp2">#Shorts</div>':''}
         <div class="ypb">▶</div>
