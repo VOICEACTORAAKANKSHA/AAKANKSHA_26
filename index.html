@@ -4,99 +4,136 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Aakanksha | Voice · Music · Mind · Screen</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{--ease:cubic-bezier(.22,.68,0,1.2);}
+
 [data-theme="dark"]{
-  --bg:#060609;--bg2:#0b0b12;--bg3:#11111a;--bg4:#181825;
-  --text:#ede8e0;--muted:#72728a;--muted2:#44445a;
-  --gold:#c8a45a;--gold2:#e6ca86;--goldl:rgba(200,164,90,.12);
-  --border:rgba(200,164,90,.1);--borderh:rgba(200,164,90,.45);
-  --card:rgba(11,11,18,.96);--glass:rgba(6,6,9,.82);
-  --sh:rgba(0,0,0,.7);--sh2:rgba(200,164,90,.15);
+  --bg:#0c0c14;
+  --bg2:#111120;
+  --bg3:#16162a;
+  --bg4:#1c1c34;
+  --text:#f0ecff;
+  --muted:#8080a8;
+  --muted2:#404060;
+  --rose:#e8a0b4;
+  --rose2:#f0c0d0;
+  --violet:#9b7fe8;
+  --violet2:#c4aaff;
+  --teal:#6ecfcf;
+  --acc:var(--rose);
+  --acc2:var(--rose2);
+  --border:rgba(232,160,180,.1);
+  --borderh:rgba(232,160,180,.4);
+  --goldl:rgba(232,160,180,.08);
+  --card:rgba(17,17,32,.97);
+  --glass:rgba(12,12,20,.85);
+  --sh:rgba(0,0,0,.6);
+  --sh2:rgba(155,127,232,.2);
 }
 [data-theme="light"]{
-  --bg:#faf7f1;--bg2:#f2ece0;--bg3:#e8e0d0;--bg4:#ddd4c0;
-  --text:#18130a;--muted:#6a5840;--muted2:#a08860;
-  --gold:#9a6418;--gold2:#c08428;--goldl:rgba(154,100,24,.1);
-  --border:rgba(130,86,24,.14);--borderh:rgba(130,86,24,.5);
-  --card:rgba(250,247,241,.97);--glass:rgba(250,247,241,.9);
-  --sh:rgba(60,36,8,.12);--sh2:rgba(154,100,24,.12);
+  --bg:#fdf8f5;
+  --bg2:#f5ede8;
+  --bg3:#ede0d8;
+  --bg4:#e0cfc5;
+  --text:#1a0e18;
+  --muted:#7a5868;
+  --muted2:#b09098;
+  --rose:#c05878;
+  --rose2:#e07898;
+  --violet:#7058c8;
+  --violet2:#9878e8;
+  --teal:#3a9898;
+  --acc:var(--rose);
+  --acc2:var(--rose2);
+  --border:rgba(192,88,120,.13);
+  --borderh:rgba(192,88,120,.45);
+  --goldl:rgba(192,88,120,.07);
+  --card:rgba(253,248,245,.98);
+  --glass:rgba(253,248,245,.92);
+  --sh:rgba(80,20,40,.1);
+  --sh2:rgba(192,88,120,.15);
 }
+
 html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden;transition:background .5s,color .5s;}
+body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;transition:background .5s,color .5s;}
 
 /* CURSOR */
 #cur,#ring{position:fixed;border-radius:50%;pointer-events:none;z-index:9999;}
-#cur{width:8px;height:8px;background:var(--gold);transition:transform .08s,width .3s,height .3s;}
-#ring{width:28px;height:28px;border:1px solid rgba(200,164,90,.4);z-index:9998;transition:border-color .3s;}
+#cur{width:8px;height:8px;background:var(--rose);transition:transform .08s;}
+#ring{width:28px;height:28px;border:1px solid rgba(232,160,180,.45);z-index:9998;}
 
 /* NAV */
-nav{position:fixed;top:0;width:100%;z-index:300;padding:0 5%;height:64px;display:flex;align-items:center;justify-content:space-between;background:var(--glass);backdrop-filter:blur(30px);-webkit-backdrop-filter:blur(30px);border-bottom:1px solid var(--border);transition:all .4s;}
-.logo-w{display:flex;flex-direction:column;line-height:1.1;}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:700;color:var(--gold);letter-spacing:.03em;}
-.logo-s{font-size:.55rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:1px;}
+nav{position:fixed;top:0;width:100%;z-index:300;padding:0 5%;height:62px;display:flex;align-items:center;justify-content:space-between;background:var(--glass);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border-bottom:1px solid var(--border);transition:all .4s;}
+.logo-w{line-height:1.1;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.03em;}
+.logo-s{font-size:.54rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);margin-top:1px;}
 .nl{display:flex;gap:1.4rem;list-style:none;}
-.nl a{color:var(--muted);text-decoration:none;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;transition:.3s;position:relative;padding-bottom:2px;}
-.nl a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:.35s;}
-.nl a:hover{color:var(--gold);}
+.nl a{color:var(--muted);text-decoration:none;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:.3s;position:relative;padding-bottom:2px;}
+.nl a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:linear-gradient(90deg,var(--rose),var(--violet));transition:.35s;}
+.nl a:hover{color:var(--rose);}
 .nl a:hover::after{width:100%;}
 .nav-r{display:flex;align-items:center;gap:10px;}
 .tog{width:40px;height:21px;background:var(--bg3);border:1px solid var(--border);border-radius:11px;cursor:pointer;position:relative;outline:none;flex-shrink:0;transition:.4s;}
-.tog::after{content:'';position:absolute;top:3px;left:3px;width:13px;height:13px;border-radius:50%;background:var(--gold);transition:.4s;}
+.tog::after{content:'';position:absolute;top:3px;left:3px;width:13px;height:13px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--violet));transition:.4s;}
 [data-theme="light"] .tog::after{transform:translateX(19px);}
 .ti{font-size:.65rem;position:absolute;top:50%;transform:translateY(-50%);transition:.3s;}
 .ti.moon{right:4px;}.ti.sun{left:4px;opacity:0;}
 [data-theme="light"] .ti.moon{opacity:0;}[data-theme="light"] .ti.sun{opacity:1;}
-.ncta{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:7px 18px;border-radius:22px;font-size:.68rem;font-weight:600;text-decoration:none;letter-spacing:.07em;transition:.35s;white-space:nowrap;}
-[data-theme="light"] .ncta{color:#18130a;}
-.ncta:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--sh2);}
+.ncta{background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:7px 18px;border-radius:22px;font-size:.68rem;font-weight:600;text-decoration:none;letter-spacing:.07em;transition:.35s;white-space:nowrap;}
+.ncta:hover{transform:translateY(-2px);box-shadow:0 6px 22px var(--sh2);}
 
 /* HERO */
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:100px 5% 80px;position:relative;overflow:hidden;}
-#pts{position:absolute;inset:0;pointer-events:none;}
-.hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;opacity:.5;}
-.hero-glow{position:absolute;top:20%;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(200,164,90,.07) 0%,transparent 70%);pointer-events:none;}
+canvas{position:absolute;inset:0;pointer-events:none;}
+.hero-grain{position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;opacity:.4;}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;}
+.blob1{width:500px;height:500px;top:10%;left:10%;background:rgba(155,127,232,.06);}
+.blob2{width:400px;height:400px;bottom:15%;right:8%;background:rgba(232,160,180,.06);}
+.blob3{width:300px;height:300px;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(110,207,207,.04);}
 .hi{position:relative;z-index:1;max-width:900px;}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-size:.66rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:32px;animation:fUp .8s ease both;}
-.eyebrow::before,.eyebrow::after{content:'';display:block;width:30px;height:1px;background:var(--gold);opacity:.5;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,10vw,9rem);line-height:.95;font-weight:300;margin-bottom:6px;animation:fUp .9s .08s ease both;letter-spacing:-.02em;}
-.hero h1 strong{font-weight:700;background:linear-gradient(135deg,var(--gold),var(--gold2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero h1 em{display:block;font-style:italic;font-size:.42em;color:var(--muted);letter-spacing:.1em;font-weight:300;margin-top:12px;-webkit-text-fill-color:var(--muted);}
-.hero-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);margin:28px auto;animation:fUp 1s .2s ease both;}
-.hero-q{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.08rem;max-width:460px;margin:0 auto 32px;line-height:1.75;animation:fUp 1s .25s ease both;}
-.hero-q strong{color:var(--gold2);font-style:normal;}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--muted);font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;margin-bottom:32px;animation:fUp .8s ease both;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:28px;height:1px;background:linear-gradient(90deg,var(--rose),var(--violet));opacity:.6;}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,10.5vw,9.5rem);line-height:.95;font-weight:300;margin-bottom:8px;animation:fUp .95s .08s ease both;letter-spacing:-.02em;}
+.hero h1 strong{font-weight:700;background:linear-gradient(135deg,var(--rose),var(--violet2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero h1 em{display:block;font-style:italic;font-size:.4em;color:var(--muted);letter-spacing:.1em;font-weight:300;margin-top:14px;-webkit-text-fill-color:var(--muted);}
+.hero-divider{display:flex;align-items:center;gap:16px;justify-content:center;margin:26px 0;animation:fUp 1s .2s ease both;}
+.hd-line{flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--rose));}
+.hd-line.r{background:linear-gradient(90deg,var(--violet),transparent);}
+.hd-dot{width:5px;height:5px;border-radius:50%;background:var(--rose);box-shadow:0 0 10px var(--rose);}
+.hero-q{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;max-width:480px;margin:0 auto 30px;line-height:1.78;animation:fUp 1s .25s ease both;}
+.hero-q strong{color:var(--rose2);font-style:normal;}
 .pills{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:36px;animation:fUp 1s .3s ease both;}
-.pill{display:flex;align-items:center;gap:7px;background:var(--goldl);border:1px solid var(--border);padding:7px 15px;border-radius:22px;font-size:.72rem;transition:.35s;}
+.pill{display:flex;align-items:center;gap:7px;background:var(--goldl);border:1px solid var(--border);padding:7px 15px;border-radius:22px;font-size:.71rem;transition:.35s;}
 .pill:hover{border-color:var(--borderh);transform:translateY(-2px);}
 .pill .d{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-.dm{background:#f4a0c0;}.dd{background:#a0c4f4;}.ds{background:#a0f4bc;}
+.dm{background:#f4a0c0;}.dd{background:#a0a4f4;}.ds{background:#a0f4d4;}
 .hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fUp 1s .38s ease both;}
-.bg{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:12px 30px;border-radius:30px;font-size:.8rem;font-weight:600;text-decoration:none;transition:.35s;letter-spacing:.05em;}
-[data-theme="light"] .bg{color:#18130a;}
-.bg:hover{transform:translateY(-3px);box-shadow:0 12px 30px var(--sh2);}
-.bl{border:1px solid var(--borderh);color:var(--gold);padding:12px 30px;border-radius:30px;font-size:.8rem;text-decoration:none;transition:.35s;}
+.bg{background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:12px 30px;border-radius:30px;font-size:.8rem;font-weight:600;text-decoration:none;transition:.35s;letter-spacing:.05em;}
+.bg:hover{transform:translateY(-3px);box-shadow:0 12px 32px var(--sh2);}
+.bl{border:1px solid var(--borderh);color:var(--rose);padding:12px 30px;border-radius:30px;font-size:.8rem;text-decoration:none;transition:.35s;}
 .bl:hover{background:var(--goldl);transform:translateY(-3px);}
 .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--muted2);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;animation:sb 2.8s ease-in-out infinite;}
-.sh-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--gold),transparent);}
+.sh-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--rose),transparent);}
 @keyframes sb{0%,100%{transform:translateX(-50%) translateY(0)}60%{transform:translateX(-50%) translateY(8px)}}
-@keyframes fUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-/* MARQUEE STRIP */
-.strip{background:var(--goldl);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:12px 0;overflow:hidden;white-space:nowrap;}
-.strip-track{display:inline-flex;gap:0;animation:marquee 20s linear infinite;}
-.strip-item{display:inline-flex;align-items:center;gap:10px;padding:0 28px;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
-.strip-dot{color:var(--gold);font-size:.6rem;}
+/* MARQUEE */
+.strip{background:var(--goldl);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;overflow:hidden;white-space:nowrap;}
+.strip-track{display:inline-flex;animation:marquee 22s linear infinite;}
+.strip-item{display:inline-flex;align-items:center;gap:10px;padding:0 28px;font-size:.7rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
+.strip-dot{color:var(--rose);font-size:.55rem;}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* SECTIONS */
 section{padding:100px 5%;}
 .sw{max-width:1100px;margin:0 auto;}
-.sl{color:var(--gold);font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;font-weight:500;}
+.sl{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;font-weight:500;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .st{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:12px;}
-.st em{font-style:italic;color:var(--gold);}
+.st em{font-style:italic;color:var(--rose);}
 .st strong{font-weight:600;}
-.gr{width:40px;height:1px;background:linear-gradient(90deg,var(--gold),transparent);margin:13px 0 44px;}
+.gr{width:40px;height:1px;background:linear-gradient(90deg,var(--rose),var(--violet),transparent);margin:13px 0 44px;}
 
 /* REVEAL */
 .rv{opacity:0;transform:translateY(32px);transition:opacity .75s ease,transform .75s ease;}
@@ -108,51 +145,51 @@ section{padding:100px 5%;}
 
 /* ABOUT */
 .ab-bg{background:var(--bg2);}
-.ab-grid{display:grid;grid-template-columns:420px 1fr;gap:80px;align-items:center;}
+.ab-grid{display:grid;grid-template-columns:400px 1fr;gap:76px;align-items:center;}
 .af{position:relative;}
-.af-img{width:100%;aspect-ratio:3/4;background:linear-gradient(145deg,var(--bg3),var(--bg4));border-radius:24px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:6rem;overflow:hidden;position:relative;}
-.af-img::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 35% 25%,rgba(200,164,90,.1),transparent 65%);}
-.af-glow{position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:70%;height:50px;background:rgba(200,164,90,.12);filter:blur(24px);}
-.b1{position:absolute;top:22px;right:-22px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:12px 16px;border-radius:14px;font-size:.7rem;font-weight:600;line-height:1.6;box-shadow:0 10px 26px var(--sh2);animation:flt 3.5s ease-in-out infinite;}
-[data-theme="light"] .b1{color:#18130a;}
+.af-photo{width:100%;aspect-ratio:3/4;border-radius:28px;overflow:hidden;position:relative;background:linear-gradient(145deg,var(--bg3),var(--bg4));border:1px solid var(--border);}
+.af-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+.af-photo-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:5.5rem;}
+.af-glow{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);width:70%;height:50px;background:rgba(232,160,180,.12);filter:blur(28px);}
+.b1{position:absolute;top:22px;right:-22px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:12px 16px;border-radius:14px;font-size:.7rem;font-weight:600;line-height:1.6;box-shadow:0 10px 28px var(--sh2);animation:flt 3.5s ease-in-out infinite;}
 .b2{position:absolute;bottom:22px;left:-22px;background:var(--card);border:1px solid var(--borderh);padding:11px 15px;border-radius:14px;font-size:.7rem;font-weight:500;line-height:1.6;animation:flt 4s ease-in-out infinite reverse;}
 @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0;}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 14px;text-align:center;transition:.35s;position:relative;overflow:hidden;}
-.stat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--goldl),transparent);opacity:0;transition:.35s;}
-.stat:hover{border-color:var(--borderh);transform:translateY(-3px);}
+.stat::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(232,160,180,.05),rgba(155,127,232,.05));opacity:0;transition:.35s;}
+.stat:hover{border-color:var(--borderh);}
 .stat:hover::before{opacity:1;}
-.sn{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;color:var(--gold);}
+.sn{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .sl3{color:var(--muted);font-size:.66rem;margin-top:2px;letter-spacing:.05em;}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
-.chip{background:var(--goldl);border:1px solid var(--border);color:var(--gold);font-size:.68rem;padding:5px 12px;border-radius:14px;transition:.3s;}
-.chip:hover{background:rgba(200,164,90,.2);}
+.chip{background:var(--goldl);border:1px solid var(--border);color:var(--rose);font-size:.67rem;padding:5px 12px;border-radius:14px;transition:.3s;}
+.chip:hover{background:rgba(232,160,180,.15);}
 
 /* WORLDS */
 .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .wc{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:36px 28px;transition:.45s;position:relative;overflow:hidden;cursor:default;}
-.wc::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;opacity:.05;transition:.5s;}
-.wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:.45s;}
+.wc::before{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;border-radius:50%;opacity:.06;transition:.5s;}
+.wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--violet),transparent);transform:scaleX(0);transition:.45s;}
 .wc.mu::before{background:#f4a0c0;}
-.wc.mi::before{background:#a0c4f4;}
-.wc.sc::before{background:#a0f4bc;}
+.wc.mi::before{background:#a0a4f4;}
+.wc.sc::before{background:#a0f4d4;}
 .wc:hover{border-color:var(--borderh);transform:translateY(-8px);box-shadow:0 24px 56px var(--sh);}
 .wc:hover::before{opacity:.18;transform:scale(1.5);}
 .wc:hover::after{transform:scaleX(1);}
-.wi{font-size:2.6rem;margin-bottom:18px;display:block;transition:.35s;}
-.wc:hover .wi{transform:scale(1.1);}
+.wi{font-size:2.5rem;margin-bottom:18px;display:block;transition:.35s;}
+.wc:hover .wi{transform:scale(1.12);}
 .wt2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;margin-bottom:5px;}
-.wh{font-size:.68rem;color:var(--gold);letter-spacing:.09em;margin-bottom:14px;display:block;}
+.wh{font-size:.67rem;color:var(--rose);letter-spacing:.09em;margin-bottom:14px;display:block;}
 .wd{color:var(--muted);font-size:.8rem;line-height:1.8;}
-.wlinks{margin-top:20px;display:flex;flex-direction:column;gap:5px;}
+.wlinks{margin-top:18px;display:flex;flex-direction:column;gap:5px;}
 .wlnk{display:flex;align-items:center;gap:8px;font-size:.73rem;color:var(--muted);text-decoration:none;transition:.3s;padding:6px 10px;border-radius:8px;}
-.wlnk:hover{color:var(--gold);background:var(--goldl);}
+.wlnk:hover{color:var(--rose);background:var(--goldl);}
 
 /* SKILLS */
 .sk-bg{background:var(--bg2);}
 .skg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;}
 .skc{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 20px;text-align:center;transition:.4s;position:relative;overflow:hidden;cursor:default;}
-.skc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);transition:.4s;}
+.skc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--rose),var(--violet),transparent);transform:scaleX(0);transition:.4s;}
 .skc:hover{border-color:var(--borderh);transform:translateY(-6px);box-shadow:0 16px 40px var(--sh);}
 .skc:hover::after{transform:scaleX(1);}
 .si{font-size:2.1rem;margin-bottom:12px;display:block;transition:.35s;}
@@ -161,26 +198,35 @@ section{padding:100px 5%;}
 .sd{font-size:.7rem;color:var(--muted);line-height:1.6;}
 
 /* WORK */
-.wf-row{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:28px;}
-.wf{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.68rem;padding:7px 16px;border-radius:20px;cursor:pointer;transition:.3s;letter-spacing:.05em;font-family:'DM Sans',sans-serif;}
-.wf.on,.wf:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
-[data-theme="light"] .wf.on,[data-theme="light"] .wf:hover{color:#18130a;}
+.wf-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;}
+.wf{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.67rem;padding:7px 15px;border-radius:20px;cursor:pointer;transition:.3s;letter-spacing:.04em;font-family:'Outfit',sans-serif;}
+.wf.on,.wf:hover{background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;border-color:transparent;}
 .pw-hidden{display:none!important;}
-.pwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;}
+.pwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px;}
 .pw{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.45s;cursor:pointer;}
 .pw:hover{border-color:var(--borderh);transform:translateY(-6px);box-shadow:0 22px 54px var(--sh);}
-.pwt{height:215px;position:relative;overflow:hidden;background:var(--bg3);}
+.pwt{height:210px;position:relative;overflow:hidden;background:var(--bg3);}
 .pwt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.55s;}
 .pw:hover .pwt img{transform:scale(1.07);}
-.pwo{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,6,9,.9) 0%,rgba(6,6,9,.2) 55%,transparent);}
-[data-theme="light"] .pwo{background:linear-gradient(to top,rgba(24,19,10,.78) 0%,rgba(24,19,10,.08) 55%,transparent);}
-.pwbadge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:.58rem;font-weight:700;padding:4px 11px;border-radius:8px;letter-spacing:.09em;text-transform:uppercase;z-index:2;}
-[data-theme="light"] .pwbadge{color:#18130a;}
-.pwplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:46px;height:46px;background:rgba(200,164,90,.9);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;opacity:0;transition:.35s;z-index:2;}
+.pwo{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,20,.92) 0%,rgba(12,12,20,.15) 55%,transparent);}
+[data-theme="light"] .pwo{background:linear-gradient(to top,rgba(26,14,24,.8) 0%,rgba(26,14,24,.08) 55%,transparent);}
+.pwbadge{position:absolute;top:12px;left:12px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;font-size:.57rem;font-weight:700;padding:4px 11px;border-radius:8px;letter-spacing:.09em;text-transform:uppercase;z-index:2;}
+.pwplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:46px;height:46px;background:rgba(232,160,180,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;opacity:0;transition:.35s;z-index:2;}
 .pw:hover .pwplay{opacity:1;transform:translate(-50%,-50%) scale(1);}
 .pwb{padding:18px 20px;}
 .pwt2{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:5px;}
 .pwm{color:var(--muted);font-size:.75rem;line-height:1.65;}
+/* Platform cards */
+.pw-platform{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;position:relative;overflow:hidden;}
+.pw-pf-logo{font-size:2.8rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.4));z-index:1;}
+.pw-pf-name{font-size:.67rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.65);z-index:1;}
+.pw-pf-badge{position:absolute;bottom:14px;left:14px;right:14px;background:rgba(0,0,0,.5);backdrop-filter:blur(8px);border-radius:8px;padding:8px 11px;font-size:.72rem;color:#fff;font-weight:500;line-height:1.4;z-index:1;text-align:left;}
+.pf-kuku{background:linear-gradient(135deg,#1a0520,#3d0d50,#7a1a80);}
+.pf-storytv{background:linear-gradient(135deg,#0f1a30,#1e3060,#1a4ed8);}
+.pf-baalkatha{background:linear-gradient(135deg,#0f1a22,#1a3040,#0ea5c8);}
+.pf-podcast{background:linear-gradient(135deg,#120c28,#2a1855,#1a1450);}
+.pf-eight{background:linear-gradient(135deg,#0d0d20,#1a1050,#2d1b70);}
+.pf-eight2{background:linear-gradient(135deg,#1a0a00,#3d1800,#7c3000);}
 
 /* YOUTUBE */
 .yt-bg{background:var(--bg2);}
@@ -189,12 +235,11 @@ section{padding:100px 5%;}
 .yt-ico{width:38px;height:38px;background:#FF0000;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0;}
 .ytchs{display:flex;flex-direction:column;gap:2px;}
 .ytch{font-size:.7rem;color:var(--muted);}
-.ytch a{color:var(--gold);text-decoration:none;font-weight:500;}
+.ytch a{color:var(--rose);text-decoration:none;font-weight:500;}
 .ytch a:hover{text-decoration:underline;}
 .yt-tabs{display:flex;gap:6px;flex-wrap:wrap;}
-.ytt{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.68rem;padding:7px 16px;border-radius:20px;cursor:pointer;transition:.3s;font-family:'DM Sans',sans-serif;}
-.ytt.on,.ytt:hover{background:var(--gold);color:#fff;border-color:var(--gold);}
-[data-theme="light"] .ytt.on,[data-theme="light"] .ytt:hover{color:#18130a;}
+.ytt{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.68rem;padding:7px 16px;border-radius:20px;cursor:pointer;transition:.3s;font-family:'Outfit',sans-serif;}
+.ytt.on,.ytt:hover{background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;border-color:transparent;}
 .ytg{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:16px;}
 .ytg .yc:first-child{grid-column:1/3;}
 @media(max-width:640px){.ytg .yc:first-child{grid-column:auto;}}
@@ -205,8 +250,7 @@ section{padding:100px 5%;}
 .yc:hover .yti{transform:scale(1.06);}
 .ypb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.3s;z-index:2;}
 .yc:hover .ypb{opacity:1;transform:translate(-50%,-50%) scale(1);}
-.lp{position:absolute;top:9px;left:9px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:.56rem;font-weight:700;padding:3px 9px;border-radius:7px;letter-spacing:.07em;text-transform:uppercase;z-index:2;}
-[data-theme="light"] .lp{color:#18130a;}
+.lp{position:absolute;top:9px;left:9px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;font-size:.56rem;font-weight:700;padding:3px 9px;border-radius:7px;letter-spacing:.07em;text-transform:uppercase;z-index:2;}
 .sp2{position:absolute;top:9px;right:9px;background:rgba(255,0,0,.85);color:#fff;font-size:.56rem;font-weight:700;padding:3px 8px;border-radius:7px;z-index:2;}
 .yi{padding:12px 14px;}
 .yvt{font-size:.84rem;font-weight:500;line-height:1.4;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
@@ -218,18 +262,17 @@ section{padding:100px 5%;}
 .rlc:hover{transform:scale(1.04);box-shadow:0 18px 40px var(--sh);border-color:var(--borderh);}
 .rl-bi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s;}
 .rlc:hover .rl-bi{transform:scale(1.1);}
-.rl-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.88) 0%,rgba(0,0,0,.1) 55%,transparent);}
-.rl-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(255,255,255,.16);border:2px solid rgba(255,255,255,.55);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.35s;z-index:3;backdrop-filter:blur(4px);}
+.rl-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(12,12,20,.9) 0%,rgba(12,12,20,.1) 55%,transparent);}
+.rl-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(232,160,180,.2);border:2px solid rgba(232,160,180,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.35s;z-index:3;backdrop-filter:blur(4px);}
 .rlc:hover .rl-play{opacity:1;transform:translate(-50%,-50%) scale(1);}
-.rl-badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;font-size:.55rem;font-weight:700;padding:3px 9px;border-radius:7px;z-index:3;letter-spacing:.07em;}
-[data-theme="light"] .rl-badge{color:#18130a;}
+.rl-badge{position:absolute;top:10px;left:10px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;font-size:.55rem;font-weight:700;padding:3px 9px;border-radius:7px;z-index:3;letter-spacing:.07em;}
 .rl-lb{position:absolute;bottom:0;left:0;right:0;padding:14px 12px 13px;font-size:.72rem;color:#fff;line-height:1.4;z-index:2;font-weight:500;}
 
 /* INSTAGRAM */
 .ig-bg{background:var(--bg);}
 .ig-top{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
 .ig-ico{width:38px;height:38px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0;}
-.ig-handle{font-size:.9rem;font-weight:600;color:var(--gold);}
+.ig-handle{font-size:.9rem;font-weight:600;color:var(--rose);}
 .ig-handle a{color:inherit;text-decoration:none;}
 .ig-handle a:hover{text-decoration:underline;}
 .ig-sub{font-size:.7rem;color:var(--muted);margin-top:2px;}
@@ -241,7 +284,7 @@ section{padding:100px 5%;}
 .ig-info{padding:12px 15px;}
 .ig-cap{font-size:.82rem;font-weight:500;line-height:1.45;margin-bottom:5px;}
 .ig-met{font-size:.68rem;color:var(--muted);}
-.ig-met a{color:var(--gold);text-decoration:none;}
+.ig-met a{color:var(--rose);text-decoration:none;}
 
 /* TESTIMONIALS */
 .tm-bg{background:var(--bg2);}
@@ -254,11 +297,11 @@ section{padding:100px 5%;}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 .tm{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:26px 24px;width:310px;flex-shrink:0;transition:.35s;}
 .tm:hover{border-color:var(--borderh);transform:translateY(-4px);box-shadow:0 14px 34px var(--sh);}
-.tm-stars{color:var(--gold);font-size:.85rem;margin-bottom:11px;letter-spacing:3px;}
+.tm-stars{font-size:.85rem;margin-bottom:11px;letter-spacing:3px;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .tm-q{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1rem;line-height:1.75;color:var(--text);margin-bottom:16px;position:relative;padding-left:18px;}
-.tm-q::before{content:'"';position:absolute;left:0;top:-4px;font-size:2rem;color:var(--gold);line-height:1;}
+.tm-q::before{content:'"';position:absolute;left:0;top:-4px;font-size:2rem;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;}
+.tm-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--rose),var(--violet));display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .tm-author{display:flex;align-items:center;gap:10px;}
-.tm-av{width:34px;height:34px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
 .tm-name{font-size:.8rem;font-weight:600;}
 .tm-role{font-size:.68rem;color:var(--muted);}
 
@@ -270,17 +313,13 @@ section{padding:100px 5%;}
 .cnc:hover{transform:translateY(-5px);}
 .cnc:hover::before{opacity:1;}
 .ci{font-size:1.7rem;margin-bottom:8px;position:relative;z-index:1;}
-.cn2{font-size:.6rem;color:var(--gold);letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;font-weight:600;position:relative;z-index:1;}
+.cn2{font-size:.6rem;color:var(--rose);letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;font-weight:600;position:relative;z-index:1;}
 .cv{font-size:.8rem;position:relative;z-index:1;}
 .ct2{font-size:.62rem;color:var(--muted);margin-top:2px;font-style:italic;position:relative;z-index:1;}
 .cnc.yt:hover{border-color:#ff4444;box-shadow:0 12px 30px rgba(255,50,50,.1);}
-.cnc.yt:hover::before{background:rgba(255,50,50,.05);}
 .cnc.ig:hover{border-color:#e1306c;box-shadow:0 12px 30px rgba(225,48,108,.1);}
-.cnc.ig:hover::before{background:rgba(225,48,108,.05);}
 .cnc.li:hover{border-color:#0077b5;box-shadow:0 12px 30px rgba(0,119,181,.1);}
-.cnc.li:hover::before{background:rgba(0,119,181,.05);}
 .cnc.sp:hover{border-color:#1DB954;box-shadow:0 12px 30px rgba(29,185,84,.1);}
-.cnc.sp:hover::before{background:rgba(29,185,84,.05);}
 .cnc.em:hover{border-color:var(--borderh);box-shadow:0 12px 30px var(--sh2);}
 .cnc.lt:hover{border-color:#39BA63;box-shadow:0 12px 30px rgba(57,186,99,.1);}
 
@@ -288,32 +327,29 @@ section{padding:100px 5%;}
 .ct-in{max-width:580px;margin:0 auto;text-align:center;}
 .ct-form{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;margin-top:36px;text-align:left;}
 .cf-l{color:var(--muted);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px;display:block;font-weight:500;}
-.cf-i,.cf-t{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px 14px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.86rem;outline:none;transition:.3s;margin-bottom:16px;}
-.cf-i:focus,.cf-t:focus{border-color:var(--gold);}
+.cf-i,.cf-t{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px 14px;color:var(--text);font-family:'Outfit',sans-serif;font-size:.86rem;outline:none;transition:.3s;margin-bottom:16px;}
+.cf-i:focus,.cf-t:focus{border-color:var(--rose);}
 .cf-t{height:100px;resize:none;}
-.cf-btn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff;padding:13px;border-radius:12px;font-size:.86rem;font-weight:600;border:none;cursor:pointer;letter-spacing:.06em;transition:.35s;font-family:'DM Sans',sans-serif;}
-[data-theme="light"] .cf-btn{color:#18130a;}
-.cf-btn:hover{transform:translateY(-2px);box-shadow:0 10px 26px var(--sh2);}
+.cf-btn{width:100%;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:13px;border-radius:12px;font-size:.86rem;font-weight:600;border:none;cursor:pointer;letter-spacing:.06em;transition:.35s;font-family:'Outfit',sans-serif;}
+.cf-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--sh2);}
 
 /* MODAL */
 .mmod{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:500;align-items:center;justify-content:center;backdrop-filter:blur(14px);}
 .mmod.open{display:flex;}
 .mbox{width:92%;max-width:840px;background:var(--bg3);border-radius:20px;overflow:hidden;border:1px solid var(--border);position:relative;animation:popIn .32s var(--ease) both;}
 @keyframes popIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
-.mx{position:absolute;top:10px;right:11px;background:rgba(200,164,90,.2);border:none;color:var(--text);font-size:1rem;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:1;transition:.3s;font-family:'DM Sans',sans-serif;}
-.mx:hover{background:rgba(200,164,90,.5);}
+.mx{position:absolute;top:10px;right:11px;background:rgba(232,160,180,.2);border:none;color:var(--text);font-size:1rem;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:1;transition:.3s;font-family:'Outfit',sans-serif;}
+.mx:hover{background:rgba(232,160,180,.5);}
 .mif{width:100%;aspect-ratio:16/9;}
 
 /* FOOTER */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 30px;text-align:center;}
-.flogo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--gold);margin-bottom:6px;}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;background:linear-gradient(135deg,var(--rose),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:6px;}
 .fq{color:var(--muted);font-size:.78rem;font-style:italic;margin-bottom:20px;}
 .flinks{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:18px;}
 .flinks a{color:var(--muted);font-size:.68rem;text-decoration:none;letter-spacing:.09em;text-transform:uppercase;transition:.3s;}
-.flinks a:hover{color:var(--gold);}
+.flinks a:hover{color:var(--rose);}
 .fc{color:var(--muted2);font-size:.65rem;line-height:1.8;}
-
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 @media(max-width:980px){.ab-grid{grid-template-columns:1fr;}.wg{grid-template-columns:1fr;}}
 @media(max-width:768px){.nl{display:none;}.b1,.b2{display:none;}.hero h1{font-size:clamp(3rem,13vw,5.5rem);}}
@@ -323,7 +359,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
 <div id="cur"></div>
 <div id="ring"></div>
 
-<!-- NAV -->
 <nav>
   <div class="logo-w">
     <div class="logo">Aakanksha</div>
@@ -346,18 +381,23 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
   <canvas id="pts"></canvas>
   <div class="hero-grain"></div>
-  <div class="hero-glow"></div>
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
   <div class="hi">
     <div class="eyebrow">Voice Artist · Storyteller · Psychologist</div>
     <h1>
       <strong>Aakanksha</strong>
       <em>Capturing life through sound, mind & screen.</em>
     </h1>
-    <div class="hero-line"></div>
+    <div class="hero-divider">
+      <div class="hd-line"></div>
+      <div class="hd-dot"></div>
+      <div class="hd-line r"></div>
+    </div>
     <p class="hero-q">"A voice that heals the silent — and brings <strong>untold stories</strong> to life."</p>
     <div class="pills">
       <div class="pill"><div class="d dm"></div>🎤 Music · @negai24</div>
@@ -372,36 +412,45 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   <div class="scroll-hint"><div class="sh-line"></div>Scroll</div>
 </section>
 
-<!-- MARQUEE STRIP -->
 <div class="strip">
   <div class="strip-track">
-    <span class="strip-item">Voice Actor <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Dubbing Artist <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Singer <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Content Creator <span class="strip-dot">✦</span></span>
-    <span class="strip-item">MA Clinical Psychology <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Art Therapy <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Film Coordinator <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Anchor <span class="strip-dot">✦</span></span>
-    <span class="strip-item">100+ Projects <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Voice Actor <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Dubbing Artist <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Singer <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Content Creator <span class="strip-dot">✦</span></span>
-    <span class="strip-item">MA Clinical Psychology <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Art Therapy <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Film Coordinator <span class="strip-dot">✦</span></span>
-    <span class="strip-item">Anchor <span class="strip-dot">✦</span></span>
-    <span class="strip-item">100+ Projects <span class="strip-dot">✦</span></span>
+    <span class="strip-item">Voice Actor<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Dubbing Artist<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Singer<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Content Creator<span class="strip-dot">✦</span></span>
+    <span class="strip-item">MA Clinical Psychology<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Art Therapy<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Film Coordinator<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Anchor<span class="strip-dot">✦</span></span>
+    <span class="strip-item">100+ Projects<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Kuku FM<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Eight Network<span class="strip-dot">✦</span></span>
+    <span class="strip-item">StoryTV<span class="strip-dot">✦</span></span>
+    <span class="strip-item">BaalKatha<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Voice Actor<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Dubbing Artist<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Singer<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Content Creator<span class="strip-dot">✦</span></span>
+    <span class="strip-item">MA Clinical Psychology<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Art Therapy<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Film Coordinator<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Anchor<span class="strip-dot">✦</span></span>
+    <span class="strip-item">100+ Projects<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Kuku FM<span class="strip-dot">✦</span></span>
+    <span class="strip-item">Eight Network<span class="strip-dot">✦</span></span>
+    <span class="strip-item">StoryTV<span class="strip-dot">✦</span></span>
+    <span class="strip-item">BaalKatha<span class="strip-dot">✦</span></span>
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about" class="ab-bg">
   <div class="sw">
     <div class="ab-grid">
       <div class="af rvl">
-        <div class="af-img">🎙️</div>
+        <div class="af-photo">
+          <img src="./images/aakanksha.jpg" alt="Aakanksha" onerror="this.style.display='none'"/>
+          <div class="af-photo-fb" id="photoFb">🎙️</div>
+        </div>
         <div class="af-glow"></div>
         <div class="b1">MA Clinical<br/>Psychology 🧠<br/>+ Art Therapy</div>
         <div class="b2">🎬 Voice Artist<br/>🎤 Singer · Anchor</div>
@@ -431,7 +480,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- THREE WORLDS -->
 <section id="worlds">
   <div class="sw">
     <div class="rv" style="text-align:center;margin-bottom:48px;">
@@ -454,7 +502,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
         <span class="wi">🧠</span>
         <div class="wt2">Psychology</div>
         <span class="wh">@chittavritti.echoes · Instagram</span>
-        <p class="wd">Mental health content, podcast, and conversations around emotion and the science of being human. MA meets real talk.</p>
+        <p class="wd">Mental health content, podcast, and conversations around emotion and the science of being human.</p>
         <div class="wlinks">
           <a class="wlnk" href="https://www.instagram.com/chittavritti.echoes" target="_blank"><span>📸</span>@chittavritti.echoes</a>
           <a class="wlnk" href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" target="_blank"><span>🎧</span>Listen on Spotify</a>
@@ -474,7 +522,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills" class="sk-bg">
   <div class="sw">
     <div class="rv">
@@ -495,7 +542,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- WORK -->
 <section id="work">
   <div class="sw">
     <div class="rv">
@@ -505,53 +551,123 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
     </div>
     <div class="wf-row rv">
       <button class="wf on" onclick="filterWork('all',this)">All</button>
+      <button class="wf" onclick="filterWork('audio',this)">🎙️ Audio Shows</button>
       <button class="wf" onclick="filterWork('dubbing',this)">🎬 Dubbing</button>
       <button class="wf" onclick="filterWork('kukufm',this)">🎧 Kuku FM</button>
+      <button class="wf" onclick="filterWork('eight',this)">8️⃣ Eight Network</button>
       <button class="wf" onclick="filterWork('storytv',this)">📺 StoryTV</button>
       <button class="wf" onclick="filterWork('baalkatha',this)">🌙 BaalKatha</button>
+      <button class="wf" onclick="filterWork('youtube-work',this)">▶️ YouTube</button>
+      <button class="wf" onclick="filterWork('instagram',this)">📸 Instagram</button>
     </div>
     <div class="pwg" id="workGrid">
-      <div class="pw rv d1" data-cat="kukufm" onclick="window.open('https://tv.kukufm.com/show/dad-let-me-clean-the-house','_blank')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/c9d32697-1f6e-47d3-a106-0f092d6fbcc4_96f3d53a6bb64589bd89dca37ad03c3d.webp" alt="Dad Let Me Clean"/><div class="pwo"></div><div class="pwbadge">Kuku FM · Dubbing</div><div class="pwplay">↗</div></div>
-        <div class="pwb"><div class="pwt2">Dad, Let Me Clean The House</div><p class="pwm">Dubbing for Kuku FM's popular short drama — warmth and family emotion brought to life through voice.</p></div>
+      <div class="pw rv" data-cat="instagram" onclick="window.open('https://www.instagram.com/p/DV3rbBkE8c4/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);"><div class="pw-pf-logo">📸</div><div class="pw-pf-name">Instagram · @akki__tv</div><div class="pw-pf-badge">Latest Post</div></div><div class="pwo"></div><div class="pwbadge">Instagram</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Latest Instagram Work</div><p class="pwm">Latest creative work from @akki__tv — tap to view.</p></div>
       </div>
-      <div class="pw rv d2" data-cat="kukufm" onclick="window.open('https://kukufm.com/show/the-last-call','_blank')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/45506f15-e802-4188-b59b-e3eddec73e9a_190fb273a8df49e3aa830b449338b0f9.webp" alt="The Last Call"/><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio Show</div><div class="pwplay">↗</div></div>
-        <div class="pwb"><div class="pwt2">The Last Call</div><p class="pwm">Audio show on Kuku FM — raw, intimate storytelling through voice alone.</p></div>
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/kLCsqW_Arv8?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/kLCsqW_Arv8/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2" id="wt-kLCsqW_Arv8">Loading…</div><p class="pwm">Voice dubbing performance — click to watch.</p></div>
       </div>
-      <div class="pw rv d3" data-cat="storytv dubbing" onclick="window.open('https://app.storytv.asia/shows/1174','_blank')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/3b72ccb9-474e-4b0c-ab2c-43bb4e13a7b7_image.png" alt="Race Against Time"/><div class="pwo"></div><div class="pwbadge">StoryTV · Dubbing</div><div class="pwplay">↗</div></div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/AdAghrjV27w?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/AdAghrjV27w/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2" id="wt-AdAghrjV27w">Loading…</div><p class="pwm">Voice performance — click to watch.</p></div>
+      </div>
+      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/4vEyrzF1DA4?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/4vEyrzF1DA4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2" id="wt-4vEyrzF1DA4">Loading…</div><p class="pwm">Voice performance — click to watch.</p></div>
+      </div>
+      <!-- KUKU FM AUDIO SHOWS -->
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/dark-vow-jungle-ki-pukar/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a00,#3d1500,#7c2d00);"><div class="pw-pf-logo">🌿</div><div class="pw-pf-name">Kuku FM · Horror</div><div class="pw-pf-badge">Dark Vow: Jungle Ki Pukar</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Dark Vow: Jungle Ki Pukar</div><p class="pwm">Horror audio show — a village, a broken pact, and a terrifying forest deity awakening.</p></div>
+      </div>
+      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/panic-room/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2e,#3d0d6e);"><div class="pw-pf-logo">🚪</div><div class="pw-pf-name">Kuku FM · Thriller</div><div class="pw-pf-badge">Panic Room</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Panic Room</div><p class="pwm">Psychological thriller audio show — gripping, intense, edge-of-your-seat storytelling.</p></div>
+      </div>
+      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/sleeper-cell-ke-yoddha/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a1a0a,#0d2d0d,#155215);"><div class="pw-pf-logo">🕵️</div><div class="pw-pf-name">Kuku FM · Action</div><div class="pw-pf-badge">Sleeper Cell Ke Yoddha</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Sleeper Cell Ke Yoddha</div><p class="pwm">Action audio show — undercover agents, hidden identities, and a nation at stake.</p></div>
+      </div>
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/ceo-of-casanova','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a1a,#3d0d3d,#6b1a5e);"><div class="pw-pf-logo">💼</div><div class="pw-pf-name">Kuku FM · Romance</div><div class="pw-pf-badge">CEO of Casanova</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">CEO of Casanova</div><p class="pwm">Romantic audio show — charisma, power, and the complexity of love in the corporate world.</p></div>
+      </div>
+      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/billion-rupee-bride','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a1000,#3d2800,#7c5200);"><div class="pw-pf-logo">💍</div><div class="pw-pf-name">Kuku FM · Drama</div><div class="pw-pf-badge">Billion Rupee Bride</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Billion Rupee Bride</div><p class="pwm">Drama audio show — wealth, marriage, and the hidden price of a perfect life.</p></div>
+      </div>
+      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/limitless-pyaar','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a14,#3d0d28,#7c1a50);"><div class="pw-pf-logo">❤️</div><div class="pw-pf-name">Kuku FM · Romance</div><div class="pw-pf-badge">Limitless Pyaar</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Limitless Pyaar</div><p class="pwm">Romantic audio show — a love story with no limits, no conditions, no boundaries.</p></div>
+      </div>
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/the-last-call','_blank')">
+        <div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">The Last Call — Audio Show</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio Show</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">The Last Call</div><p class="pwm">Raw, intimate audio storytelling — a voice performance that stays with you.</p></div>
+      </div>
+      <!-- EIGHT NETWORK -->
+      <div class="pw rv d2" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/suryaputra-karna/67da5e08-41f4-42d7-9d59-a0dca087b896','_blank')">
+        <div class="pwt"><div class="pw-platform pf-eight2"><div class="pw-pf-logo">☀️</div><div class="pw-pf-name">Eight Network · Mythology</div><div class="pw-pf-badge">Suryaputra Karna</div></div><div class="pwo"></div><div class="pwbadge">Eight Network · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Suryaputra Karna</div><p class="pwm">Mythological audio drama — the untold, deeply human story of Karna from Mahabharat.</p></div>
+      </div>
+      <div class="pw rv d3" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/mahabharat-shakuni/2e1bcaef-b8df-4c5f-9f3e-830f978cc7e6','_blank')">
+        <div class="pwt"><div class="pw-platform pf-eight"><div class="pw-pf-logo">♟️</div><div class="pw-pf-name">Eight Network · Mythology</div><div class="pw-pf-badge">Mahabharat — Shakuni</div></div><div class="pwo"></div><div class="pwbadge">Eight Network · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Mahabharat — Shakuni</div><p class="pwm">The mastermind's story — a mythological audio performance exploring Shakuni's cunning and grief.</p></div>
+      </div>
+      <!-- PODCAST -->
+      <div class="pw rv d1" data-cat="audio" onclick="window.open('https://www.instagram.com/reel/DTS1J22DRCu/','_blank')">
+        <div class="pwt"><div class="pw-platform pf-podcast"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Podcast</div><div class="pw-pf-badge">Why You Feel Lost (Even When Life Looks Fine)</div></div><div class="pwo"></div><div class="pwbadge">Audio · Podcast</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2">Why You Feel Lost (Even When Life Looks Fine)</div><p class="pwm">A psychological deep-dive — the science behind feeling lost when everything looks fine.</p></div>
+      </div>
+      <!-- STORYTV -->
+      <div class="pw rv d2" data-cat="storytv dubbing" onclick="window.open('https://app.storytv.asia/shows/1174','_blank')">
+        <div class="pwt"><div class="pw-platform pf-storytv"><div class="pw-pf-logo">📺</div><div class="pw-pf-name">StoryTV</div><div class="pw-pf-badge">Race Against Time</div></div><div class="pwo"></div><div class="pwbadge">StoryTV · Dubbing</div><div class="pwplay">↗</div></div>
         <div class="pwb"><div class="pwt2">Race Against Time</div><p class="pwm">High-stakes dubbing for StoryTV — India's leading short drama app.</p></div>
       </div>
-      <div class="pw rv d1" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/mpkncpXa6lY?autoplay=1')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/8517ad86-6ba8-4411-9313-0afa35d24c6b_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/mpkncpXa6lY/mqdefault.jpg'"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
-        <div class="pwb"><div class="pwt2">एक दुनिया बिना… झप्पियों के</div><p class="pwm">A world without hugs — emotional dubbing performance exploring human connection.</p></div>
+      <!-- KUKU TV DUBBING -->
+      <div class="pw rv d3" data-cat="kukufm dubbing" onclick="window.open('https://tv.kukufm.com/show/dad-let-me-clean-the-house','_blank')">
+        <div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎧</div><div class="pw-pf-name">Kuku TV</div><div class="pw-pf-badge">Dad, Let Me Clean The House</div></div><div class="pwo"></div><div class="pwbadge">Kuku TV · Dubbing</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwt2">Dad, Let Me Clean The House</div><p class="pwm">Dubbing for Kuku TV — warmth and family emotion through voice.</p></div>
       </div>
-      <div class="pw rv d2" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/BVJGk_ohXd0?autoplay=1')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/797e5795-d0dc-4f88-ab31-a482dea9b51c_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/BVJGk_ohXd0/mqdefault.jpg'"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
-        <div class="pwb"><div class="pwt2">एक दुनिया बिना… कुर्सियों के</div><p class="pwm">A world without chairs — creative dubbing from the एक दुनिया बिना series.</p></div>
+      <!-- EK DUNIYA BINA -->
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/mpkncpXa6lY?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/mpkncpXa6lY/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2">एक दुनिया बिना… झप्पियों के</div><p class="pwm">A world without hugs — emotional dubbing exploring human connection.</p></div>
       </div>
-      <div class="pw rv d3" data-cat="dubbing" onclick="openModal('https://www.youtube.com/embed/x-J-ZmHKeC4?autoplay=1')">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/a3565a1d-52c0-420d-99f5-e8c75805f769_hqdefault.jpeg" alt="Dubbing" onerror="this.src='https://img.youtube.com/vi/x-J-ZmHKeC4/mqdefault.jpg'"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/BVJGk_ohXd0?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/BVJGk_ohXd0/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2">एक दुनिया बिना… कुर्सियों के</div><p class="pwm">A world without chairs — creative dubbing with depth and imagination.</p></div>
+      </div>
+      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/x-J-ZmHKeC4?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/x-J-ZmHKeC4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
         <div class="pwb"><div class="pwt2">एक दुनिया बिना… जेबों के</div><p class="pwm">A world without pockets — playful dubbing with character and depth.</p></div>
       </div>
-      <div class="pw rv d1" data-cat="baalkatha">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/3145cec8-a412-4c04-bcf1-8ae96158478b_hqdefault.jpeg" alt="BaalKatha"/><div class="pwo"></div><div class="pwbadge">BaalKatha · Voiceover</div><div class="pwplay">🌙</div></div>
-        <div class="pwb"><div class="pwt2">The Night the Sky Listened</div><p class="pwm">Calming bedtime story for kids — gentle, soothing performance for BaalKatha.</p></div>
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/2GFOnYj0WIQ?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/2GFOnYj0WIQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2">एक दुनिया बिना… लिखाई के</div><p class="pwm">A world without writing — imaginative dubbing performance.</p></div>
       </div>
-      <div class="pw rv d2" data-cat="baalkatha">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/5a9fd980-b6cf-4bf3-a0e7-f3b5cdace197_hqdefault.jpeg" alt="BaalKatha Lantern"/><div class="pwo"></div><div class="pwbadge">BaalKatha · Voiceover</div><div class="pwplay">🪔</div></div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/1RjMimoDtFQ?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/1RjMimoDtFQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwt2">एक दुनिया बिना… गोलों के</div><p class="pwm">A world without balls — thought-provoking dubbing performance.</p></div>
+      </div>
+      <!-- BAALKATHA -->
+      <div class="pw rv d3" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🌙</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Night the Sky Listened</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🌙</div></div>
+        <div class="pwb"><div class="pwt2">The Night the Sky Listened</div><p class="pwm">Calming bedtime story for kids — gentle, soothing voice performance.</p></div>
+      </div>
+      <div class="pw rv d1" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🪔</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Lantern Who Wanted to Fly</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🪔</div></div>
         <div class="pwb"><div class="pwt2">The Lantern Who Wanted to Fly</div><p class="pwm">Heart-touching kids story — imaginative voice performance full of wonder.</p></div>
       </div>
-      <div class="pw rv d3" data-cat="baalkatha">
-        <div class="pwt"><img src="https://ugc.production.linktr.ee/c92c0687-d1fb-4023-bb22-da3f4eecfad1_hqdefault.jpeg" alt="BaalKatha"/><div class="pwo"></div><div class="pwbadge">BaalKatha · Voiceover</div><div class="pwplay">🧱</div></div>
+      <div class="pw rv d2" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🧱</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Block at the Bottom</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🧱</div></div>
         <div class="pwb"><div class="pwt2">The Block at the Bottom</div><p class="pwm">A rhyming bedtime moral story — warm, expressive storytelling voice.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- YOUTUBE -->
 <section id="videos" class="yt-bg">
   <div class="sw">
     <div class="yt-top rv">
@@ -572,7 +688,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- REELS -->
 <section id="reels">
   <div class="sw">
     <div class="rv">
@@ -581,7 +696,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
       <div class="gr"></div>
     </div>
     <div class="rlg">
-      <div class="rlc rv d1" onclick="openModal('https://www.youtube.com/embed/Wh0k-aHQ6sc?autoplay=1')">      <img class="rl-bi" src="https://img.youtube.com/vi/Wh0k-aHQ6sc/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/Wh0k-aHQ6sc/mqdefault.jpg'"/><div class="rl-ov"></div><div class="rl-badge">Latest</div><div class="rl-play">▶</div><div class="rl-lb">Dead Poets Society | Carpe Diem Isn't What You Think</div></div>
+      <div class="rlc rv d1" onclick="openModal('https://www.youtube.com/embed/Wh0k-aHQ6sc?autoplay=1')"><img class="rl-bi" src="https://img.youtube.com/vi/Wh0k-aHQ6sc/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/Wh0k-aHQ6sc/mqdefault.jpg'"/><div class="rl-ov"></div><div class="rl-badge">Latest</div><div class="rl-play">▶</div><div class="rl-lb">Dead Poets Society | Carpe Diem Isn't What You Think</div></div>
       <div class="rlc rv d2" onclick="openModal('https://www.youtube.com/embed/PaiRofXhlE0?autoplay=1')"><img class="rl-bi" src="https://img.youtube.com/vi/PaiRofXhlE0/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/PaiRofXhlE0/mqdefault.jpg'"/><div class="rl-ov"></div><div class="rl-badge">Cinema</div><div class="rl-play">▶</div><div class="rl-lb">Pyaasa (1957) | The Film About Being Unseen</div></div>
       <div class="rlc rv d3" onclick="openModal('https://www.youtube.com/embed/mOmc7mX1RY0?autoplay=1')"><img class="rl-bi" src="https://img.youtube.com/vi/mOmc7mX1RY0/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/mOmc7mX1RY0/mqdefault.jpg'"/><div class="rl-ov"></div><div class="rl-badge">Psych</div><div class="rl-play">▶</div><div class="rl-lb">Comparison Is Exhausting</div></div>
       <div class="rlc rv d4" onclick="openModal('https://www.youtube.com/embed/tDJHV1W1G5k?autoplay=1')"><img class="rl-bi" src="https://img.youtube.com/vi/tDJHV1W1G5k/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/tDJHV1W1G5k/mqdefault.jpg'"/><div class="rl-ov"></div><div class="rl-badge">Emotion</div><div class="rl-play">▶</div><div class="rl-lb">You're Not Too Late. Send That Text.</div></div>
@@ -591,7 +706,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- INSTAGRAM -->
 <section id="instagram" class="ig-bg">
   <div class="sw">
     <div class="ig-top rv">
@@ -616,7 +730,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section id="testimonials" class="tm-bg">
   <div class="sw">
     <div class="rv" style="text-align:center;margin-bottom:44px;">
@@ -628,7 +741,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   <div class="tm-wrap"><div class="tm-track" id="tmTrack"></div></div>
 </section>
 
-<!-- CONNECT -->
 <section id="connect" class="cn-bg">
   <div class="sw">
     <div style="text-align:center;margin-bottom:40px;" class="rv">
@@ -651,14 +763,13 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <div class="ct-in">
     <div class="rv">
       <p class="sl">Collaborate</p>
       <h2 class="st">Got a project? <em>Let's talk.</em></h2>
       <div class="gr" style="margin:13px auto;"></div>
-      <p style="color:var(--muted);font-size:.87rem;line-height:1.85;max-width:420px;margin:0 auto;">Open for voice work, dubbing, anchoring, content creation, music collabs & psychological consulting.</p>
+      <p style="color:var(--muted);font-size:.87rem;line-height:1.85;max-width:400px;margin:0 auto;">Open for voice work, dubbing, anchoring, content creation, music collabs & psychological consulting.</p>
     </div>
     <div class="ct-form rv">
       <label class="cf-l">Your Name</label>
@@ -672,7 +783,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div class="flogo">Aakanksha</div>
   <p class="fq">"Capturing life through sound, mind, and screen."</p>
@@ -685,7 +795,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
   <p class="fc">© 2025 Aakanksha · Voice Artist · MA Clinical Psychology · Content Creator<br/>Made with intention — every word, every voice.</p>
 </footer>
 
-<!-- MODAL -->
 <div class="mmod" id="modal" onclick="closeModal(event)">
   <div class="mbox">
     <button class="mx" onclick="closeModal()">✕</button>
@@ -711,20 +820,21 @@ const cv=document.getElementById('pts'),ctx=cv.getContext('2d');
 let W,H;
 const resize=()=>{W=cv.width=innerWidth;H=cv.height=innerHeight;};
 resize();addEventListener('resize',resize);
-const P=Array.from({length:55},()=>({x:Math.random()*2e3,y:Math.random()*1e3,r:Math.random()*1.2+.25,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.12,a:Math.random()*Math.PI*2}));
+const cols=['232,160,180','155,127,232','110,207,207'];
+const P=Array.from({length:60},(_,i)=>({x:Math.random()*2e3,y:Math.random()*1e3,r:Math.random()*1.2+.25,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.12,a:Math.random()*Math.PI*2,col:cols[i%3]}));
 (function draw(){
   ctx.clearRect(0,0,W,H);
   const dark=html.getAttribute('data-theme')==='dark';
   P.forEach(p=>{
     p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;p.a+=.003;
-    const al=(.12+.15*Math.sin(p.a))*(dark?1:.45);
+    const al=(.1+.12*Math.sin(p.a))*(dark?1:.4);
     ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    ctx.fillStyle=dark?`rgba(200,164,90,${al})`:`rgba(130,88,24,${al})`;ctx.fill();
+    ctx.fillStyle=`rgba(${p.col},${al})`;ctx.fill();
   });
   requestAnimationFrame(draw);
 })();
 
-/* SCROLL REVEAL */
+/* REVEAL */
 const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});},{threshold:.1});
 document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>io.observe(el));
 
@@ -746,24 +856,24 @@ function sendMsg(){const b=document.getElementById('cfBtn');b.textContent='Sent 
 
 /* YOUTUBE */
 const FILMS=[
-  {id:"Wh0k-aHQ6sc",title:"Dead Poets Society | Carpe Diem Isn't What You Think",desc:"A deeper look at the lesson Dead Poets Society is really teaching — beyond just 'seize the day'.",latest:true,shorts:true},
+  {id:"Wh0k-aHQ6sc",title:"Dead Poets Society | Carpe Diem Isn't What You Think",desc:"Beyond just 'seize the day' — the real lesson of Dead Poets Society.",latest:true,shorts:true},
   {id:"mnGdMK1rCRk",shorts:true},
   {id:"OgKobR6k7MQ",shorts:true},
   {id:"uE1dPXK-gew",shorts:true},
-  {id:"EuOwcmy0vWo",title:"Boong Film Review: 7 Saal Ka Baccha, BAFTA Ki Jeet 🏆",desc:"A heartfelt breakdown of Boong — the 7-year-old who won BAFTA and the world's heart.",shorts:true},
-  {id:"PaiRofXhlE0",title:"Pyaasa (1957) | The Film About Being Unseen",desc:"A cinematic deep-dive into Guru Dutt's timeless masterpiece.",shorts:true},
+  {id:"EuOwcmy0vWo",title:"Boong Film Review: 7 Saal Ka Baccha, BAFTA Ki Jeet 🏆",desc:"A heartfelt breakdown of Boong — the 7-year-old who won BAFTA.",shorts:true},
+  {id:"PaiRofXhlE0",title:"Pyaasa (1957) | The Film About Being Unseen",desc:"Guru Dutt's timeless masterpiece — a poet the world refused to see.",shorts:true},
   {id:"FYnQw5KBs6I",title:"You Were Never \"Too Sensitive\" | Houkago Karte",desc:"Not every 'problem child' is a problem.",shorts:true},
-  {id:"tDJHV1W1G5k",title:"You're Not Too Late. Send That Text.",desc:"Move to Heaven — two trauma cleaners collect final stories.",shorts:true},
+  {id:"tDJHV1W1G5k",title:"You're Not Too Late. Send That Text.",desc:"Move to Heaven — final stories people leave behind.",shorts:true},
   {id:"mOmc7mX1RY0",title:"Comparison Is Exhausting | A Quiet Truth",desc:"Exhaustion often comes from comparing your life to someone else's timeline.",shorts:true},
   {id:"6tyQKmcnuSs",title:"This Indian Horror Film Doesn't Want to Scare You",desc:"Bramayugam — black & white, no jump scares. Just dread.",shorts:true},
-  {id:"F7J9H3KyU7g",title:"Unreal: Fujouri Zakkaten — The Show That Will Haunt You 🖤",desc:"What would you give up to get exactly what you want?",shorts:true},
+  {id:"F7J9H3KyU7g",title:"Unreal: Fujouri Zakkaten 🖤",desc:"What would you give up to get exactly what you want?",shorts:true},
   {id:"J5jn-vPyP3Q",title:"One Mistake Can Ruin Everything | The Redemption Experiment",desc:"About being judged by your worst moment.",shorts:true},
-  {id:"sCkX4XJrxMU",title:"Inside Mayasabha: Decaying Theatre, Buried Secrets",desc:"A treasure hunt that blurs reality — obsession, chaos and mind games.",shorts:true},
-  {id:"pNubeaJAnaU",title:"50 Lakh se 100 Crore Tak | Laalo Film Review",desc:"Koi hype nahi. Bas ek kahani jo logon ne apni bana li.",shorts:true},
+  {id:"sCkX4XJrxMU",title:"Inside Mayasabha: Decaying Theatre, Buried Secrets",desc:"A treasure hunt that blurs reality.",shorts:true},
+  {id:"pNubeaJAnaU",title:"50 Lakh se 100 Crore Tak | Laalo",desc:"Koi hype nahi. Bas ek kahani.",shorts:true},
   {id:"yA6dPbyWWu8",title:"Nemuru Baka | Shorts",desc:"A hidden gem you didn't know you needed.",shorts:true},
   {id:"2GFOnYj0WIQ",title:"एक दुनिया बिना… लिखाई के",desc:"What would a world without writing look like?"},
-  {id:"1RjMimoDtFQ",title:"एक दुनिया बिना… गोलों के",desc:"A thought experiment about a world without something we take for granted."},
-  {id:"uLyAIz2ll0o",title:"All the Long Nights Explained",desc:"A Japanese film about two people silently struggling behind a 'normal' façade.",shorts:true},
+  {id:"1RjMimoDtFQ",title:"एक दुनिया बिना… गोलों के",desc:"A world without something we take for granted."},
+  {id:"uLyAIz2ll0o",title:"All the Long Nights Explained",desc:"A Japanese film about silently struggling.",shorts:true},
 ];
 const MUSIC=[
   {id:"",title:"Japanese Cover · @Negai24",desc:"Coming soon",placeholder:true},
@@ -783,7 +893,6 @@ function setTab(tab,el){
   document.getElementById('ytAllBtn').href=tab==='films'?'https://www.youtube.com/@akkki__tv':'https://www.youtube.com/@Negai24';
   renderYT();
 }
-
 async function renderYT(){
   const data=activeTab==='films'?FILMS:MUSIC;
   const g=document.getElementById('ytGrid');
@@ -794,9 +903,7 @@ async function renderYT(){
     </div>`
   :`<div class="yc rv ${i===0?'':'d'+Math.min(i,5)}" onclick="openModal('https://www.youtube.com/embed/${v.id}?autoplay=1')">
       <div class="ytw">
-        <img class="yti" src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" 
-          onerror="if(this.src.includes('hqdefault')){this.src='https://img.youtube.com/vi/${v.id}/mqdefault.jpg';}else if(this.src.includes('mqdefault')){this.src='https://img.youtube.com/vi/${v.id}/default.jpg';}else{this.style.display='none';this.parentElement.style.background='var(--bg4)';}" 
-          alt="${v.title||v.id}" loading="lazy"/>
+        <img class="yti" src="https://img.youtube.com/vi/${v.id}/hqdefault.jpg" onerror="this.src='https://img.youtube.com/vi/${v.id}/mqdefault.jpg'" alt="${v.title||v.id}" loading="lazy"/>
         ${v.latest?'<div class="lp">★ Latest</div>':''}
         ${v.shorts?'<div class="sp2">#Shorts</div>':''}
         <div class="ypb">▶</div>
@@ -817,8 +924,22 @@ async function renderYT(){
 }
 renderYT();
 
+/* AUTO-FETCH WORK VIDEO TITLES */
+['AdAghrjV27w','4vEyrzF1DA4','kLCsqW_Arv8'].forEach(async id=>{
+  try{
+    const r=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`);
+    const d=await r.json();
+    const el=document.getElementById('wt-'+id);
+    if(el&&d.title)el.textContent=d.title;
+  }catch(e){}
+});
+document.querySelector('.af-photo img')?.addEventListener('load',()=>{
+  const fb=document.getElementById('photoFb');
+  if(fb)fb.style.display='none';
+});
+
 /* TESTIMONIALS */
-const TESTIMONIALS=[
+const T=[
   {q:"Aakanksha's voice carries so much emotion. She doesn't just deliver lines — she makes you feel the character from the inside.",name:"Riya Sharma",role:"Film Director",e:"🎬"},
   {q:"Working with her on dubbing was a dream. She nails the sync AND the soul. That's rare.",name:"Karan Mehta",role:"Post-Production Lead",e:"🎙️"},
   {q:"Her psychological understanding makes her a completely different kind of voice artist. She gets the WHY behind every character.",name:"Priya Nair",role:"Content Producer",e:"🧠"},
@@ -828,8 +949,7 @@ const TESTIMONIALS=[
   {q:"I came for the film content. I stayed for the psychology insights. She makes you see stories completely differently.",name:"Ananya Bose",role:"Viewer @akkki__tv",e:"✨"},
   {q:"Every project she touches feels intentional and deeply human. A rare creative.",name:"Rohit Das",role:"Creative Collaborator",e:"🎞️"},
 ];
-const doubled=[...TESTIMONIALS,...TESTIMONIALS];
-document.getElementById('tmTrack').innerHTML=doubled.map(t=>`
+document.getElementById('tmTrack').innerHTML=[...T,...T].map(t=>`
   <div class="tm">
     <div class="tm-stars">★★★★★</div>
     <p class="tm-q">${t.q}</p>
