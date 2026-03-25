@@ -369,6 +369,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
     <li><a href="#worlds">Worlds</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#samples">Samples</a></li>
+    <li><a href="#covers">Music</a></li>
     <li><a href="#videos">Videos</a></li>
     <li><a href="#testimonials">Reviews</a></li>
     <li><a href="#connect">Connect</a></li>
@@ -678,25 +679,42 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:44px 5% 3
       <p style="color:var(--muted);font-size:.9rem;line-height:1.8;max-width:560px;">Five categories of voice work — from dubbing to storytelling to character performance. Click any folder to listen.</p>
     </div>
 
-    <!-- FEATURED VIDEO -->
+    <!-- FEATURED DEMO VIDEO -->
     <div class="rv" style="margin-bottom:40px;">
       <div style="background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;max-width:800px;margin:0 auto;">
         <div style="position:relative;padding-top:56.25%;background:var(--bg3);">
-          <iframe
-            src="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/preview"
-            style="position:absolute;inset:0;width:100%;height:100%;border:none;"
-            allow="autoplay"
-            allowfullscreen>
-          </iframe>
+          <iframe src="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/preview" style="position:absolute;inset:0;width:100%;height:100%;border:none;" allow="autoplay" allowfullscreen></iframe>
         </div>
         <div style="padding:18px 22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;">
           <div>
             <div style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;margin-bottom:4px;">Voice Demo Reel</div>
             <div style="color:var(--muted);font-size:.76rem;">Aakanksha · Voice Artist · 100+ Projects</div>
           </div>
-          <a href="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/view" target="_blank" style="display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:8px 18px;border-radius:20px;font-size:.72rem;font-weight:600;text-decoration:none;letter-spacing:.06em;transition:.3s;">
-            ▶ Open Full Screen
-          </a>
+          <a href="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/view" target="_blank" style="display:flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--rose),var(--violet));color:#fff;padding:8px 18px;border-radius:20px;font-size:.72rem;font-weight:600;text-decoration:none;">▶ Open Full Screen</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SAMPLE PLAYER -->
+    <div class="player-wrap rv">
+      <div class="player-tabs">
+        <button class="ptab on" onclick="switchTab('all',this)">🎙️ All Samples</button>
+        <button class="ptab" onclick="switchTab('hindi',this)">🇮🇳 Hindi</button>
+        <button class="ptab" onclick="switchTab('other',this)">🌐 Other</button>
+      </div>
+      <div class="player-body">
+        <div class="player-list" id="playerList"></div>
+        <div class="player-main">
+          <div class="player-iframe-wrap">
+            <iframe id="playerIframe" src="https://drive.google.com/file/d/15-NCnOT-D_8sLUdPJOLoc4PZOZO2G46L/preview" allow="autoplay" allowfullscreen></iframe>
+          </div>
+          <div class="player-footer">
+            <div class="pf-info">
+              <div class="pf-title" id="playerTitle">Sample 01</div>
+              <div class="pf-sub" id="playerSub">Aakanksha · Voice Sample</div>
+            </div>
+            <a class="pf-open" id="playerLink" href="https://drive.google.com/file/d/15-NCnOT-D_8sLUdPJOLoc4PZOZO2G46L/view" target="_blank">↗ Open in Drive</a>
+          </div>
         </div>
       </div>
     </div>
