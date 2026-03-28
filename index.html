@@ -7,57 +7,57 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-:root{--ease:cubic-bezier(.22,.68,0,1.2);}
+:root{--ease:cubic-bezier(.22,.68,0,1.2);--ease2:cubic-bezier(.4,0,.2,1);}
 
 [data-theme="dark"]{
-  --bg:#050d08;--bg2:#081210;--bg3:#0d1a14;--bg4:#122218;
-  --text:#e8f5ee;--muted:#6a9478;--muted2:#2a4435;
-  --g1:#4ade80;--g2:#86efac;--g3:#16a34a;--g4:#22c55e;
-  --gold:#d4a843;--gold2:#f0c860;
-  --gr1:linear-gradient(135deg,#4ade80,#16a34a);
-  --gr2:linear-gradient(135deg,#22c55e,#065f46);
-  --gr3:linear-gradient(135deg,#86efac,#4ade80);
-  --gra:linear-gradient(135deg,#4ade80,#d4a843);
-  --border:rgba(74,222,128,.1);--borderh:rgba(74,222,128,.45);
-  --goldl:rgba(74,222,128,.07);
-  --card:rgba(8,18,16,.97);--glass:rgba(5,13,8,.88);
-  --sh:rgba(0,0,0,.7);--sh2:rgba(22,163,74,.25);--sh3:rgba(74,222,128,.15);
+  --bg:#08080f;--bg2:#0e0e1a;--bg3:#141422;--bg4:#1c1c2e;
+  --text:#f2eeff;--muted:#7878a0;--muted2:#3a3a58;
+  --r:#e8a0c0;--r2:#f5c0d8;--v:#a080e8;--v2:#c4a8ff;
+  --t:#70d4d4;--t2:#a0e8e8;
+  --gr1:linear-gradient(135deg,#e8a0c0,#a080e8);
+  --gr2:linear-gradient(135deg,#a080e8,#70d4d4);
+  --gr3:linear-gradient(135deg,#e8a0c0,#70d4d4);
+  --border:rgba(232,160,192,.1);--borderh:rgba(232,160,192,.4);
+  --goldl:rgba(232,160,192,.07);
+  --card:rgba(14,14,26,.97);--glass:rgba(8,8,15,.88);
+  --sh:rgba(0,0,0,.7);--sh2:rgba(160,128,232,.2);
+  --sh3:rgba(232,160,192,.15);
 }
 [data-theme="light"]{
-  --bg:#f0faf3;--bg2:#e4f5ea;--bg3:#d1ead9;--bg4:#bcddca;
-  --text:#071a0e;--muted:#2d6645;--muted2:#8ab89e;
-  --g1:#16a34a;--g2:#15803d;--g3:#166534;--g4:#22c55e;
-  --gold:#a07020;--gold2:#c09030;
-  --gr1:linear-gradient(135deg,#16a34a,#166534);
-  --gr2:linear-gradient(135deg,#22c55e,#15803d);
-  --gr3:linear-gradient(135deg,#4ade80,#16a34a);
-  --gra:linear-gradient(135deg,#16a34a,#a07020);
-  --border:rgba(22,163,74,.14);--borderh:rgba(22,163,74,.5);
-  --goldl:rgba(22,163,74,.07);
-  --card:rgba(240,250,243,.98);--glass:rgba(240,250,243,.92);
-  --sh:rgba(5,50,20,.1);--sh2:rgba(22,163,74,.18);--sh3:rgba(74,222,128,.12);
+  --bg:#fdf9ff;--bg2:#f5eef8;--bg3:#ede0f2;--bg4:#e0d0ec;
+  --text:#180820;--muted:#785888;--muted2:#b090c0;
+  --r:#b84080;--r2:#d860a0;--v:#6840c0;--v2:#9060e0;
+  --t:#3898a8;--t2:#60b8c8;
+  --gr1:linear-gradient(135deg,#b84080,#6840c0);
+  --gr2:linear-gradient(135deg,#6840c0,#3898a8);
+  --gr3:linear-gradient(135deg,#b84080,#3898a8);
+  --border:rgba(184,64,128,.13);--borderh:rgba(184,64,128,.45);
+  --goldl:rgba(184,64,128,.07);
+  --card:rgba(253,249,255,.98);--glass:rgba(253,249,255,.92);
+  --sh:rgba(80,0,80,.1);--sh2:rgba(104,64,192,.15);
+  --sh3:rgba(184,64,128,.12);
 }
 
 html{scroll-behavior:smooth;}
 body{background:var(--bg);color:var(--text);font-family:'Outfit',sans-serif;overflow-x:hidden;transition:background .5s,color .5s;}
 
-/* LOADER */
-#loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px;transition:opacity .7s,visibility .7s;}
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:20px;transition:opacity .6s,visibility .6s;}
 #loader.hide{opacity:0;visibility:hidden;}
-.ld-logo{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:ldPulse 1.6s ease-in-out infinite;}
-.ld-bar{width:180px;height:2px;background:var(--bg3);border-radius:2px;overflow:hidden;}
-.ld-fill{height:100%;background:var(--gr1);border-radius:2px;animation:ldLoad 2s ease forwards;}
-@keyframes ldLoad{0%{width:0}100%{width:100%}}
-@keyframes ldPulse{0%,100%{opacity:1}50%{opacity:.4}}
+.loader-logo{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:pulse2 1.5s ease-in-out infinite;}
+.loader-bar{width:160px;height:2px;background:var(--bg3);border-radius:2px;overflow:hidden;}
+.loader-fill{height:100%;background:var(--gr1);border-radius:2px;animation:load 1.8s ease forwards;}
+@keyframes load{0%{width:0}100%{width:100%}}
+@keyframes pulse2{0%,100%{opacity:1}50%{opacity:.5}}
 
-/* PROGRESS */
-#prog{position:fixed;top:0;left:0;height:2px;background:var(--gr1);z-index:999;transition:width .08s;width:0;}
+/* ── SCROLL PROGRESS ── */
+#prog{position:fixed;top:0;left:0;height:2px;background:var(--gr1);z-index:999;transition:width .1s;width:0;}
 
-/* CURSOR */
-#cur{position:fixed;width:9px;height:9px;border-radius:50%;background:var(--g1);pointer-events:none;z-index:9998;transition:transform .08s;mix-blend-mode:screen;}
-#ring{position:fixed;width:30px;height:30px;border-radius:50%;border:1px solid rgba(74,222,128,.4);pointer-events:none;z-index:9997;}
+/* ── CURSOR ── */
+#cur{position:fixed;width:10px;height:10px;border-radius:50%;background:var(--r);pointer-events:none;z-index:9998;transition:transform .08s,width .3s,height .3s,background .3s;mix-blend-mode:screen;}
+#ring{position:fixed;width:32px;height:32px;border-radius:50%;border:1px solid rgba(232,160,192,.4);pointer-events:none;z-index:9997;transition:border-color .3s;}
 
-/* NAV */
+/* ── NAV ── */
 nav{position:fixed;top:0;width:100%;z-index:400;height:64px;padding:0 5%;display:flex;align-items:center;justify-content:space-between;background:var(--glass);backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);border-bottom:1px solid var(--border);transition:all .4s;}
 .logo-w{cursor:pointer;}
 .logo{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:.03em;}
@@ -65,7 +65,7 @@ nav{position:fixed;top:0;width:100%;z-index:400;height:64px;padding:0 5%;display
 .nl{display:flex;gap:1.4rem;list-style:none;}
 .nl a{color:var(--muted);text-decoration:none;font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;transition:.3s;position:relative;padding-bottom:2px;}
 .nl a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gr1);transition:.35s;}
-.nl a:hover{color:var(--g1);}
+.nl a:hover{color:var(--r);}
 .nl a:hover::after{width:100%;}
 .nav-r{display:flex;align-items:center;gap:10px;}
 .tog{width:40px;height:21px;background:var(--bg3);border:1px solid var(--border);border-radius:11px;cursor:pointer;position:relative;outline:none;flex-shrink:0;transition:.4s;}
@@ -75,66 +75,65 @@ nav{position:fixed;top:0;width:100%;z-index:400;height:64px;padding:0 5%;display
 .ti.moon{right:4px;}.ti.sun{left:4px;opacity:0;}
 [data-theme="light"] .ti.moon{opacity:0;}[data-theme="light"] .ti.sun{opacity:1;}
 .ncta{background:var(--gr1);color:#fff;padding:7px 18px;border-radius:22px;font-size:.68rem;font-weight:600;text-decoration:none;letter-spacing:.07em;transition:.35s;white-space:nowrap;}
-[data-theme="light"] .ncta{color:#071a0e;}
 .ncta:hover{transform:translateY(-2px);box-shadow:0 6px 22px var(--sh2);}
+/* HAMBURGER */
 .ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
-.ham span{width:22px;height:1.5px;background:var(--g1);border-radius:2px;transition:.3s;}
-.mob-menu{display:none;position:fixed;inset:0;background:rgba(5,13,8,.96);backdrop-filter:blur(40px);z-index:350;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
+.ham span{width:22px;height:1.5px;background:var(--r);border-radius:2px;transition:.3s;}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--glass);backdrop-filter:blur(40px);z-index:350;flex-direction:column;align-items:center;justify-content:center;gap:2rem;}
 .mob-menu.open{display:flex;}
 .mob-menu a{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:var(--text);text-decoration:none;letter-spacing:.06em;transition:.3s;}
 .mob-menu a:hover{background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .mob-close{position:absolute;top:20px;right:24px;background:none;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;}
 
-/* HERO */
+/* ── HERO ── */
 .hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding:100px 5% 80px;position:relative;overflow:hidden;}
 canvas{position:absolute;inset:0;pointer-events:none;}
 .hero-blobs{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
-.blob{position:absolute;border-radius:50%;filter:blur(100px);animation:blobAnim 9s ease-in-out infinite;}
-.blob1{width:600px;height:600px;top:-10%;left:-10%;background:rgba(74,222,128,.04);animation-delay:0s;}
-.blob2{width:500px;height:500px;bottom:-10%;right:-10%;background:rgba(22,163,74,.06);animation-delay:-3s;}
-.blob3{width:350px;height:350px;top:45%;left:45%;background:rgba(212,168,67,.03);animation-delay:-6s;}
-@keyframes blobAnim{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.96)}}
-.hi{position:relative;z-index:1;max-width:920px;}
+.blob{position:absolute;border-radius:50%;filter:blur(100px);animation:blobAnim 8s ease-in-out infinite;}
+.blob1{width:600px;height:600px;top:-10%;left:-10%;background:rgba(232,160,192,.05);animation-delay:0s;}
+.blob2{width:500px;height:500px;bottom:-10%;right:-10%;background:rgba(160,128,232,.06);animation-delay:-3s;}
+.blob3{width:400px;height:400px;top:40%;left:40%;background:rgba(112,212,212,.04);animation-delay:-6s;}
+@keyframes blobAnim{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-20px) scale(1.05)}66%{transform:translate(-20px,30px) scale(.97)}}
+.hi{position:relative;z-index:1;max-width:900px;}
 .eyebrow{display:inline-flex;align-items:center;gap:12px;color:var(--muted);font-size:.64rem;letter-spacing:.24em;text-transform:uppercase;margin-bottom:30px;animation:fUp .8s ease both;}
-.eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gr1);opacity:.5;}
+.eyebrow::before,.eyebrow::after{content:'';display:block;width:32px;height:1px;background:var(--gr1);opacity:.55;}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,11vw,10rem);line-height:.93;font-weight:300;margin-bottom:8px;animation:fUp .95s .08s ease both;letter-spacing:-.02em;}
 .hero h1 strong{font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .hero h1 em{display:block;font-style:italic;font-size:.38em;color:var(--muted);letter-spacing:.12em;font-weight:300;margin-top:16px;-webkit-text-fill-color:var(--muted);}
 .hero-div{display:flex;align-items:center;gap:16px;justify-content:center;margin:28px 0;animation:fUp 1s .18s ease both;}
-.hd-l{flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--g1));}
-.hd-l.r{background:linear-gradient(90deg,var(--g3),transparent);}
-.hd-d{width:6px;height:6px;border-radius:50%;background:var(--g1);box-shadow:0 0 14px var(--g1);}
+.hd-l{flex:1;max-width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--r));}
+.hd-l.r{background:linear-gradient(90deg,var(--v),transparent);}
+.hd-d{width:6px;height:6px;border-radius:50%;background:var(--r);box-shadow:0 0 12px var(--r);}
 .hero-q{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--muted);font-size:1.1rem;max-width:480px;margin:0 auto 30px;line-height:1.78;animation:fUp 1s .22s ease both;}
-.hero-q strong{color:var(--g2);font-style:normal;}
+.hero-q strong{color:var(--r2);font-style:normal;}
 .pills{display:flex;justify-content:center;gap:6px;flex-wrap:wrap;margin-bottom:34px;animation:fUp 1s .28s ease both;}
 .pill{display:flex;align-items:center;gap:7px;background:var(--goldl);border:1px solid var(--border);padding:7px 14px;border-radius:22px;font-size:.7rem;transition:.35s;}
 .pill:hover{border-color:var(--borderh);transform:translateY(-2px);}
 .pill .d{width:5px;height:5px;border-radius:50%;flex-shrink:0;}
-.dm{background:#86efac;}.dd{background:#6ee7b7;}.ds{background:#d4a843;}
+.dm{background:#f4a0c0;}.dd{background:#a0a4f4;}.ds{background:#a0f4d4;}
 .hbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;animation:fUp 1s .35s ease both;}
 .bg{background:var(--gr1);color:#fff;padding:13px 32px;border-radius:30px;font-size:.8rem;font-weight:600;text-decoration:none;transition:.35s;letter-spacing:.05em;}
-[data-theme="light"] .bg{color:#071a0e;}
-.bg:hover{transform:translateY(-3px);box-shadow:0 14px 34px var(--sh2);}
-.bl{border:1px solid var(--borderh);color:var(--g1);padding:13px 32px;border-radius:30px;font-size:.8rem;text-decoration:none;transition:.35s;}
+.bg:hover{transform:translateY(-3px);box-shadow:0 14px 34px var(--sh3);}
+.bl{border:1px solid var(--borderh);color:var(--r);padding:13px 32px;border-radius:30px;font-size:.8rem;text-decoration:none;transition:.35s;}
 .bl:hover{background:var(--goldl);transform:translateY(-3px);}
 .scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;color:var(--muted2);font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;animation:sb 2.8s ease-in-out infinite;}
-.sh-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--g1),transparent);}
+.sh-line{width:1px;height:38px;background:linear-gradient(to bottom,var(--r),transparent);}
 @keyframes sb{0%,100%{transform:translateX(-50%) translateY(0)}60%{transform:translateX(-50%) translateY(8px)}}
 @keyframes fUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 
-/* MARQUEE */
+/* ── MARQUEE ── */
 .strip{background:var(--goldl);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:11px 0;overflow:hidden;white-space:nowrap;}
 .strip-track{display:inline-flex;animation:marquee 28s linear infinite;}
 .strip-item{display:inline-flex;align-items:center;gap:10px;padding:0 26px;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);}
-.strip-dot{background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.strip-dot{background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:.55rem;}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-/* SECTIONS */
+/* ── SECTIONS ── */
 section{padding:100px 5%;}
 .sw{max-width:1100px;margin:0 auto;}
-.sl{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;font-weight:500;background:var(--gra);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.sl{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:10px;font-weight:500;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .st{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:300;line-height:1.1;margin-bottom:12px;}
-.st em{font-style:italic;color:var(--g1);}
+.st em{font-style:italic;color:var(--r);}
 .st strong{font-weight:600;}
 .gr{width:44px;height:1px;background:var(--gr1);margin:13px 0 44px;}
 
@@ -146,7 +145,7 @@ section{padding:100px 5%;}
 .d1{transition-delay:.07s;}.d2{transition-delay:.14s;}.d3{transition-delay:.21s;}
 .d4{transition-delay:.28s;}.d5{transition-delay:.35s;}.d6{transition-delay:.42s;}
 
-/* ABOUT */
+/* ── ABOUT ── */
 .ab-bg{background:var(--bg2);}
 .ab-grid{display:grid;grid-template-columns:400px 1fr;gap:76px;align-items:center;}
 .af{position:relative;}
@@ -154,11 +153,11 @@ section{padding:100px 5%;}
 .af-photo img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:.5s;}
 .af-photo:hover img{transform:scale(1.04);}
 .af-photo-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:6rem;}
-.af-glow{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);width:70%;height:50px;background:rgba(74,222,128,.1);filter:blur(28px);}
-.b1{position:absolute;top:22px;right:-22px;background:var(--gr1);color:#fff;padding:12px 16px;border-radius:14px;font-size:.7rem;font-weight:600;line-height:1.6;box-shadow:0 10px 28px var(--sh2);animation:flt 3.5s ease-in-out infinite;}
-[data-theme="light"] .b1{color:#071a0e;}
+.af-glow{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);width:70%;height:50px;background:rgba(232,160,192,.1);filter:blur(28px);}
+.b1{position:absolute;top:22px;right:-22px;background:var(--gr1);color:#fff;padding:12px 16px;border-radius:14px;font-size:.7rem;font-weight:600;line-height:1.6;box-shadow:0 10px 28px var(--sh3);animation:flt 3.5s ease-in-out infinite;}
 .b2{position:absolute;bottom:22px;left:-22px;background:var(--card);border:1px solid var(--borderh);padding:11px 15px;border-radius:14px;font-size:.7rem;font-weight:500;line-height:1.6;animation:flt 4s ease-in-out infinite reverse;}
 @keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+/* Animated counters */
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:22px 0;}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px 14px;text-align:center;transition:.35s;position:relative;overflow:hidden;cursor:default;}
 .stat::before{content:'';position:absolute;inset:0;background:var(--gr1);opacity:0;transition:.4s;}
@@ -167,28 +166,30 @@ section{padding:100px 5%;}
 .sn{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .sl3{color:var(--muted);font-size:.66rem;margin-top:2px;letter-spacing:.06em;}
 .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px;}
-.chip{background:var(--goldl);border:1px solid var(--border);color:var(--g1);font-size:.67rem;padding:5px 12px;border-radius:14px;transition:.3s;}
-.chip:hover{background:rgba(74,222,128,.15);}
+.chip{background:var(--goldl);border:1px solid var(--border);color:var(--r);font-size:.67rem;padding:5px 12px;border-radius:14px;transition:.3s;}
+.chip:hover{background:rgba(232,160,192,.15);}
 
-/* WORLDS */
+/* ── WORLDS ── */
 .wg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
 .wc{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:36px 28px;transition:.45s;position:relative;overflow:hidden;cursor:default;}
 .wc::before{content:'';position:absolute;top:-60px;right:-60px;width:200px;height:200px;border-radius:50%;opacity:.05;transition:.5s;}
 .wc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gr1);transform:scaleX(0);transition:.45s;}
-.wc.mu::before{background:#86efac;}.wc.mi::before{background:#6ee7b7;}.wc.sc::before{background:#d4a843;}
+.wc.mu::before{background:#f4a0c0;}
+.wc.mi::before{background:#a0a4f4;}
+.wc.sc::before{background:#a0f4d4;}
 .wc:hover{border-color:var(--borderh);transform:translateY(-8px);box-shadow:0 24px 56px var(--sh);}
 .wc:hover::before{opacity:.16;transform:scale(1.5);}
 .wc:hover::after{transform:scaleX(1);}
 .wi{font-size:2.6rem;margin-bottom:18px;display:block;transition:.35s;}
 .wc:hover .wi{transform:scale(1.12) rotate(-3deg);}
 .wt2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:600;margin-bottom:5px;}
-.wh{font-size:.67rem;color:var(--g1);letter-spacing:.09em;margin-bottom:14px;display:block;}
+.wh{font-size:.67rem;color:var(--r);letter-spacing:.09em;margin-bottom:14px;display:block;}
 .wd{color:var(--muted);font-size:.8rem;line-height:1.8;}
 .wlinks{margin-top:18px;display:flex;flex-direction:column;gap:5px;}
 .wlnk{display:flex;align-items:center;gap:8px;font-size:.73rem;color:var(--muted);text-decoration:none;transition:.3s;padding:6px 10px;border-radius:8px;}
-.wlnk:hover{color:var(--g1);background:var(--goldl);}
+.wlnk:hover{color:var(--r);background:var(--goldl);}
 
-/* SKILLS */
+/* ── SKILLS ── */
 .sk-bg{background:var(--bg2);}
 .skg{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;}
 .skc{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:28px 20px;text-align:center;transition:.4s;position:relative;overflow:hidden;cursor:default;}
@@ -200,11 +201,10 @@ section{padding:100px 5%;}
 .sn2{font-size:.88rem;font-weight:600;margin-bottom:5px;}
 .sd{font-size:.7rem;color:var(--muted);line-height:1.6;}
 
-/* WORK */
+/* ── WORK ── */
 .wf-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:28px;}
 .wf{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.67rem;padding:7px 15px;border-radius:20px;cursor:pointer;transition:.3s;letter-spacing:.04em;font-family:'Outfit',sans-serif;}
 .wf.on,.wf:hover{background:var(--gr1);color:#fff;border-color:transparent;}
-[data-theme="light"] .wf.on,[data-theme="light"] .wf:hover{color:#071a0e;}
 .pw-hidden{display:none!important;}
 .pwg{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:20px;}
 .pw{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:.45s;cursor:pointer;display:flex;flex-direction:column;}
@@ -212,12 +212,10 @@ section{padding:100px 5%;}
 .pwt{height:200px;position:relative;overflow:hidden;background:var(--bg3);flex-shrink:0;}
 .pwt img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.55s;}
 .pw:hover .pwt img{transform:scale(1.07);}
-.pwo{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,8,.92) 0%,rgba(5,13,8,.15) 55%,transparent);}
-[data-theme="light"] .pwo{background:linear-gradient(to top,rgba(7,26,14,.75) 0%,rgba(7,26,14,.08) 55%,transparent);}
+.pwo{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,15,.92) 0%,rgba(8,8,15,.15) 55%,transparent);}
+[data-theme="light"] .pwo{background:linear-gradient(to top,rgba(24,8,32,.75) 0%,rgba(24,8,32,.08) 55%,transparent);}
 .pwbadge{position:absolute;top:12px;left:12px;background:var(--gr1);color:#fff;font-size:.57rem;font-weight:700;padding:4px 11px;border-radius:8px;letter-spacing:.09em;text-transform:uppercase;z-index:2;}
-[data-theme="light"] .pwbadge{color:#071a0e;}
-.pwplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:46px;height:46px;background:rgba(74,222,128,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;opacity:0;transition:.35s;z-index:2;}
-[data-theme="light"] .pwplay{color:#071a0e;}
+.pwplay{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:46px;height:46px;background:rgba(232,160,192,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;color:#fff;opacity:0;transition:.35s;z-index:2;}
 .pw:hover .pwplay{opacity:1;transform:translate(-50%,-50%) scale(1);}
 .pwb{padding:18px 20px;flex:1;display:flex;flex-direction:column;}
 .pwb-top{display:flex;align-items:center;gap:9px;margin-bottom:10px;}
@@ -226,48 +224,49 @@ section{padding:100px 5%;}
 .pwt2{font-family:'Cormorant Garamond',serif;font-size:1.12rem;font-weight:600;margin-bottom:5px;line-height:1.3;}
 .pwm{color:var(--muted);font-size:.74rem;line-height:1.65;flex:1;}
 .pw-action{display:flex;align-items:center;justify-content:space-between;margin-top:14px;padding-top:12px;border-top:1px solid var(--border);}
-.pw-listen{font-size:.68rem;font-weight:600;color:var(--g1);letter-spacing:.07em;text-transform:uppercase;}
-.pw-arr{width:26px;height:26px;border-radius:50%;border:1px solid var(--borderh);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--g1);transition:.3s;}
+.pw-listen{font-size:.68rem;font-weight:600;color:var(--r);letter-spacing:.07em;text-transform:uppercase;}
+.pw-arr{width:26px;height:26px;border-radius:50%;border:1px solid var(--borderh);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--r);transition:.3s;}
 .pw:hover .pw-arr{background:var(--gr1);color:#fff;border-color:transparent;}
-[data-theme="light"] .pw:hover .pw-arr{color:#071a0e;}
+/* Platform cards */
 .pw-platform{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;position:relative;overflow:hidden;}
 .pw-pf-logo{font-size:3rem;z-index:1;filter:drop-shadow(0 4px 12px rgba(0,0,0,.5));}
 .pw-pf-name{font-size:.65rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.55);z-index:1;}
 .pw-pf-badge{position:absolute;bottom:12px;left:12px;right:12px;background:rgba(0,0,0,.55);backdrop-filter:blur(10px);border-radius:10px;padding:9px 12px;font-size:.72rem;color:#fff;font-weight:500;line-height:1.4;z-index:2;border:1px solid rgba(255,255,255,.08);}
-.pf-kuku{background:linear-gradient(135deg,#0a1a0a,#1a4a1a,#2d8a2d);}
-.pf-storytv{background:linear-gradient(135deg,#0a1a14,#1a4a30,#2d8a5a);}
-.pf-baalkatha{background:linear-gradient(135deg,#0a1a10,#0d3a1e,#0d6b35);}
-.pf-podcast{background:linear-gradient(135deg,#0a1a0d,#122a15,#1a4a22);}
-.pf-eight{background:linear-gradient(135deg,#0a1a0a,#1a3d1a,#2a6b2a);}
-.pf-eight2{background:linear-gradient(135deg,#1a1000,#3d2800,#6b4800);}
+.pf-kuku{background:linear-gradient(135deg,#1a0520,#3d0d50,#7a1a80);}
+.pf-storytv{background:linear-gradient(135deg,#0f1a30,#1e3060,#1a4ed8);}
+.pf-baalkatha{background:linear-gradient(135deg,#0f1a22,#1a3040,#0ea5c8);}
+.pf-podcast{background:linear-gradient(135deg,#120c28,#2a1855,#1a1450);}
+.pf-eight{background:linear-gradient(135deg,#0d0d20,#1a1050,#2d1b70);}
+.pf-eight2{background:linear-gradient(135deg,#1a0a00,#3d1800,#7c3000);}
 
-/* SAMPLES */
+/* ── SAMPLES ── */
 .samples-bg{background:var(--bg2);}
+/* Featured video */
 .feat-vid{background:var(--card);border:1px solid var(--border);border-radius:22px;overflow:hidden;max-width:820px;margin:0 auto 48px;}
 .feat-vid-wrap{position:relative;padding-top:56.25%;background:var(--bg3);}
 .feat-vid-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none;}
 .feat-footer{padding:18px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;border-top:1px solid var(--border);}
 .feat-title{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:600;}
 .feat-sub{color:var(--muted);font-size:.74rem;margin-top:3px;}
+/* Sample Player */
 .player-wrap{background:var(--card);border:1px solid var(--border);border-radius:22px;overflow:hidden;max-width:1100px;margin:0 auto 40px;}
 .player-tabs{display:flex;gap:0;border-bottom:1px solid var(--border);overflow-x:auto;}
 .ptab{background:transparent;border:none;color:var(--muted);font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 22px;cursor:pointer;border-bottom:2px solid transparent;transition:.3s;font-family:'Outfit',sans-serif;white-space:nowrap;flex-shrink:0;}
-.ptab.on{color:var(--g1);border-bottom-color:var(--g1);}
-.ptab:hover:not(.on){color:var(--g1);background:var(--goldl);}
+.ptab.on{color:var(--r);border-bottom-color:var(--r);}
+.ptab:hover:not(.on){color:var(--r);background:var(--goldl);}
 .player-body{display:grid;grid-template-columns:300px 1fr;min-height:460px;}
 .player-list{border-right:1px solid var(--border);overflow-y:auto;max-height:460px;}
 .player-list::-webkit-scrollbar{width:3px;}
 .player-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
-.pitem{display:flex;align-items:center;gap:11px;padding:12px 16px;cursor:pointer;transition:.3s;border-bottom:1px solid rgba(74,222,128,.04);}
+.pitem{display:flex;align-items:center;gap:11px;padding:12px 16px;cursor:pointer;transition:.3s;border-bottom:1px solid rgba(255,255,255,.03);}
 .pitem:hover{background:var(--goldl);}
-.pitem.active{background:linear-gradient(135deg,rgba(74,222,128,.08),rgba(22,163,74,.08));border-left:2px solid var(--g1);}
+.pitem.active{background:linear-gradient(135deg,rgba(232,160,192,.1),rgba(160,128,232,.1));border-left:2px solid var(--r);}
 .pitem-num{width:26px;height:26px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:var(--muted);flex-shrink:0;transition:.3s;}
 .pitem.active .pitem-num{background:var(--gr1);color:#fff;border-color:transparent;}
-[data-theme="light"] .pitem.active .pitem-num{color:#071a0e;}
 .pitem-info{flex:1;min-width:0;}
 .pitem-title{font-size:.78rem;font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .pitem-sub{font-size:.64rem;color:var(--muted);margin-top:2px;}
-.pitem-play{font-size:.65rem;color:var(--g1);opacity:0;transition:.3s;}
+.pitem-play{font-size:.65rem;color:var(--r);opacity:0;transition:.3s;}
 .pitem:hover .pitem-play,.pitem.active .pitem-play{opacity:1;}
 .player-main{display:flex;flex-direction:column;}
 .player-iframe-wrap{position:relative;padding-top:56.25%;background:var(--bg3);flex:1;}
@@ -276,57 +275,55 @@ section{padding:100px 5%;}
 .pf-title{font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:600;}
 .pf-sub{font-size:.68rem;color:var(--muted);margin-top:2px;}
 .pf-open{display:flex;align-items:center;gap:7px;background:var(--gr1);color:#fff;padding:7px 16px;border-radius:16px;font-size:.7rem;font-weight:600;text-decoration:none;transition:.3s;}
-[data-theme="light"] .pf-open{color:#071a0e;}
 .pf-open:hover{transform:translateY(-2px);box-shadow:0 6px 18px var(--sh2);}
+/* Sample folder cards */
 .samples-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;max-width:1100px;margin:0 auto;}
 .sample-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px 24px;transition:.4s;text-decoration:none;color:var(--text);display:block;position:relative;overflow:hidden;}
 .sample-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gr1);opacity:0;transition:.4s;}
 .sample-card:hover{border-color:var(--borderh);transform:translateY(-5px);box-shadow:0 18px 44px var(--sh);}
 .sample-card:hover::before{opacity:1;}
-.sample-icon-wrap{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,rgba(74,222,128,.1),rgba(22,163,74,.1));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;transition:.4s;}
+.sample-icon-wrap{width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,rgba(232,160,192,.12),rgba(160,128,232,.12));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:18px;transition:.4s;}
 .sample-card:hover .sample-icon-wrap{background:var(--gr1);border-color:transparent;}
 .sample-num{font-size:.6rem;color:var(--muted);letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px;}
 .sample-title{font-family:'Cormorant Garamond',serif;font-size:1.28rem;font-weight:600;margin-bottom:6px;}
 .sample-desc{color:var(--muted);font-size:.77rem;line-height:1.65;margin-bottom:16px;}
 .sample-tags{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:16px;}
-.sample-tag{background:var(--goldl);border:1px solid var(--border);color:var(--g1);font-size:.6rem;padding:3px 10px;border-radius:10px;}
+.sample-tag{background:var(--goldl);border:1px solid var(--border);color:var(--r);font-size:.6rem;padding:3px 10px;border-radius:10px;}
 .sample-cta{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border);}
-.sample-listen{font-size:.68rem;font-weight:600;color:var(--g1);letter-spacing:.08em;text-transform:uppercase;}
-.sample-arr{width:28px;height:28px;border-radius:50%;border:1px solid var(--borderh);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--g1);transition:.3s;}
+.sample-listen{font-size:.68rem;font-weight:600;color:var(--r);letter-spacing:.08em;text-transform:uppercase;}
+.sample-arr{width:28px;height:28px;border-radius:50%;border:1px solid var(--borderh);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:var(--r);transition:.3s;}
 .sample-card:hover .sample-arr{background:var(--gr1);color:#fff;border-color:transparent;}
-[data-theme="light"] .sample-card:hover .sample-arr{color:#071a0e;}
 
-/* SONG COVERS */
+/* ── SONG COVERS ── */
 .music-bg{background:var(--bg3);}
 .covers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:11px;max-width:1100px;}
 .cover-card{aspect-ratio:1/1;border-radius:16px;cursor:pointer;position:relative;overflow:hidden;border:1px solid var(--border);transition:.38s;text-decoration:none;display:block;}
 .cover-card:hover{transform:scale(1.05);box-shadow:0 14px 34px var(--sh);border-color:var(--borderh);}
 .cover-bg{position:absolute;inset:0;transition:.4s;}
 .cover-card:hover .cover-bg{transform:scale(1.1);}
-.cover-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,8,.9) 0%,rgba(5,13,8,.1) 60%,transparent);}
+.cover-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,15,.9) 0%,rgba(8,8,15,.1) 60%,transparent);transition:.3s;}
+.cover-card:hover .cover-overlay{background:linear-gradient(to top,rgba(8,8,15,.92) 0%,rgba(8,8,15,.25) 70%,rgba(232,160,192,.06) 100%);}
 .cover-num{position:absolute;top:9px;left:9px;background:var(--gr1);color:#fff;font-size:.56rem;font-weight:700;padding:3px 8px;border-radius:7px;letter-spacing:.07em;z-index:2;}
-[data-theme="light"] .cover-num{color:#071a0e;}
 .cover-ig{position:absolute;top:9px;right:9px;width:24px;height:24px;background:rgba(0,0,0,.45);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7rem;backdrop-filter:blur(4px);z-index:2;opacity:0;transition:.3s;}
 .cover-card:hover .cover-ig{opacity:1;}
-.cover-note{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.2rem;z-index:1;transition:.3s;}
+.cover-note{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:2.2rem;z-index:1;transition:.3s;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));}
 .cover-card:hover .cover-note{transform:translate(-50%,-50%) scale(1.18);}
 .cover-label{position:absolute;bottom:0;left:0;right:0;padding:9px 10px;font-size:.67rem;color:#fff;font-weight:500;z-index:2;}
 .covers-more{text-align:center;margin-top:20px;}
 .covers-hidden-item{display:none!important;}
 
-/* YOUTUBE */
+/* ── YOUTUBE ── */
 .yt-bg{background:var(--bg2);}
 .yt-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:30px;flex-wrap:wrap;}
 .yt-brand{display:flex;align-items:center;gap:12px;}
 .yt-ico{width:38px;height:38px;background:#FF0000;border-radius:9px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0;}
 .ytchs{display:flex;flex-direction:column;gap:2px;}
 .ytch{font-size:.7rem;color:var(--muted);}
-.ytch a{color:var(--g1);text-decoration:none;font-weight:500;}
+.ytch a{color:var(--r);text-decoration:none;font-weight:500;}
 .ytch a:hover{text-decoration:underline;}
 .yt-tabs{display:flex;gap:6px;flex-wrap:wrap;}
 .ytt{background:var(--bg3);border:1px solid var(--border);color:var(--muted);font-size:.68rem;padding:7px 16px;border-radius:20px;cursor:pointer;transition:.3s;font-family:'Outfit',sans-serif;}
 .ytt.on,.ytt:hover{background:var(--gr1);color:#fff;border-color:transparent;}
-[data-theme="light"] .ytt.on,[data-theme="light"] .ytt:hover{color:#071a0e;}
 .ytg{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:16px;}
 .ytg .yc:first-child{grid-column:1/3;}
 @media(max-width:640px){.ytg .yc:first-child{grid-column:auto;}}
@@ -338,30 +335,28 @@ section{padding:100px 5%;}
 .ypb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(255,0,0,.88);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.3s;z-index:2;}
 .yc:hover .ypb{opacity:1;transform:translate(-50%,-50%) scale(1);}
 .lp{position:absolute;top:9px;left:9px;background:var(--gr1);color:#fff;font-size:.56rem;font-weight:700;padding:3px 9px;border-radius:7px;letter-spacing:.07em;text-transform:uppercase;z-index:2;}
-[data-theme="light"] .lp{color:#071a0e;}
 .sp2{position:absolute;top:9px;right:9px;background:rgba(255,0,0,.85);color:#fff;font-size:.56rem;font-weight:700;padding:3px 8px;border-radius:7px;z-index:2;}
 .yi{padding:12px 14px;}
 .yvt{font-size:.84rem;font-weight:500;line-height:1.4;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 .yvd{font-size:.7rem;color:var(--muted);line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
 
-/* REELS */
+/* ── REELS ── */
 .rlg{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;}
 .rlc{aspect-ratio:9/16;border-radius:18px;cursor:pointer;position:relative;overflow:hidden;border:1px solid var(--border);transition:.4s;}
 .rlc:hover{transform:scale(1.04);box-shadow:0 18px 40px var(--sh);border-color:var(--borderh);}
 .rl-bi{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:.5s;}
 .rlc:hover .rl-bi{transform:scale(1.1);}
-.rl-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,13,8,.9) 0%,rgba(5,13,8,.1) 55%,transparent);}
-.rl-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(74,222,128,.2);border:2px solid rgba(74,222,128,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.35s;z-index:3;backdrop-filter:blur(4px);}
+.rl-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,8,15,.9) 0%,rgba(8,8,15,.1) 55%,transparent);}
+.rl-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(.8);width:40px;height:40px;background:rgba(232,160,192,.2);border:2px solid rgba(232,160,192,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.9rem;color:#fff;opacity:0;transition:.35s;z-index:3;backdrop-filter:blur(4px);}
 .rlc:hover .rl-play{opacity:1;transform:translate(-50%,-50%) scale(1);}
 .rl-badge{position:absolute;top:10px;left:10px;background:var(--gr1);color:#fff;font-size:.55rem;font-weight:700;padding:3px 9px;border-radius:7px;z-index:3;letter-spacing:.07em;}
-[data-theme="light"] .rl-badge{color:#071a0e;}
 .rl-lb{position:absolute;bottom:0;left:0;right:0;padding:13px 11px;font-size:.7rem;color:#fff;line-height:1.4;z-index:2;font-weight:500;}
 
-/* INSTAGRAM */
+/* ── INSTAGRAM ── */
 .ig-bg{background:var(--bg);}
 .ig-top{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
 .ig-ico{width:38px;height:38px;background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1rem;flex-shrink:0;}
-.ig-handle{font-size:.9rem;font-weight:600;color:var(--g1);}
+.ig-handle{font-size:.9rem;font-weight:600;color:var(--r);}
 .ig-handle a{color:inherit;text-decoration:none;}
 .ig-handle a:hover{text-decoration:underline;}
 .ig-sub{font-size:.7rem;color:var(--muted);margin-top:2px;}
@@ -373,9 +368,9 @@ section{padding:100px 5%;}
 .ig-info{padding:12px 15px;}
 .ig-cap{font-size:.82rem;font-weight:500;margin-bottom:5px;}
 .ig-met{font-size:.68rem;color:var(--muted);}
-.ig-met a{color:var(--g1);text-decoration:none;}
+.ig-met a{color:var(--r);text-decoration:none;}
 
-/* TESTIMONIALS */
+/* ── TESTIMONIALS ── */
 .tm-bg{background:var(--bg2);}
 .tm-wrap{overflow:hidden;position:relative;}
 .tm-wrap::before,.tm-wrap::after{content:'';position:absolute;top:0;bottom:0;width:100px;z-index:2;pointer-events:none;}
@@ -394,13 +389,13 @@ section{padding:100px 5%;}
 .tm-name{font-size:.8rem;font-weight:600;}
 .tm-role{font-size:.68rem;color:var(--muted);}
 
-/* CONNECT */
+/* ── CONNECT ── */
 .cn-bg{background:var(--bg3);}
 .cng{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;}
-.cnc{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 18px;text-align:center;text-decoration:none;color:var(--text);display:block;transition:.38s;}
+.cnc{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px 18px;text-align:center;text-decoration:none;color:var(--text);display:block;transition:.38s;position:relative;overflow:hidden;}
 .cnc:hover{transform:translateY(-5px);}
 .ci{font-size:1.7rem;margin-bottom:8px;}
-.cn2{font-size:.6rem;color:var(--g1);letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;font-weight:600;}
+.cn2{font-size:.6rem;color:var(--r);letter-spacing:.13em;text-transform:uppercase;margin-bottom:3px;font-weight:600;}
 .cv{font-size:.8rem;}
 .ct2{font-size:.62rem;color:var(--muted);margin-top:2px;font-style:italic;}
 .cnc.yt:hover{border-color:#ff4444;box-shadow:0 12px 30px rgba(255,50,50,.1);}
@@ -410,27 +405,26 @@ section{padding:100px 5%;}
 .cnc.em:hover{border-color:var(--borderh);box-shadow:0 12px 30px var(--sh2);}
 .cnc.lt:hover{border-color:#39BA63;box-shadow:0 12px 30px rgba(57,186,99,.1);}
 
-/* CONTACT */
+/* ── CONTACT ── */
 .ct-in{max-width:580px;margin:0 auto;text-align:center;}
 .ct-form{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:40px;margin-top:36px;text-align:left;}
 .cf-l{color:var(--muted);font-size:.65rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px;display:block;font-weight:500;}
 .cf-i,.cf-t{width:100%;background:var(--bg2);border:1px solid var(--border);border-radius:11px;padding:11px 14px;color:var(--text);font-family:'Outfit',sans-serif;font-size:.86rem;outline:none;transition:.3s;margin-bottom:16px;}
-.cf-i:focus,.cf-t:focus{border-color:var(--g1);}
+.cf-i:focus,.cf-t:focus{border-color:var(--r);}
 .cf-t{height:100px;resize:none;}
 .cf-btn{width:100%;background:var(--gr1);color:#fff;padding:13px;border-radius:12px;font-size:.86rem;font-weight:600;border:none;cursor:pointer;letter-spacing:.06em;transition:.35s;font-family:'Outfit',sans-serif;}
-[data-theme="light"] .cf-btn{color:#071a0e;}
 .cf-btn:hover{transform:translateY(-2px);box-shadow:0 10px 28px var(--sh2);}
 
-/* MODAL */
+/* ── MODAL ── */
 .mmod{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:600;align-items:center;justify-content:center;backdrop-filter:blur(16px);}
 .mmod.open{display:flex;}
 .mbox{width:92%;max-width:860px;background:var(--bg3);border-radius:22px;overflow:hidden;border:1px solid var(--border);position:relative;animation:popIn .32s var(--ease) both;}
 @keyframes popIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:scale(1)}}
-.mx{position:absolute;top:10px;right:11px;background:rgba(74,222,128,.2);border:none;color:var(--text);font-size:1rem;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:1;transition:.3s;font-family:'Outfit',sans-serif;}
-.mx:hover{background:rgba(74,222,128,.5);}
+.mx{position:absolute;top:10px;right:11px;background:rgba(232,160,192,.2);border:none;color:var(--text);font-size:1rem;width:30px;height:30px;border-radius:50%;cursor:pointer;z-index:1;transition:.3s;font-family:'Outfit',sans-serif;}
+.mx:hover{background:rgba(232,160,192,.5);}
 .mif{width:100%;aspect-ratio:16/9;}
 
-/* FOOTER */
+/* ── FOOTER ── */
 footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 30px;text-align:center;}
 .ft-inner{max-width:600px;margin:0 auto;}
 .flogo{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:700;background:var(--gr1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px;}
@@ -440,7 +434,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
 .fsoc:hover{background:var(--gr1);border-color:transparent;transform:translateY(-3px);}
 .flinks{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:20px;}
 .flinks a{color:var(--muted);font-size:.66rem;text-decoration:none;letter-spacing:.09em;text-transform:uppercase;transition:.3s;}
-.flinks a:hover{color:var(--g1);}
+.flinks a:hover{color:var(--r);}
 .fc{color:var(--muted2);font-size:.64rem;line-height:1.8;}
 
 @media(max-width:980px){.ab-grid{grid-template-columns:1fr;}.wg{grid-template-columns:1fr;}.player-body{grid-template-columns:1fr;}}
@@ -449,11 +443,19 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
 </head>
 <body>
 
-<div id="loader"><div class="ld-logo">Aakanksha</div><div class="ld-bar"><div class="ld-fill"></div></div></div>
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-logo">Aakanksha</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
 <div id="prog"></div>
+
 <div id="cur"></div>
 <div id="ring"></div>
 
+<!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" onclick="closeMob()">✕</button>
   <a href="#about" onclick="closeMob()">About</a>
@@ -466,6 +468,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   <a href="#connect" onclick="closeMob()">Connect</a>
 </div>
 
+<!-- NAV -->
 <nav>
   <div class="logo-w" onclick="scrollTo(0,0)">
     <div class="logo">Aakanksha</div>
@@ -482,21 +485,36 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
     <li><a href="#connect">Connect</a></li>
   </ul>
   <div class="nav-r">
-    <button class="tog" id="tog" aria-label="Toggle theme"><span class="ti sun">☀️</span><span class="ti moon">🌙</span></button>
+    <button class="tog" id="tog" aria-label="Toggle theme">
+      <span class="ti sun">☀️</span>
+      <span class="ti moon">🌙</span>
+    </button>
     <a href="mailto:Voiceactoraakanksha24@gmail.com" class="ncta">Work With Me</a>
-    <div class="ham" id="ham" onclick="openMob()"><span></span><span></span><span></span></div>
+    <div class="ham" id="ham" onclick="openMob()">
+      <span></span><span></span><span></span>
+    </div>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <canvas id="pts"></canvas>
   <div class="hero-blobs">
-    <div class="blob blob1"></div><div class="blob blob2"></div><div class="blob blob3"></div>
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
   </div>
   <div class="hi">
     <div class="eyebrow">Voice Artist · Storyteller · Psychologist</div>
-    <h1><strong>Aakanksha</strong><em>Capturing life through sound, mind & screen.</em></h1>
-    <div class="hero-div"><div class="hd-l"></div><div class="hd-d"></div><div class="hd-l r"></div></div>
+    <h1>
+      <strong>Aakanksha</strong>
+      <em>Capturing life through sound, mind & screen.</em>
+    </h1>
+    <div class="hero-div">
+      <div class="hd-l"></div>
+      <div class="hd-d"></div>
+      <div class="hd-l r"></div>
+    </div>
     <p class="hero-q">"A voice that heals the silent — and brings <strong>untold stories</strong> to life."</p>
     <div class="pills">
       <div class="pill"><div class="d dm"></div>🎤 Music · @negai24</div>
@@ -511,6 +529,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   <div class="scroll-hint"><div class="sh-line"></div>Scroll</div>
 </section>
 
+<!-- MARQUEE -->
 <div class="strip">
   <div class="strip-track">
     <span class="strip-item">Voice Actor<span class="strip-dot">✦</span></span>
@@ -542,6 +561,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </div>
 
+<!-- ABOUT -->
 <section id="about" class="ab-bg">
   <div class="sw">
     <div class="ab-grid">
@@ -579,6 +599,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </section>
 
+<!-- WORLDS -->
 <section id="worlds">
   <div class="sw">
     <div class="rv" style="text-align:center;margin-bottom:48px;">
@@ -587,13 +608,41 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
       <div class="gr" style="margin:13px auto;"></div>
     </div>
     <div class="wg">
-      <div class="wc mu rv d1"><span class="wi">🎵</span><div class="wt2">Music</div><span class="wh">@negai24 · Instagram & YouTube</span><p class="wd">Japanese, Korean & English song covers. Music is where I find the words when language alone isn't enough.</p><div class="wlinks"><a class="wlnk" href="https://www.instagram.com/negai24" target="_blank"><span>📸</span>@negai24 on Instagram</a><a class="wlnk" href="https://www.youtube.com/@Negai24" target="_blank"><span>▶️</span>@Negai24 on YouTube</a></div></div>
-      <div class="wc mi rv d2"><span class="wi">🧠</span><div class="wt2">Psychology</div><span class="wh">@chittavritti.echoes · Instagram</span><p class="wd">Mental health content, podcast, and conversations around emotion and the science of being human.</p><div class="wlinks"><a class="wlnk" href="https://www.instagram.com/chittavritti.echoes" target="_blank"><span>📸</span>@chittavritti.echoes</a><a class="wlnk" href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" target="_blank"><span>🎧</span>Listen on Spotify</a></div></div>
-      <div class="wc sc rv d3"><span class="wi">🎬</span><div class="wt2">Films & Series</div><span class="wh">@akki__tv · Instagram & @akkki__tv · YouTube</span><p class="wd">Film breakdowns, series deep-dives, and psychological analysis of Japanese, Korean, and Indian cinema.</p><div class="wlinks"><a class="wlnk" href="https://www.instagram.com/akki__tv" target="_blank"><span>📸</span>@akki__tv on Instagram</a><a class="wlnk" href="https://www.youtube.com/@akkki__tv" target="_blank"><span>▶️</span>@akkki__tv on YouTube</a></div></div>
+      <div class="wc mu rv d1">
+        <span class="wi">🎵</span>
+        <div class="wt2">Music</div>
+        <span class="wh">@negai24 · Instagram & YouTube</span>
+        <p class="wd">Japanese, Korean & English song covers. Music is where I find the words when language alone isn't enough.</p>
+        <div class="wlinks">
+          <a class="wlnk" href="https://www.instagram.com/negai24" target="_blank"><span>📸</span>@negai24 on Instagram</a>
+          <a class="wlnk" href="https://www.youtube.com/@Negai24" target="_blank"><span>▶️</span>@Negai24 on YouTube</a>
+        </div>
+      </div>
+      <div class="wc mi rv d2">
+        <span class="wi">🧠</span>
+        <div class="wt2">Psychology</div>
+        <span class="wh">@chittavritti.echoes · Instagram</span>
+        <p class="wd">Mental health content, podcast, and conversations around emotion and the science of being human.</p>
+        <div class="wlinks">
+          <a class="wlnk" href="https://www.instagram.com/chittavritti.echoes" target="_blank"><span>📸</span>@chittavritti.echoes</a>
+          <a class="wlnk" href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" target="_blank"><span>🎧</span>Listen on Spotify</a>
+        </div>
+      </div>
+      <div class="wc sc rv d3">
+        <span class="wi">🎬</span>
+        <div class="wt2">Films & Series</div>
+        <span class="wh">@akki__tv · Instagram & @akkki__tv · YouTube</span>
+        <p class="wd">Film breakdowns, series deep-dives, and psychological analysis of Japanese, Korean, and Indian cinema.</p>
+        <div class="wlinks">
+          <a class="wlnk" href="https://www.instagram.com/akki__tv" target="_blank"><span>📸</span>@akki__tv on Instagram</a>
+          <a class="wlnk" href="https://www.youtube.com/@akkki__tv" target="_blank"><span>▶️</span>@akkki__tv on YouTube</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SKILLS -->
 <section id="skills" class="sk-bg">
   <div class="sw">
     <div class="rv"><p class="sl">Expertise</p><h2 class="st">Skills & <em>Craft</em></h2><div class="gr"></div></div>
@@ -610,6 +659,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </section>
 
+<!-- WORK -->
 <section id="work">
   <div class="sw">
     <div class="rv"><p class="sl">Portfolio</p><h2 class="st">Professional <em>Work</em></h2><div class="gr"></div></div>
@@ -625,37 +675,115 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
       <button class="wf" onclick="filterWork('instagram',this)">📸 Instagram</button>
     </div>
     <div class="pwg" id="workGrid">
-      <div class="pw rv" data-cat="instagram" onclick="window.open('https://www.instagram.com/p/DV3rbBkE8c4/','_blank')"><div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);"><div class="pw-pf-logo">📸</div><div class="pw-pf-name">Instagram</div><div class="pw-pf-badge">@akki__tv · Latest Post</div></div><div class="pwo"></div><div class="pwbadge">Instagram</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>📸</span>@akki__tv</div><div class="pw-genre">Reel</div></div><div class="pwt2">Latest Instagram Work</div><p class="pwm">Latest creative content from @akki__tv.</p><div class="pw-action"><span class="pw-listen">View Post</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/kLCsqW_Arv8?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/kLCsqW_Arv8/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Dubbing</div></div><div class="pwt2" id="wt-kLCsqW_Arv8">Loading…</div><p class="pwm">Professional dubbing performance.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/AdAghrjV27w?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/AdAghrjV27w/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Voice</div></div><div class="pwt2" id="wt-AdAghrjV27w">Loading…</div><p class="pwm">Voice performance work.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/4vEyrzF1DA4?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/4vEyrzF1DA4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Voice</div></div><div class="pwt2" id="wt-4vEyrzF1DA4">Loading…</div><p class="pwm">Voice performance work.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/dark-vow-jungle-ki-pukar/','_blank')"><div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a1a00,#1a4000,#2d7000);"><div class="pw-pf-logo">🌿</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Dark Vow: Jungle Ki Pukar · Horror</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Horror</div></div><div class="pwt2">Dark Vow: Jungle Ki Pukar</div><p class="pwm">A village, a broken pact, and a terrifying forest deity awakening.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/panic-room/','_blank')"><div class="pwt"><div class="pw-platform pf-podcast"><div class="pw-pf-logo">🚪</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Panic Room · Thriller</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Thriller</div></div><div class="pwt2">Panic Room</div><p class="pwm">Psychological thriller — gripping, intense audio storytelling.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/sleeper-cell-ke-yoddha/','_blank')"><div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🕵️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Sleeper Cell Ke Yoddha · Action</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Action</div></div><div class="pwt2">Sleeper Cell Ke Yoddha</div><p class="pwm">Undercover agents, hidden identities, nation at stake.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/ceo-of-casanova','_blank')"><div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a1a0d,#1a4a1f,#2d8a3a);"><div class="pw-pf-logo">💼</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">CEO of Casanova · Romance</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Romance</div></div><div class="pwt2">CEO of Casanova</div><p class="pwm">Charisma, power, and the complexity of love in the corporate world.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/billion-rupee-bride','_blank')"><div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a1400,#3d3000,#6b5400);"><div class="pw-pf-logo">💍</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Billion Rupee Bride · Drama</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Drama</div></div><div class="pwt2">Billion Rupee Bride</div><p class="pwm">Wealth, marriage, and the hidden price of a perfect life.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/limitless-pyaar','_blank')"><div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a1a0a,#1a4a1a,#2d8a2d);"><div class="pw-pf-logo">❤️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Limitless Pyaar · Romance</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Romance</div></div><div class="pwt2">Limitless Pyaar</div><p class="pwm">A love story with no limits, no conditions, no boundaries.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/the-last-call','_blank')"><div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">The Last Call · Audio Show</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Audio Show</div></div><div class="pwt2">The Last Call</div><p class="pwm">Raw, intimate audio storytelling — a voice that stays with you.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d2" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/suryaputra-karna/67da5e08-41f4-42d7-9d59-a0dca087b896','_blank')"><div class="pwt"><div class="pw-platform pf-eight2"><div class="pw-pf-logo">☀️</div><div class="pw-pf-name">Eight Network</div><div class="pw-pf-badge">Suryaputra Karna · Mythology</div></div><div class="pwo"></div><div class="pwbadge">Eight · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>8️⃣</span>Eight</div><div class="pw-genre">Mythology</div></div><div class="pwt2">Suryaputra Karna</div><p class="pwm">The untold, deeply human story of Karna from Mahabharat.</p><div class="pw-action"><span class="pw-listen">Listen on Eight</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d3" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/mahabharat-shakuni/2e1bcaef-b8df-4c5f-9f3e-830f978cc7e6','_blank')"><div class="pwt"><div class="pw-platform pf-eight"><div class="pw-pf-logo">♟️</div><div class="pw-pf-name">Eight Network</div><div class="pw-pf-badge">Mahabharat — Shakuni · Mythology</div></div><div class="pwo"></div><div class="pwbadge">Eight · Audio</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>8️⃣</span>Eight</div><div class="pw-genre">Mythology</div></div><div class="pwt2">Mahabharat — Shakuni</div><p class="pwm">The mastermind's story — cunning, grief, and a curse that changed a war.</p><div class="pw-action"><span class="pw-listen">Listen on Eight</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d1" data-cat="audio" onclick="window.open('https://www.instagram.com/reel/DTS1J22DRCu/','_blank')"><div class="pwt"><div class="pw-platform pf-podcast"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Podcast</div><div class="pw-pf-badge">Why You Feel Lost · Psychology</div></div><div class="pwo"></div><div class="pwbadge">Podcast</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🧠</span>Psychology</div><div class="pw-genre">Podcast</div></div><div class="pwt2">Why You Feel Lost (Even When Life Looks Fine)</div><p class="pwm">The science behind feeling lost even when everything looks fine.</p><div class="pw-action"><span class="pw-listen">Watch Reel</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d2" data-cat="storytv dubbing" onclick="window.open('https://app.storytv.asia/shows/1174','_blank')"><div class="pwt"><div class="pw-platform pf-storytv"><div class="pw-pf-logo">📺</div><div class="pw-pf-name">StoryTV</div><div class="pw-pf-badge">Race Against Time · Dubbing</div></div><div class="pwo"></div><div class="pwbadge">StoryTV · Dubbing</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>📺</span>StoryTV</div><div class="pw-genre">Short Drama</div></div><div class="pwt2">Race Against Time</div><p class="pwm">High-stakes dubbing for India's leading short drama app.</p><div class="pw-action"><span class="pw-listen">Watch on StoryTV</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d3" data-cat="kukufm dubbing" onclick="window.open('https://tv.kukufm.com/show/dad-let-me-clean-the-house','_blank')"><div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎧</div><div class="pw-pf-name">Kuku TV</div><div class="pw-pf-badge">Dad, Let Me Clean The House</div></div><div class="pwo"></div><div class="pwbadge">Kuku TV · Dubbing</div><div class="pwplay">↗</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Kuku TV</div><div class="pw-genre">Dubbing</div></div><div class="pwt2">Dad, Let Me Clean The House</div><p class="pwm">Family warmth brought to life through voice.</p><div class="pw-action"><span class="pw-listen">Watch on Kuku TV</span><div class="pw-arr">↗</div></div></div></div>
-      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/mpkncpXa6lY?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/mpkncpXa6lY/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Ep.1</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series</div></div><div class="pwt2">एक दुनिया बिना… झप्पियों के</div><p class="pwm">A world without hugs — emotional dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/BVJGk_ohXd0?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/BVJGk_ohXd0/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Ep.2</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series</div></div><div class="pwt2">एक दुनिया बिना… कुर्सियों के</div><p class="pwm">A world without chairs — creative dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/x-J-ZmHKeC4?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/x-J-ZmHKeC4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Ep.3</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series</div></div><div class="pwt2">एक दुनिया बिना… जेबों के</div><p class="pwm">A world without pockets — playful dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/2GFOnYj0WIQ?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/2GFOnYj0WIQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Ep.4</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series</div></div><div class="pwt2">एक दुनिया बिना… लिखाई के</div><p class="pwm">A world without writing — imaginative dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/1RjMimoDtFQ?autoplay=1')"><div class="pwt"><img src="https://img.youtube.com/vi/1RjMimoDtFQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Ep.5</div><div class="pwplay">▶</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series</div></div><div class="pwt2">एक दुनिया बिना… गोलों के</div><p class="pwm">A world without balls — thought-provoking dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div></div>
-      <div class="pw rv d3" data-cat="baalkatha"><div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🌙</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Night the Sky Listened</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🌙</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids</div></div><div class="pwt2">The Night the Sky Listened</div><p class="pwm">Calming bedtime story — gentle, soothing voice.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🌙</div></div></div></div>
-      <div class="pw rv d1" data-cat="baalkatha"><div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🪔</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Lantern Who Wanted to Fly</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🪔</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids</div></div><div class="pwt2">The Lantern Who Wanted to Fly</div><p class="pwm">Imaginative kids story full of wonder.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🪔</div></div></div></div>
-      <div class="pw rv d2" data-cat="baalkatha"><div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🧱</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Block at the Bottom</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🧱</div></div><div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids</div></div><div class="pwt2">The Block at the Bottom</div><p class="pwm">A rhyming bedtime moral story.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🧱</div></div></div></div>
+      <div class="pw rv" data-cat="instagram" onclick="window.open('https://www.instagram.com/p/DV3rbBkE8c4/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);"><div class="pw-pf-logo">📸</div><div class="pw-pf-name">Instagram</div><div class="pw-pf-badge">@akki__tv · Latest Post</div></div><div class="pwo"></div><div class="pwbadge">Instagram</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>📸</span>@akki__tv</div><div class="pw-genre">Reel</div></div><div class="pwt2">Latest Instagram Work</div><p class="pwm">Latest creative content from @akki__tv — tap to view on Instagram.</p><div class="pw-action"><span class="pw-listen">View Post</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/kLCsqW_Arv8?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/kLCsqW_Arv8/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Dubbing</div></div><div class="pwt2" id="wt-kLCsqW_Arv8">Loading…</div><p class="pwm">Professional dubbing performance.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/AdAghrjV27w?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/AdAghrjV27w/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Voice</div></div><div class="pwt2" id="wt-AdAghrjV27w">Loading…</div><p class="pwm">Voice performance work.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/4vEyrzF1DA4?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/4vEyrzF1DA4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Voice Work</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>▶️</span>YouTube</div><div class="pw-genre">Voice</div></div><div class="pwt2" id="wt-4vEyrzF1DA4">Loading…</div><p class="pwm">Voice performance work.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/dark-vow-jungle-ki-pukar/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a00,#3d1500,#7c2d00);"><div class="pw-pf-logo">🌿</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Dark Vow: Jungle Ki Pukar · Horror</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Horror</div></div><div class="pwt2">Dark Vow: Jungle Ki Pukar</div><p class="pwm">A village, a broken pact, and a terrifying forest deity awakening.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/panic-room/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a0a1a,#1a0a2e,#3d0d6e);"><div class="pw-pf-logo">🚪</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Panic Room · Thriller</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Thriller</div></div><div class="pwt2">Panic Room</div><p class="pwm">Psychological thriller — gripping, intense, edge-of-your-seat.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/sleeper-cell-ke-yoddha/','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#0a1a0a,#0d2d0d,#155215);"><div class="pw-pf-logo">🕵️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Sleeper Cell Ke Yoddha · Action</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Action</div></div><div class="pwt2">Sleeper Cell Ke Yoddha</div><p class="pwm">Undercover agents, hidden identities, nation at stake.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/ceo-of-casanova','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a1a,#3d0d3d,#6b1a5e);"><div class="pw-pf-logo">💼</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">CEO of Casanova · Romance</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Romance</div></div><div class="pwt2">CEO of Casanova</div><p class="pwm">Charisma, power, and complexity of love in the corporate world.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/billion-rupee-bride','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a1000,#3d2800,#7c5200);"><div class="pw-pf-logo">💍</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Billion Rupee Bride · Drama</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Drama</div></div><div class="pwt2">Billion Rupee Bride</div><p class="pwm">Wealth, marriage, and the hidden price of a perfect life.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/limitless-pyaar','_blank')">
+        <div class="pwt"><div class="pw-platform" style="background:linear-gradient(135deg,#1a0a14,#3d0d28,#7c1a50);"><div class="pw-pf-logo">❤️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">Limitless Pyaar · Romance</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Romance</div></div><div class="pwt2">Limitless Pyaar</div><p class="pwm">A love story with no limits, no conditions, no boundaries.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="kukufm audio" onclick="window.open('https://kukufm.com/show/the-last-call','_blank')">
+        <div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Kuku FM</div><div class="pw-pf-badge">The Last Call · Audio Show</div></div><div class="pwo"></div><div class="pwbadge">Kuku FM · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎧</span>Kuku FM</div><div class="pw-genre">Audio Show</div></div><div class="pwt2">The Last Call</div><p class="pwm">Raw, intimate audio storytelling — a voice that stays with you.</p><div class="pw-action"><span class="pw-listen">Listen on Kuku FM</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/suryaputra-karna/67da5e08-41f4-42d7-9d59-a0dca087b896','_blank')">
+        <div class="pwt"><div class="pw-platform pf-eight2"><div class="pw-pf-logo">☀️</div><div class="pw-pf-name">Eight Network</div><div class="pw-pf-badge">Suryaputra Karna · Mythology</div></div><div class="pwo"></div><div class="pwbadge">Eight · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>8️⃣</span>Eight</div><div class="pw-genre">Mythology</div></div><div class="pwt2">Suryaputra Karna</div><p class="pwm">The untold, deeply human story of Karna from Mahabharat.</p><div class="pw-action"><span class="pw-listen">Listen on Eight</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="eight audio" onclick="window.open('https://play.eight.network/audio-stories/history-and-mythology/mahabharat-shakuni/2e1bcaef-b8df-4c5f-9f3e-830f978cc7e6','_blank')">
+        <div class="pwt"><div class="pw-platform pf-eight"><div class="pw-pf-logo">♟️</div><div class="pw-pf-name">Eight Network</div><div class="pw-pf-badge">Mahabharat — Shakuni · Mythology</div></div><div class="pwo"></div><div class="pwbadge">Eight · Audio</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>8️⃣</span>Eight</div><div class="pw-genre">Mythology</div></div><div class="pwt2">Mahabharat — Shakuni</div><p class="pwm">The mastermind's story — cunning, grief, and a curse that changed a war.</p><div class="pw-action"><span class="pw-listen">Listen on Eight</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="audio" onclick="window.open('https://www.instagram.com/reel/DTS1J22DRCu/','_blank')">
+        <div class="pwt"><div class="pw-platform pf-podcast"><div class="pw-pf-logo">🎙️</div><div class="pw-pf-name">Podcast</div><div class="pw-pf-badge">Why You Feel Lost · Psychology</div></div><div class="pwo"></div><div class="pwbadge">Podcast</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🧠</span>Psychology</div><div class="pw-genre">Podcast</div></div><div class="pwt2">Why You Feel Lost (Even When Life Looks Fine)</div><p class="pwm">The science behind feeling lost even when everything looks fine.</p><div class="pw-action"><span class="pw-listen">Watch Reel</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="storytv dubbing" onclick="window.open('https://app.storytv.asia/shows/1174','_blank')">
+        <div class="pwt"><div class="pw-platform pf-storytv"><div class="pw-pf-logo">📺</div><div class="pw-pf-name">StoryTV</div><div class="pw-pf-badge">Race Against Time · Dubbing</div></div><div class="pwo"></div><div class="pwbadge">StoryTV · Dubbing</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>📺</span>StoryTV</div><div class="pw-genre">Short Drama</div></div><div class="pwt2">Race Against Time</div><p class="pwm">High-stakes dubbing for India's leading short drama app.</p><div class="pw-action"><span class="pw-listen">Watch on StoryTV</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="kukufm dubbing" onclick="window.open('https://tv.kukufm.com/show/dad-let-me-clean-the-house','_blank')">
+        <div class="pwt"><div class="pw-platform pf-kuku"><div class="pw-pf-logo">🎧</div><div class="pw-pf-name">Kuku TV</div><div class="pw-pf-badge">Dad, Let Me Clean The House · Dubbing</div></div><div class="pwo"></div><div class="pwbadge">Kuku TV · Dubbing</div><div class="pwplay">↗</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Kuku TV</div><div class="pw-genre">Dubbing</div></div><div class="pwt2">Dad, Let Me Clean The House</div><p class="pwm">Family warmth brought to life through voice.</p><div class="pw-action"><span class="pw-listen">Watch on Kuku TV</span><div class="pw-arr">↗</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/mpkncpXa6lY?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/mpkncpXa6lY/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Series</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series · Ep 1</div></div><div class="pwt2">एक दुनिया बिना… झप्पियों के</div><p class="pwm">A world without hugs — emotional dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/BVJGk_ohXd0?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/BVJGk_ohXd0/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Series</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series · Ep 2</div></div><div class="pwt2">एक दुनिया बिना… कुर्सियों के</div><p class="pwm">A world without chairs — creative dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/x-J-ZmHKeC4?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/x-J-ZmHKeC4/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Series</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series · Ep 3</div></div><div class="pwt2">एक दुनिया बिना… जेबों के</div><p class="pwm">A world without pockets — playful dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/2GFOnYj0WIQ?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/2GFOnYj0WIQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Series</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series · Ep 4</div></div><div class="pwt2">एक दुनिया बिना… लिखाई के</div><p class="pwm">A world without writing — imaginative dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="dubbing youtube-work" onclick="openModal('https://www.youtube.com/embed/1RjMimoDtFQ?autoplay=1')">
+        <div class="pwt"><img src="https://img.youtube.com/vi/1RjMimoDtFQ/hqdefault.jpg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"/><div class="pwo"></div><div class="pwbadge">Dubbing Series</div><div class="pwplay">▶</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🎬</span>Dubbing</div><div class="pw-genre">Series · Ep 5</div></div><div class="pwt2">एक दुनिया बिना… गोलों के</div><p class="pwm">A world without balls — thought-provoking dubbing.</p><div class="pw-action"><span class="pw-listen">Watch Now</span><div class="pw-arr">▶</div></div></div>
+      </div>
+      <div class="pw rv d3" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🌙</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Night the Sky Listened</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🌙</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids · Bedtime</div></div><div class="pwt2">The Night the Sky Listened</div><p class="pwm">Calming bedtime story — gentle, soothing voice.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🌙</div></div></div>
+      </div>
+      <div class="pw rv d1" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🪔</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Lantern Who Wanted to Fly</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🪔</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids · Heart-touching</div></div><div class="pwt2">The Lantern Who Wanted to Fly</div><p class="pwm">Imaginative kids story full of wonder.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🪔</div></div></div>
+      </div>
+      <div class="pw rv d2" data-cat="baalkatha">
+        <div class="pwt"><div class="pw-platform pf-baalkatha"><div class="pw-pf-logo">🧱</div><div class="pw-pf-name">BaalKatha</div><div class="pw-pf-badge">The Block at the Bottom</div></div><div class="pwo"></div><div class="pwbadge">BaalKatha</div><div class="pwplay">🧱</div></div>
+        <div class="pwb"><div class="pwb-top"><div class="pw-plat-tag"><span>🌙</span>BaalKatha</div><div class="pw-genre">Kids · Moral</div></div><div class="pwt2">The Block at the Bottom</div><p class="pwm">A rhyming bedtime moral story — warm voice for little ears.</p><div class="pw-action"><span class="pw-listen">Listen</span><div class="pw-arr">🧱</div></div></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- SAMPLES -->
 <section id="samples" class="samples-bg">
   <div class="sw">
-    <div class="rv" style="margin-bottom:44px;"><p class="sl">Voice Demos</p><h2 class="st">Listen to My <em>Samples</em></h2><div class="gr"></div><p style="color:var(--muted);font-size:.9rem;line-height:1.8;max-width:560px;">From dubbing to voiceover — 39 samples across styles, tones and languages.</p></div>
+    <div class="rv" style="margin-bottom:44px;">
+      <p class="sl">Voice Demos</p>
+      <h2 class="st">Listen to My <em>Samples</em></h2>
+      <div class="gr"></div>
+      <p style="color:var(--muted);font-size:.9rem;line-height:1.8;max-width:560px;">From dubbing to voiceover to narration — 39 samples across styles, tones, and languages.</p>
+    </div>
     <div class="feat-vid rv">
       <div class="feat-vid-wrap"><iframe src="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/preview" allow="autoplay" allowfullscreen></iframe></div>
       <div class="feat-footer"><div><div class="feat-title">Voice Demo Reel</div><div class="feat-sub">Aakanksha · Voice Artist · 100+ Projects</div></div><a class="pf-open" href="https://drive.google.com/file/d/1O_kj2pn_PNz8jIuv6eT4jnQDsE47r5Td/view" target="_blank">↗ Open Full Screen</a></div>
@@ -674,36 +802,57 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
         </div>
       </div>
     </div>
-    <div class="rv" style="margin-top:48px;"><p class="sl">Sample Folders</p><h2 class="st" style="font-size:clamp(1.6rem,3vw,2.4rem);">Browse by <em>Category</em></h2><div class="gr"></div></div>
+    <div class="rv" style="margin-top:48px;">
+      <p class="sl">Sample Folders</p>
+      <h2 class="st" style="font-size:clamp(1.6rem,3vw,2.4rem);">Browse by <em>Category</em></h2>
+      <div class="gr"></div>
+    </div>
     <div class="samples-grid">
-      <a class="sample-card rv d1" href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank"><div class="sample-icon-wrap">🎬</div><div class="sample-num">Folder 01</div><div class="sample-title">Dubbing & Narrations</div><p class="sample-desc">Character dubbing and narrative voice work — emotional range and storytelling depth.</p><div class="sample-tags"><span class="sample-tag">Dubbing</span><span class="sample-tag">Narration</span><span class="sample-tag">Character</span></div><div class="sample-cta"><span class="sample-listen">Listen Samples</span><div class="sample-arr">↗</div></div></a>
-      <a class="sample-card rv d2" href="https://drive.google.com/drive/folders/1TAfK_lP2eYbyqVq1GasqEgF_dJpuH7MK" target="_blank"><div class="sample-icon-wrap">🎙️</div><div class="sample-num">Folder 02</div><div class="sample-title">Voice Over</div><p class="sample-desc">Professional voiceover across commercial, corporate, and creative formats.</p><div class="sample-tags"><span class="sample-tag">Voice Over</span><span class="sample-tag">Commercial</span><span class="sample-tag">Corporate</span></div><div class="sample-cta"><span class="sample-listen">Listen Samples</span><div class="sample-arr">↗</div></div></a>
-      <a class="sample-card rv d3" href="https://drive.google.com/drive/folders/1cEOltjrVYN76tsuOaFK5x3LEZ9NNFRcC" target="_blank"><div class="sample-icon-wrap">🎥</div><div class="sample-num">Folder 03</div><div class="sample-title">Content Creator</div><p class="sample-desc">Content creation samples — scripts, reels, and short-form storytelling.</p><div class="sample-tags"><span class="sample-tag">Content</span><span class="sample-tag">Reels</span><span class="sample-tag">Scripts</span></div><div class="sample-cta"><span class="sample-listen">View Samples</span><div class="sample-arr">↗</div></div></a>
-      <a class="sample-card rv d4" href="https://drive.google.com/drive/folders/1VMSrzy9DdcYbUVyBdluj7WjpcWUsA_46" target="_blank"><div class="sample-icon-wrap">📽️</div><div class="sample-num">Folder 04</div><div class="sample-title">Explainer Videos</div><p class="sample-desc">Voice and script work for explainer videos — clear and engaging delivery.</p><div class="sample-tags"><span class="sample-tag">Explainer</span><span class="sample-tag">Script</span><span class="sample-tag">Video</span></div><div class="sample-cta"><span class="sample-listen">View Samples</span><div class="sample-arr">↗</div></div></a>
-      <a class="sample-card rv d5" href="https://drive.google.com/drive/folders/1_3JXbuQZfMGKxxQvQmiKL-TPqSHJeWXO" target="_blank"><div class="sample-icon-wrap">📜</div><div class="sample-num">Folder 05</div><div class="sample-title">Resume & Certificates</div><p class="sample-desc">Professional credentials, certifications and resume for collaborators.</p><div class="sample-tags"><span class="sample-tag">Resume</span><span class="sample-tag">Certificates</span><span class="sample-tag">Credentials</span></div><div class="sample-cta"><span class="sample-listen">View Documents</span><div class="sample-arr">↗</div></div></a>
+      <a class="sample-card rv d1" href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank"><div class="sample-icon-wrap">🎬</div><div class="sample-num">Folder 01</div><div class="sample-title">Dubbing & Narrations</div><p class="sample-desc">Character dubbing and narrative voice work — emotional range, sync precision, storytelling depth.</p><div class="sample-tags"><span class="sample-tag">Dubbing</span><span class="sample-tag">Narration</span><span class="sample-tag">Character</span></div><div class="sample-cta"><span class="sample-listen">Listen Samples</span><div class="sample-arr">↗</div></div></a>
+      <a class="sample-card rv d2" href="https://drive.google.com/drive/folders/1TAfK_lP2eYbyqVq1GasqEgF_dJpuH7MK" target="_blank"><div class="sample-icon-wrap">🎙️</div><div class="sample-num">Folder 02</div><div class="sample-title">Voice Over</div><p class="sample-desc">Professional voiceover across commercial, corporate, and creative formats — warm, clear, versatile.</p><div class="sample-tags"><span class="sample-tag">Voice Over</span><span class="sample-tag">Commercial</span><span class="sample-tag">Corporate</span></div><div class="sample-cta"><span class="sample-listen">Listen Samples</span><div class="sample-arr">↗</div></div></a>
+      <a class="sample-card rv d3" href="https://drive.google.com/drive/folders/1cEOltjrVYN76tsuOaFK5x3LEZ9NNFRcC" target="_blank"><div class="sample-icon-wrap">🎥</div><div class="sample-num">Folder 03</div><div class="sample-title">Content Creator</div><p class="sample-desc">Content creation samples — scripts, reels, short-form storytelling and digital content.</p><div class="sample-tags"><span class="sample-tag">Content</span><span class="sample-tag">Reels</span><span class="sample-tag">Scripts</span></div><div class="sample-cta"><span class="sample-listen">View Samples</span><div class="sample-arr">↗</div></div></a>
+      <a class="sample-card rv d4" href="https://drive.google.com/drive/folders/1VMSrzy9DdcYbUVyBdluj7WjpcWUsA_46" target="_blank"><div class="sample-icon-wrap">📽️</div><div class="sample-num">Folder 04</div><div class="sample-title">Explainer Videos</div><p class="sample-desc">Voice and script work for explainer videos — clear, engaging, and informative delivery.</p><div class="sample-tags"><span class="sample-tag">Explainer</span><span class="sample-tag">Script</span><span class="sample-tag">Video</span></div><div class="sample-cta"><span class="sample-listen">View Samples</span><div class="sample-arr">↗</div></div></a>
+      <a class="sample-card rv d5" href="https://drive.google.com/drive/folders/1_3JXbuQZfMGKxxQvQmiKL-TPqSHJeWXO" target="_blank"><div class="sample-icon-wrap">📜</div><div class="sample-num">Folder 05</div><div class="sample-title">Resume & Certificates</div><p class="sample-desc">Professional credentials, certifications, and resume — everything a collaborator needs.</p><div class="sample-tags"><span class="sample-tag">Resume</span><span class="sample-tag">Certificates</span><span class="sample-tag">Credentials</span></div><div class="sample-cta"><span class="sample-listen">View Documents</span><div class="sample-arr">↗</div></div></a>
     </div>
   </div>
 </section>
 
+<!-- SONG COVERS -->
 <section id="covers" class="music-bg">
   <div class="sw">
-    <div class="rv" style="margin-bottom:40px;"><p class="sl">@negai24 · @Negai24</p><h2 class="st">Song <em>Covers</em></h2><div class="gr"></div><p style="color:var(--muted);font-size:.88rem;line-height:1.8;max-width:520px;">Japanese, Korean & English — music as emotional storytelling. 43 covers and counting.</p></div>
+    <div class="rv" style="margin-bottom:40px;">
+      <p class="sl">@negai24 · @Negai24</p>
+      <h2 class="st">Song <em>Covers</em></h2>
+      <div class="gr"></div>
+      <p style="color:var(--muted);font-size:.88rem;line-height:1.8;max-width:520px;">Japanese, Korean & English — music as emotional storytelling. 43 covers and counting.</p>
+    </div>
     <div class="covers-grid" id="coversGrid"></div>
     <div class="covers-more rv"><button id="coversBtn" onclick="toggleCovers()" style="background:var(--gr1);color:#fff;border:none;padding:11px 28px;border-radius:22px;font-size:.78rem;font-weight:600;cursor:pointer;letter-spacing:.06em;font-family:'Outfit',sans-serif;">Show All 43 Covers ↓</button></div>
   </div>
 </section>
 
+<!-- YOUTUBE -->
 <section id="videos" class="yt-bg">
   <div class="sw">
     <div class="yt-top rv">
-      <div class="yt-brand"><div class="yt-ico">▶</div><div class="ytchs"><div class="ytch">Films & Series → <a href="https://www.youtube.com/@akkki__tv" target="_blank">@akkki__tv</a></div><div class="ytch">Music Covers → <a href="https://www.youtube.com/@Negai24" target="_blank">@Negai24</a></div></div></div>
-      <div class="yt-tabs"><div class="ytt on" onclick="setTab('films',this)">🎬 Films & Series</div><div class="ytt" onclick="setTab('music',this)">🎵 Music Covers</div></div>
+      <div class="yt-brand">
+        <div class="yt-ico">▶</div>
+        <div class="ytchs">
+          <div class="ytch">Films & Series → <a href="https://www.youtube.com/@akkki__tv" target="_blank">@akkki__tv</a></div>
+          <div class="ytch">Music Covers → <a href="https://www.youtube.com/@Negai24" target="_blank">@Negai24</a></div>
+        </div>
+      </div>
+      <div class="yt-tabs">
+        <div class="ytt on" onclick="setTab('films',this)">🎬 Films & Series</div>
+        <div class="ytt" onclick="setTab('music',this)">🎵 Music Covers</div>
+      </div>
     </div>
     <div class="ytg" id="ytGrid"></div>
     <div style="text-align:center;margin-top:24px;"><a class="bl" id="ytAllBtn" href="https://www.youtube.com/@akkki__tv" target="_blank" style="display:inline-block;">View All Videos ↗</a></div>
   </div>
 </section>
 
+<!-- REELS -->
 <section id="reels">
   <div class="sw">
     <div class="rv"><p class="sl">Short Form</p><h2 class="st">Content Creation — <em>Reels & Shorts</em></h2><div class="gr"></div></div>
@@ -718,6 +867,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </section>
 
+<!-- INSTAGRAM -->
 <section id="instagram" class="ig-bg">
   <div class="sw">
     <div class="ig-top rv"><div class="ig-ico">📸</div><div><p class="sl" style="margin:0 0 3px;">Instagram</p><div class="ig-handle"><a href="https://www.instagram.com/akki__tv" target="_blank">@akki__tv ↗</a></div><div class="ig-sub">Films & Series · Reels · Content</div></div></div>
@@ -728,19 +878,33 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
       <div class="igc rv d3"><div class="ig-ew"><iframe src="https://www.instagram.com/reel/DVG8D7yE1fl/embed/" class="ig-if" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><div class="ig-info"><div class="ig-cap">Reel — @akki__tv</div><div class="ig-met"><a href="https://www.instagram.com/reel/DVG8D7yE1fl/" target="_blank">View on Instagram ↗</a></div></div></div>
       <div class="igc rv d4"><div class="ig-ew"><iframe src="https://www.instagram.com/p/DVVp6C1E10x/embed/" class="ig-if" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><div class="ig-info"><div class="ig-cap">Post — @akki__tv</div><div class="ig-met"><a href="https://www.instagram.com/p/DVVp6C1E10x/" target="_blank">View on Instagram ↗</a></div></div></div>
       <div class="igc rv d5"><div class="ig-ew"><iframe src="https://www.instagram.com/p/DVeBOFtEwBz/embed/" class="ig-if" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><div class="ig-info"><div class="ig-cap">Reel — @akki__tv</div><div class="ig-met"><a href="https://www.instagram.com/p/DVeBOFtEwBz/" target="_blank">View on Instagram ↗</a></div></div></div>
+      <div class="igc rv d6"><div class="ig-ew"><iframe src="https://www.instagram.com/p/DVlyGBMk42m/embed/" class="ig-if" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><div class="ig-info"><div class="ig-cap">Reel — @akki__tv</div><div class="ig-met"><a href="https://www.instagram.com/p/DVlyGBMk42m/" target="_blank">View on Instagram ↗</a></div></div></div>
+      <div class="igc rv"><div class="ig-ew"><iframe src="https://www.instagram.com/p/DVq7Yd7D8wK/embed/" class="ig-if" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div><div class="ig-info"><div class="ig-cap">Reel — @akki__tv</div><div class="ig-met"><a href="https://www.instagram.com/p/DVq7Yd7D8wK/" target="_blank">View on Instagram ↗</a></div></div></div>
     </div>
     <div style="text-align:center;margin-top:24px;"><a class="bl" href="https://www.instagram.com/akki__tv" target="_blank" style="display:inline-block;">View All on Instagram ↗</a></div>
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
 <section id="testimonials" class="tm-bg">
-  <div class="sw"><div class="rv" style="text-align:center;margin-bottom:44px;"><p class="sl" style="text-align:center;">Kind Words</p><h2 class="st" style="text-align:center;">What people <em>say</em></h2><div class="gr" style="margin:13px auto;"></div></div></div>
+  <div class="sw">
+    <div class="rv" style="text-align:center;margin-bottom:44px;">
+      <p class="sl" style="text-align:center;">Kind Words</p>
+      <h2 class="st" style="text-align:center;">What people <em>say</em></h2>
+      <div class="gr" style="margin:13px auto;"></div>
+    </div>
+  </div>
   <div class="tm-wrap"><div class="tm-track" id="tmTrack"></div></div>
 </section>
 
+<!-- CONNECT -->
 <section id="connect" class="cn-bg">
   <div class="sw">
-    <div style="text-align:center;margin-bottom:40px;" class="rv"><p class="sl" style="text-align:center;">Find Me Everywhere</p><h2 class="st" style="text-align:center;">Three worlds. <em>All here.</em></h2><div class="gr" style="margin:13px auto;"></div></div>
+    <div style="text-align:center;margin-bottom:40px;" class="rv">
+      <p class="sl" style="text-align:center;">Find Me Everywhere</p>
+      <h2 class="st" style="text-align:center;">Three worlds. <em>All here.</em></h2>
+      <div class="gr" style="margin:13px auto;"></div>
+    </div>
     <div class="cng">
       <a class="cnc yt rv" href="https://www.youtube.com/@akkki__tv" target="_blank"><div class="ci">▶️</div><div class="cn2">YouTube</div><div class="cv">@akkki__tv</div><div class="ct2">Films & Series</div></a>
       <a class="cnc yt rv d1" href="https://www.youtube.com/@Negai24" target="_blank"><div class="ci">🎵</div><div class="cn2">YouTube</div><div class="cv">@Negai24</div><div class="ct2">Music Covers</div></a>
@@ -756,6 +920,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
   <div class="ct-in">
     <div class="rv"><p class="sl">Collaborate</p><h2 class="st">Got a project? <em>Let's talk.</em></h2><div class="gr" style="margin:13px auto;"></div><p style="color:var(--muted);font-size:.87rem;line-height:1.85;max-width:400px;margin:0 auto;">Open for voice work, dubbing, anchoring, content creation, music collabs & psychological consulting.</p></div>
@@ -768,6 +933,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="ft-inner">
     <div class="flogo">Aakanksha</div>
@@ -791,20 +957,28 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:50px 5% 3
   </div>
 </footer>
 
+<!-- MODAL -->
 <div class="mmod" id="modal" onclick="closeModal(event)">
   <div class="mbox"><button class="mx" onclick="closeModal()">✕</button><iframe id="mif" class="mif" frameborder="0" allowfullscreen allow="autoplay;encrypted-media"></iframe></div>
 </div>
 
 <script>
 /* LOADER */
-window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('hide'),2000));
+window.addEventListener('load',()=>{
+  setTimeout(()=>{document.getElementById('loader').classList.add('hide');},1900);
+});
 
 /* SCROLL PROGRESS */
-window.addEventListener('scroll',()=>{document.getElementById('prog').style.width=(scrollY/(document.body.scrollHeight-innerHeight)*100)+'%';});
+window.addEventListener('scroll',()=>{
+  const p=(scrollY/(document.body.scrollHeight-innerHeight))*100;
+  document.getElementById('prog').style.width=p+'%';
+});
 
 /* THEME */
 const html=document.documentElement;
-document.getElementById('tog').addEventListener('click',()=>html.setAttribute('data-theme',html.getAttribute('data-theme')==='dark'?'light':'dark'));
+document.getElementById('tog').addEventListener('click',()=>{
+  html.setAttribute('data-theme',html.getAttribute('data-theme')==='dark'?'light':'dark');
+});
 
 /* MOBILE MENU */
 function openMob(){document.getElementById('mobMenu').classList.add('open');document.body.style.overflow='hidden';}
@@ -814,21 +988,21 @@ function closeMob(){document.getElementById('mobMenu').classList.remove('open');
 const c=document.getElementById('cur'),r=document.getElementById('ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;c.style.transform=`translate(${mx-5}px,${my-5}px)`;});
-(function loop(){rx+=(mx-rx-15)*.1;ry+=(my-ry-15)*.1;r.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop);})();
+(function loop(){rx+=(mx-rx-16)*.1;ry+=(my-ry-16)*.1;r.style.transform=`translate(${rx}px,${ry}px)`;requestAnimationFrame(loop);})();
 
 /* PARTICLES */
 const cv=document.getElementById('pts'),ctx=cv.getContext('2d');
 let W,H;
 const resize=()=>{W=cv.width=innerWidth;H=cv.height=innerHeight;};
 resize();addEventListener('resize',resize);
-const pcols=['74,222,128','34,197,94','22,163,74','134,239,172','212,168,67'];
-const P=Array.from({length:55},(_,i)=>({x:Math.random()*2e3,y:Math.random()*1e3,r:Math.random()*1.3+.25,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.12,a:Math.random()*Math.PI*2,col:pcols[i%pcols.length]}));
+const cols=['232,160,192','160,128,232','112,212,212'];
+const P=Array.from({length:55},(_,i)=>({x:Math.random()*2e3,y:Math.random()*1e3,r:Math.random()*1.2+.25,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.12,a:Math.random()*Math.PI*2,col:cols[i%3]}));
 (function draw(){
   ctx.clearRect(0,0,W,H);
   const dark=html.getAttribute('data-theme')==='dark';
   P.forEach(p=>{
     p.x=(p.x+p.vx+W)%W;p.y=(p.y+p.vy+H)%H;p.a+=.003;
-    const al=(.08+.1*Math.sin(p.a))*(dark?1:.3);
+    const al=(.08+.1*Math.sin(p.a))*(dark?1:.35);
     ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
     ctx.fillStyle=`rgba(${p.col},${al})`;ctx.fill();
   });
@@ -855,7 +1029,7 @@ function closeModal(e){if(!e||e.target===document.getElementById('modal')||e.tar
 /* WORK FILTER */
 function filterWork(cat,el){
   document.querySelectorAll('.wf').forEach(t=>t.classList.remove('on'));el.classList.add('on');
-  document.querySelectorAll('#workGrid .pw').forEach(card=>card.classList.toggle('pw-hidden',cat!=='all'&&!card.dataset.cat.includes(cat)));
+  document.querySelectorAll('#workGrid .pw').forEach(card=>{card.classList.toggle('pw-hidden',cat!=='all'&&!card.dataset.cat.includes(cat));});
 }
 
 /* CONTACT */
@@ -882,9 +1056,9 @@ const FILMS=[
   {id:"uLyAIz2ll0o",title:"All the Long Nights Explained",shorts:true},
 ];
 const MUSIC=[
-  {id:"",title:"Japanese Cover · @Negai24",placeholder:true},
-  {id:"",title:"Korean Cover · @Negai24",placeholder:true},
-  {id:"",title:"English Cover · @Negai24",placeholder:true},
+  {id:"",title:"Japanese Cover · @Negai24",desc:"Coming soon",placeholder:true},
+  {id:"",title:"Korean Cover · @Negai24",desc:"Coming soon",placeholder:true},
+  {id:"",title:"English Cover · @Negai24",desc:"Coming soon",placeholder:true},
 ];
 async function getTitle(id){try{const r=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`);const d=await r.json();return d.title||'';}catch{return '';}}
 let activeTab='films';
@@ -898,7 +1072,7 @@ async function renderYT(){
 }
 renderYT();
 
-/* AUTO-FETCH WORK TITLES */
+/* WORK VIDEO TITLES */
 ['AdAghrjV27w','4vEyrzF1DA4','kLCsqW_Arv8','C1WdbMpY-SU'].forEach(async id=>{
   try{const r=await fetch(`https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=${id}&format=json`);const d=await r.json();const el=document.getElementById('wt-'+id)||document.getElementById('rl-'+id);if(el&&d.title)el.textContent=d.title;}catch(e){}
 });
@@ -968,48 +1142,48 @@ renderList();
 
 /* SONG COVERS */
 const COVERS=[
-  {id:'DRU2UmSk8yR',g:'linear-gradient(135deg,#052e16,#14532d,#16a34a)'},
-  {id:'DRPBVcwgv6j',g:'linear-gradient(135deg,#0a2e1a,#1a5e3d,#15803d)'},
-  {id:'DRB_sDJEwKC',g:'linear-gradient(135deg,#022c22,#065f46,#047857)'},
-  {id:'DQPKwzNk_e8',g:'linear-gradient(135deg,#052e16,#166534,#4ade80)'},
-  {id:'DN--u0mE8Wr',g:'linear-gradient(135deg,#1a2e0a,#3d5e1a,#6ba32d)'},
-  {id:'DNTYpAwS1_Z',g:'linear-gradient(135deg,#0a2e0a,#1a5e1a,#22c55e)'},
-  {id:'DJj0rd3oRo',g:'linear-gradient(135deg,#052e16,#0d4a25,#059669)'},
-  {id:'DJTWiPFo',g:'linear-gradient(135deg,#022c22,#064e3b,#10b981)'},
-  {id:'DH3wm2pI',g:'linear-gradient(135deg,#14532d,#15803d,#86efac)'},
-  {id:'DHiVEUACa7V',g:'linear-gradient(135deg,#0f2d1a,#1a4d2d,#4ade80)'},
-  {id:'DGScCG2i2E8',g:'linear-gradient(135deg,#052e16,#166534,#16a34a)'},
-  {id:'DFmpe_2SNsf',g:'linear-gradient(135deg,#1a2e14,#2d5e24,#4ade80)'},
-  {id:'DFkdrlYimJS',g:'linear-gradient(135deg,#0a1a0a,#1a4a1a,#22c55e)'},
-  {id:'DFf6bX0ihI8',g:'linear-gradient(135deg,#052e16,#14532d,#4ade80)'},
-  {id:'DFXK0Voieqy',g:'linear-gradient(135deg,#022c22,#065f46,#34d399)'},
-  {id:'DExQtapSQch',g:'linear-gradient(135deg,#1a2e0a,#3a5e1a,#86efac)'},
-  {id:'C-qC2BzSOkd',g:'linear-gradient(135deg,#0a2e0a,#166534,#22c55e)'},
-  {id:'C90J7ZdypL9',g:'linear-gradient(135deg,#052e16,#0d4a25,#4ade80)'},
-  {id:'C9kB9aLSqBL',g:'linear-gradient(135deg,#022c22,#064e3b,#10b981)'},
-  {id:'C9aVLbEywdT',g:'linear-gradient(135deg,#0f2d1a,#1a5e3a,#34d399)'},
-  {id:'C9PlkI1y4Qq',g:'linear-gradient(135deg,#14532d,#166534,#86efac)'},
-  {id:'C9ERV-oS7yf',g:'linear-gradient(135deg,#052e16,#14532d,#22c55e)'},
-  {id:'C8q1METSGiR',g:'linear-gradient(135deg,#0a2e1a,#1a5e3d,#4ade80)'},
-  {id:'C8meQKNStSd',g:'linear-gradient(135deg,#022c22,#065f46,#6ee7b7)'},
-  {id:'C8hHLPoy162',g:'linear-gradient(135deg,#052e16,#0d4a25,#86efac)'},
-  {id:'C8f7kcjSUNJ',g:'linear-gradient(135deg,#1a2e14,#2d5e24,#4ade80)'},
-  {id:'C8cOfOgSLqw',g:'linear-gradient(135deg,#0a1a0a,#166534,#22c55e)'},
-  {id:'C8ZyL4oywKj',g:'linear-gradient(135deg,#052e16,#14532d,#16a34a)'},
-  {id:'C8Y6w3nySNa',g:'linear-gradient(135deg,#022c22,#064e3b,#4ade80)'},
-  {id:'C8W-6f_PTEe',g:'linear-gradient(135deg,#0f2d1a,#1a5e3a,#22c55e)'},
-  {id:'C8TxJfYSwAd',g:'linear-gradient(135deg,#052e16,#166534,#86efac)'},
-  {id:'C8TwT57yJW7',g:'linear-gradient(135deg,#0a2e0a,#1a5e1a,#4ade80)'},
-  {id:'C8RS12SyXbl',g:'linear-gradient(135deg,#14532d,#15803d,#22c55e)'},
-  {id:'C8Q-o7dSRg8',g:'linear-gradient(135deg,#022c22,#065f46,#6ee7b7)'},
-  {id:'C8L8cXnyPfb',g:'linear-gradient(135deg,#052e16,#0d4a25,#4ade80)'},
-  {id:'C8HG_ycyocc',g:'linear-gradient(135deg,#0a2e1a,#1a5e3d,#86efac)'},
-  {id:'C8EP3IBO1hY',g:'linear-gradient(135deg,#1a2e0a,#3d5e1a,#22c55e)'},
-  {id:'C74ESlES3zQ',g:'linear-gradient(135deg,#052e16,#14532d,#16a34a)'},
-  {id:'C7tBuGsNM3A',g:'linear-gradient(135deg,#022c22,#064e3b,#34d399)'},
-  {id:'C7rUAK7yJWy',g:'linear-gradient(135deg,#0f2d1a,#1a5e3a,#4ade80)'},
-  {id:'C7MdyaXyY4S',g:'linear-gradient(135deg,#14532d,#166534,#86efac)'},
-  {id:'C5EQN9ySs4D',g:'linear-gradient(135deg,#052e16,#0d4a25,#22c55e)'},
+  {id:'DRU2UmSk8yR',g:'linear-gradient(135deg,#1a0a2e,#3d1a5e,#c04090)'},
+  {id:'DRPBVcwgv6j',g:'linear-gradient(135deg,#0a1a2e,#1a3d5e,#2090c0)'},
+  {id:'DRB_sDJEwKC',g:'linear-gradient(135deg,#1a0a14,#5e1a3d,#c04070)'},
+  {id:'DQPKwzNk_e8',g:'linear-gradient(135deg,#0a2e1a,#1a5e3d,#20c080)'},
+  {id:'DN--u0mE8Wr',g:'linear-gradient(135deg,#2e1a0a,#5e3d1a,#c08020)'},
+  {id:'DNTYpAwS1_Z',g:'linear-gradient(135deg,#0a0a2e,#1a1a5e,#4040c0)'},
+  {id:'DJj0rd3oRo',g:'linear-gradient(135deg,#2e0a1a,#5e1a3d,#c02060)'},
+  {id:'DJTWiPFo',g:'linear-gradient(135deg,#0a2e2e,#1a5e5e,#20c0c0)'},
+  {id:'DH3wm2pI',g:'linear-gradient(135deg,#1a1a0a,#3d3d1a,#a0a020)'},
+  {id:'DHiVEUACa7V',g:'linear-gradient(135deg,#2e0a2e,#5e1a5e,#c020c0)'},
+  {id:'DGScCG2i2E8',g:'linear-gradient(135deg,#0a1a0a,#1a5e1a,#20c020)'},
+  {id:'DFmpe_2SNsf',g:'linear-gradient(135deg,#1a0a0a,#5e1a1a,#c02020)'},
+  {id:'DFkdrlYimJS',g:'linear-gradient(135deg,#0a0a1a,#1a1a5e,#2020c0)'},
+  {id:'DFf6bX0ihI8',g:'linear-gradient(135deg,#1a0a2e,#4a1a6e,#9040e0)'},
+  {id:'DFXK0Voieqy',g:'linear-gradient(135deg,#0a1a2e,#1a4a6e,#2080e0)'},
+  {id:'DExQtapSQch',g:'linear-gradient(135deg,#2e1a0a,#6e4a1a,#e08040)'},
+  {id:'C-qC2BzSOkd',g:'linear-gradient(135deg,#1a0a2e,#3d1a5e,#8840d0)'},
+  {id:'C90J7ZdypL9',g:'linear-gradient(135deg,#0a2e1a,#1a6e4a,#40d080)'},
+  {id:'C9kB9aLSqBL',g:'linear-gradient(135deg,#2e0a0a,#6e1a1a,#d04040)'},
+  {id:'C9aVLbEywdT',g:'linear-gradient(135deg,#0a2e2e,#1a5e5e,#40b0b0)'},
+  {id:'C9PlkI1y4Qq',g:'linear-gradient(135deg,#1a1a0a,#4a4a1a,#b0b040)'},
+  {id:'C9ERV-oS7yf',g:'linear-gradient(135deg,#2e0a2e,#6e1a6e,#d040d0)'},
+  {id:'C8q1METSGiR',g:'linear-gradient(135deg,#0a0a2e,#1a1a6e,#4040d0)'},
+  {id:'C8meQKNStSd',g:'linear-gradient(135deg,#1a0a14,#4e1a3a,#b04080)'},
+  {id:'C8hHLPoy162',g:'linear-gradient(135deg,#0a1a0a,#1a4e1a,#40b040)'},
+  {id:'C8f7kcjSUNJ',g:'linear-gradient(135deg,#2e1a1a,#6e4a4a,#d09090)'},
+  {id:'C8cOfOgSLqw',g:'linear-gradient(135deg,#0a2e1a,#1a6e4a,#40c080)'},
+  {id:'C8ZyL4oywKj',g:'linear-gradient(135deg,#1a0a2e,#4a1a7e,#8040e0)'},
+  {id:'C8Y6w3nySNa',g:'linear-gradient(135deg,#2e2e0a,#6e6e1a,#d0d040)'},
+  {id:'C8W-6f_PTEe',g:'linear-gradient(135deg,#0a1a2e,#1a4a7e,#40a0e0)'},
+  {id:'C8TxJfYSwAd',g:'linear-gradient(135deg,#2e0a1a,#7e1a4a,#e040a0)'},
+  {id:'C8TwT57yJW7',g:'linear-gradient(135deg,#0a2e2e,#1a7e7e,#40d0d0)'},
+  {id:'C8RS12SyXbl',g:'linear-gradient(135deg,#1a1a0a,#5e5e1a,#c0c040)'},
+  {id:'C8Q-o7dSRg8',g:'linear-gradient(135deg,#2e0a2e,#7e1a7e,#e040e0)'},
+  {id:'C8L8cXnyPfb',g:'linear-gradient(135deg,#0a0a2e,#1a1a7e,#4040e0)'},
+  {id:'C8HG_ycyocc',g:'linear-gradient(135deg,#1a0a0a,#5e1a1a,#c04040)'},
+  {id:'C8EP3IBO1hY',g:'linear-gradient(135deg,#0a2e0a,#1a7e1a,#40e040)'},
+  {id:'C74ESlES3zQ',g:'linear-gradient(135deg,#2e1a0a,#7e4a1a,#e0a040)'},
+  {id:'C7tBuGsNM3A',g:'linear-gradient(135deg,#1a0a2e,#4a1a8e,#a040e0)'},
+  {id:'C7rUAK7yJWy',g:'linear-gradient(135deg,#0a1a2e,#1a5a8e,#40a0e0)'},
+  {id:'C7MdyaXyY4S',g:'linear-gradient(135deg,#2e1a1a,#8e4a4a,#e0a0a0)'},
+  {id:'C5EQN9ySs4D',g:'linear-gradient(135deg,#0a2e1a,#1a8e5a,#40e0a0)'},
 ];
 const NOTES=['🎵','🎶','🎤','🎸','🎹','🎷','🎺','🎻','🥁','🪗'];
 const SHOW_INIT=12;let coversExpanded=false;
