@@ -24,103 +24,103 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      /* Premium Luxury Dark Theme */
-      --bg: #09090b;
-      --bg2: #111114;
-      --bg3: #18181c;
-      --card: #121216;
-      --gold: #d4af37; /* Champagne Gold */
-      --gold2: #eed2a6; /* Lighter Gold */
-      --gold-dim: rgba(212, 175, 55, 0.12);
-      --cream: #faf5eb;
-      --text: #e1e1e6;
-      --muted: #8c8c94;
-      --border: rgba(212, 175, 55, 0.15);
+      /* Premium Emerald Green Theme */
+      --bg: #040a06;
+      --bg2: #08130b;
+      --bg3: #0c1a0f;
+      --card: #0a140d;
+      --green: #10b981; /* Emerald Green */
+      --green2: #34d399; /* Lighter Green */
+      --green-dim: rgba(16, 185, 129, 0.12);
+      --cream: #f0fdf4;
+      --text: #e1e6e3;
+      --muted: #9ca3af;
+      --border: rgba(16, 185, 129, 0.15);
       --radius: 12px;
       --radius-sm: 8px;
       --ff-head: 'Playfair Display', Georgia, serif;
       --ff-body: 'DM Sans', system-ui, sans-serif;
       --ff-mono: 'DM Mono', monospace;
       --shadow: 0 10px 30px rgba(0,0,0,0.8);
-      --glow: 0 0 30px rgba(212, 175, 55, 0.08);
+      --glow: 0 0 30px rgba(16, 185, 129, 0.08);
     }
     html { scroll-behavior: smooth; }
     body { font-family: var(--ff-body); background: var(--bg); color: var(--text); line-height: 1.7; overflow-x: hidden; }
     ::-webkit-scrollbar { width: 4px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+    ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 2.5rem; height: 64px;
-      background: rgba(9,9,11,0.85); backdrop-filter: blur(20px);
+      background: rgba(4,10,6,0.85); backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border); transition: all 0.3s;
     }
-    .nav-logo { font-family: var(--ff-head); font-size: 1.3rem; color: var(--gold); font-style: italic; letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo { font-family: var(--ff-head); font-size: 1.3rem; color: var(--green); font-style: italic; letter-spacing: 0.02em; text-decoration: none; }
     .nav-links { display: flex; gap: 0.2rem; align-items: center; }
     .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.4rem 0.7rem; border-radius: 6px; transition: color 0.2s, background 0.2s; }
-    .nav-links a:hover { color: var(--gold); background: var(--gold-dim); }
-    .nav-cta { font-size: 0.78rem !important; color: var(--bg) !important; background: var(--gold) !important; padding: 0.45rem 1rem !important; font-weight: 600 !important; }
-    .nav-cta:hover { background: var(--gold2) !important; color: var(--bg) !important; }
+    .nav-links a:hover { color: var(--green); background: var(--green-dim); }
+    .nav-cta { font-size: 0.78rem !important; color: var(--bg) !important; background: var(--green) !important; padding: 0.45rem 1rem !important; font-weight: 600 !important; }
+    .nav-cta:hover { background: var(--green2) !important; color: var(--bg) !important; }
     .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; }
-    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); margin: 4px 0; transition: all 0.3s; border-radius: 2px; }
-    #mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 998; background: rgba(9,9,11,0.97); backdrop-filter: blur(20px); padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); flex-direction: column; gap: 0.5rem; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--green); margin: 4px 0; transition: all 0.3s; border-radius: 2px; }
+    #mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; z-index: 998; background: rgba(4,10,6,0.97); backdrop-filter: blur(20px); padding: 1.5rem 2rem; border-bottom: 1px solid var(--border); flex-direction: column; gap: 0.5rem; }
     #mobile-menu a { color: var(--text); text-decoration: none; font-size: 1rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); display: block; }
     #mobile-menu.open { display: flex; }
 
     section { padding: 6rem 2.5rem; max-width: 1200px; margin: 0 auto; }
-    .section-label { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
+    .section-label { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--green); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 0.6rem; }
     .section-title { font-family: var(--ff-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; line-height: 1.15; margin-bottom: 2rem; }
-    .section-title em { font-style: italic; color: var(--gold); }
-    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.3; margin: 0; }
+    .section-title em { font-style: italic; color: var(--green); }
+    .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--green), transparent); opacity: 0.3; margin: 0; }
 
     #hero { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 6rem 2rem 4rem; position: relative; overflow: hidden; max-width: none; }
-    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,175,55,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 80% 80%, rgba(212,175,55,0.04) 0%, transparent 60%); pointer-events: none; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(16,185,129,0.07) 0%, transparent 70%), radial-gradient(ellipse 50% 50% at 80% 80%, rgba(16,185,129,0.04) 0%, transparent 60%); pointer-events: none; }
     .hero-noise { position: absolute; inset: 0; opacity: 0.03; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); background-size: 256px; pointer-events: none; }
-    .hero-eyebrow { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--gold); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.2rem; animation: fadeUp 0.8s ease both; }
-    .hero-name { font-family: var(--ff-head); font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 700; font-style: italic; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 1rem; background: linear-gradient(135deg, var(--cream) 0%, var(--gold2) 50%, var(--cream) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeUp 0.8s 0.1s ease both; }
+    .hero-eyebrow { font-family: var(--ff-mono); font-size: 0.72rem; color: var(--green); letter-spacing: 0.25em; text-transform: uppercase; margin-bottom: 1.2rem; animation: fadeUp 0.8s ease both; }
+    .hero-name { font-family: var(--ff-head); font-size: clamp(3.5rem, 9vw, 7.5rem); font-weight: 700; font-style: italic; line-height: 0.95; letter-spacing: -0.02em; margin-bottom: 1rem; background: linear-gradient(135deg, var(--cream) 0%, var(--green2) 50%, var(--cream) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: fadeUp 0.8s 0.1s ease both; }
     .hero-sub { font-size: clamp(1rem, 2vw, 1.25rem); color: var(--muted); font-style: italic; margin-bottom: 2rem; animation: fadeUp 0.8s 0.2s ease both; }
     .hero-quote { font-family: var(--ff-head); font-size: clamp(0.9rem, 1.5vw, 1.1rem); color: var(--text); opacity: 0.8; max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.6; animation: fadeUp 0.8s 0.3s ease both; }
-    .hero-quote strong { color: var(--gold); }
+    .hero-quote strong { color: var(--green); }
     .hero-pills { display: flex; gap: 0.6rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; animation: fadeUp 0.8s 0.35s ease both; }
-    .hero-pill { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); border: 1px solid var(--border); padding: 0.3rem 0.8rem; border-radius: 100px; letter-spacing: 0.12em; text-transform: uppercase; }
+    .hero-pill { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--green); border: 1px solid var(--border); padding: 0.3rem 0.8rem; border-radius: 100px; letter-spacing: 0.12em; text-transform: uppercase; }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; animation: fadeUp 0.8s 0.4s ease both; }
     .btn { display: inline-flex; align-items: center; gap: 0.4rem; padding: 0.75rem 1.75rem; border-radius: 100px; font-size: 0.85rem; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.25s; letter-spacing: 0.04em; }
-    .btn-gold { background: var(--gold); color: var(--bg); }
-    .btn-gold:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,0.3); }
-    .btn-outline { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
-    .btn-outline:hover { background: var(--gold-dim); transform: translateY(-2px); }
+    .btn-green { background: var(--green); color: var(--bg); }
+    .btn-green:hover { background: var(--green2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,185,129,0.3); }
+    .btn-outline { background: transparent; color: var(--green); border: 1px solid var(--green); }
+    .btn-outline:hover { background: var(--green-dim); transform: translateY(-2px); }
     .hero-img-wrap { margin-top: 3rem; animation: fadeUp 0.8s 0.5s ease both; }
-    .hero-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); box-shadow: 0 0 0 8px var(--gold-dim), var(--shadow); }
+    .hero-img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid var(--green); box-shadow: 0 0 0 8px var(--green-dim), var(--shadow); }
     .hero-ticker { margin-top: 3rem; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 0.6rem 0; white-space: nowrap; width: 100vw; margin-left: -50vw; left: 50%; position: relative; animation: fadeUp 0.8s 0.6s ease both; }
     .ticker-inner { display: inline-block; animation: ticker 40s linear infinite; }
     .ticker-inner span { font-family: var(--ff-mono); font-size: 0.7rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; padding: 0 1.5rem; }
-    .ticker-inner .gold { color: var(--gold); }
+    .ticker-inner .green { color: var(--green); }
 
     .vid-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; cursor: pointer; position: relative; }
-    .vid-card:hover { transform: translateY(-6px); box-shadow: var(--shadow), var(--glow); border-color: var(--gold); }
+    .vid-card:hover { transform: translateY(-6px); box-shadow: var(--shadow), var(--glow); border-color: var(--green); }
     .vid-thumb { position: relative; aspect-ratio: 16/9; background: var(--bg3); overflow: hidden; }
     .vid-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .vid-card:hover .vid-thumb img { transform: scale(1.06); }
     .play-btn { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,0.4); transition: background 0.3s; }
     .vid-card:hover .play-btn { background: rgba(0,0,0,0.15); }
-    .play-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(212,175,55,0.9); display: grid; place-items: center; transition: transform 0.3s, background 0.3s; }
-    .vid-card:hover .play-icon { transform: scale(1.1); background: var(--gold); }
+    .play-icon { width: 48px; height: 48px; border-radius: 50%; background: rgba(16,185,129,0.9); display: grid; place-items: center; transition: transform 0.3s, background 0.3s; }
+    .vid-card:hover .play-icon { transform: scale(1.1); background: var(--green); }
     .play-icon svg { width: 18px; height: 18px; fill: var(--bg); margin-left: 3px; }
     .vid-info { padding: 1.2rem; }
-    .vid-category { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
+    .vid-category { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.4rem; }
     .vid-title { font-size: 0.95rem; font-weight: 600; color: var(--text); line-height: 1.4; margin-bottom: 0.3rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
     .vid-date { font-size: 0.75rem; color: var(--muted); }
     .vid-loading { display: grid; place-items: center; min-height: 200px; color: var(--muted); font-size: 0.85rem; }
-    .spinner { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); border-top-color: var(--gold); animation: spin 0.8s linear infinite; margin-bottom: 0.8rem; }
+    .spinner { width: 32px; height: 32px; border-radius: 50%; border: 2px solid var(--border); border-top-color: var(--green); animation: spin 0.8s linear infinite; margin-bottom: 0.8rem; }
 
     #about { padding-top: 7rem; }
     .about-grid { display: block; }
     .about-stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-top: 2rem; }
     .stat-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.5rem 1rem; text-align: center; transition: transform 0.3s, border-color 0.3s; }
-    .stat-card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .stat-num { font-family: var(--ff-head); font-size: 2.5rem; color: var(--gold); font-weight: 700; line-height: 1; display: block; }
+    .stat-card:hover { transform: translateY(-4px); border-color: var(--green); }
+    .stat-num { font-family: var(--ff-head); font-size: 2.5rem; color: var(--green); font-weight: 700; line-height: 1; display: block; }
     .stat-label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 0.5rem; }
     .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.8rem; }
     .tag { font-size: 0.75rem; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 100px; color: var(--text); background: var(--bg2); }
@@ -128,20 +128,20 @@
     #worlds { padding-top: 7rem; }
     .worlds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
     .world-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.5rem 1.8rem; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
-    .world-card:hover { transform: translateY(-6px); border-color: var(--gold); box-shadow: var(--shadow), var(--glow); }
+    .world-card:hover { transform: translateY(-6px); border-color: var(--green); box-shadow: var(--shadow), var(--glow); }
     .world-icon { font-size: 2.5rem; margin-bottom: 1.2rem; display: block; }
-    .world-title { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700; font-style: italic; color: var(--gold); margin-bottom: 0.4rem; }
+    .world-title { font-family: var(--ff-head); font-size: 1.5rem; font-weight: 700; font-style: italic; color: var(--green); margin-bottom: 0.4rem; }
     .world-handle { font-family: var(--ff-mono); font-size: 0.75rem; color: var(--muted); margin-bottom: 1rem; }
     .world-desc { font-size: 0.9rem; color: var(--text); opacity: 0.85; margin-bottom: 1.5rem; line-height: 1.6; }
     .world-links { display: flex; flex-direction: column; gap: 0.5rem; }
-    .world-link { font-size: 0.85rem; color: var(--gold); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s, transform 0.2s; }
+    .world-link { font-size: 0.85rem; color: var(--green); text-decoration: none; display: flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s, transform 0.2s; }
     .world-link:hover { opacity: 0.8; transform: translateX(3px); }
 
     #skills { padding-top: 7rem; max-width: none; padding-left: 0; padding-right: 0; }
     .skills-inner { max-width: 1200px; margin: 0 auto; padding: 0 2.5rem; }
     .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
     .skill-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1.8rem 1.4rem; transition: border-color 0.3s, transform 0.3s; }
-    .skill-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+    .skill-card:hover { border-color: var(--green); transform: translateY(-4px); }
     .skill-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
     .skill-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--cream); }
     .skill-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
@@ -149,40 +149,31 @@
     #work { padding-top: 7rem; }
     .filter-bar { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 2.5rem; }
     .filter-btn { font-size: 0.8rem; padding: 0.5rem 1.2rem; border: 1px solid var(--border); border-radius: 100px; background: var(--card); color: var(--muted); cursor: pointer; transition: all 0.3s; }
-    .filter-btn:hover, .filter-btn.active { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 600; box-shadow: 0 4px 15px rgba(212,175,55,0.2); }
+    .filter-btn:hover, .filter-btn.active { background: var(--green); color: var(--bg); border-color: var(--green); font-weight: 600; box-shadow: 0 4px 15px rgba(16,185,129,0.2); }
     .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
     .port-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; display: flex; flex-direction: column; position: relative; }
-    .port-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--gold); }
+    .port-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--green); }
     .port-card.hidden { display: none; }
     .port-thumb { position: relative; aspect-ratio: 16/9; background: var(--bg3); overflow: hidden; }
     .port-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .port-card:hover .port-thumb img { transform: scale(1.06); }
     .port-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: grid; place-items: center; transition: background 0.3s; }
     .port-card:hover .port-overlay { background: rgba(0,0,0,0.15); }
-    .port-play { width: 48px; height: 48px; border-radius: 50%; background: var(--gold); display: grid; place-items: center; transition: transform 0.3s; }
-    .port-card:hover .port-play { transform: scale(1.1); box-shadow: 0 4px 15px rgba(212,175,55,0.4); }
+    .port-play { width: 48px; height: 48px; border-radius: 50%; background: var(--green); display: grid; place-items: center; transition: transform 0.3s; }
+    .port-card:hover .port-play { transform: scale(1.1); box-shadow: 0 4px 15px rgba(16,185,129,0.4); }
     .port-play svg { width: 18px; height: 18px; fill: var(--bg); margin-left: 2px; }
     .port-body { padding: 1.2rem; flex: 1; display: flex; flex-direction: column; }
-    .port-platform { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.4rem; }
+    .port-platform { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.14em; margin-bottom: 0.4rem; }
     .port-title { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.4rem; line-height: 1.4; color: var(--cream); }
     .port-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; flex: 1; }
-    .port-cta { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.82rem; font-weight: 600; color: var(--gold); text-decoration: none; transition: opacity 0.2s; cursor: pointer; }
+    .port-cta { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; font-size: 0.82rem; font-weight: 600; color: var(--green); text-decoration: none; transition: opacity 0.2s; cursor: pointer; }
     .port-cta:hover { opacity: 0.7; }
-
-    /* Instagram-styled card for reels */
-    .insta-reel-thumb {
-      position: absolute; inset: 0;
-      background: linear-gradient(135deg, #405DE6 0%, #5851DB 20%, #833AB4 40%, #C13584 60%, #E1306C 80%, #FD1D1D 100%);
-      display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem;
-    }
-    .insta-reel-thumb .insta-logo { font-size: 2.2rem; }
-    .insta-reel-thumb .insta-badge { font-family: var(--ff-mono); font-size: 0.65rem; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.14em; font-weight:600; }
 
     #samples { padding-top: 7rem; }
     .samples-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; margin-top: 1.5rem; }
     .sample-folder { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem 1.5rem; text-decoration: none; color: var(--text); transition: all 0.3s; display: block; position: relative; overflow: hidden; }
-    .sample-folder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
-    .sample-folder:hover { border-color: var(--gold); transform: translateY(-4px); box-shadow: var(--glow); }
+    .sample-folder::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--green); transform: scaleX(0); transition: transform 0.3s; transform-origin: left; }
+    .sample-folder:hover { border-color: var(--green); transform: translateY(-4px); box-shadow: var(--glow); }
     .sample-folder:hover::before { transform: scaleX(1); }
     .sample-folder-icon { font-size: 2.2rem; margin-bottom: 1rem; display: block; }
     .sample-folder-name { font-weight: 600; margin-bottom: 0.4rem; color: var(--cream); font-size: 1.05rem; }
@@ -194,7 +185,7 @@
     #videos { padding-top: 7rem; }
     .vid-tabs { display: flex; gap: 0.8rem; margin-bottom: 2.5rem; }
     .vid-tab { padding: 0.6rem 1.6rem; border-radius: 100px; font-size: 0.85rem; font-weight: 500; cursor: pointer; border: 1px solid var(--border); color: var(--muted); background: var(--card); transition: all 0.3s; }
-    .vid-tab.active { background: var(--gold); color: var(--bg); border-color: var(--gold); font-weight: 700; box-shadow: 0 4px 15px rgba(212,175,55,0.2); }
+    .vid-tab.active { background: var(--green); color: var(--bg); border-color: var(--green); font-weight: 700; box-shadow: 0 4px 15px rgba(16,185,129,0.2); }
     .vid-panel { display: none; }
     .vid-panel.active { display: block; }
     #films-panel.active, #music-panel.active { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
@@ -202,63 +193,61 @@
     #reels { padding-top: 7rem; }
     .reels-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.2rem; }
     .reel-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; cursor: pointer; }
-    .reel-card:hover { transform: translateY(-6px); box-shadow: var(--shadow), var(--glow); border-color: var(--gold); }
+    .reel-card:hover { transform: translateY(-6px); box-shadow: var(--shadow), var(--glow); border-color: var(--green); }
     .reel-thumb { position: relative; aspect-ratio: 9/16; background: var(--bg3); overflow: hidden; }
     .reel-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
     .reel-card:hover .reel-thumb img { transform: scale(1.05); }
     .reel-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.4); display: grid; place-items: center; transition: background 0.3s; }
     .reel-card:hover .reel-overlay { background: rgba(0,0,0,0.2); }
-    .reel-play { width: 44px; height: 44px; border-radius: 50%; background: rgba(212,175,55,0.9); display: grid; place-items: center; transition: transform 0.3s; }
-    .reel-card:hover .reel-play { transform: scale(1.1); background: var(--gold); }
+    .reel-play { width: 44px; height: 44px; border-radius: 50%; background: rgba(16,185,129,0.9); display: grid; place-items: center; transition: transform 0.3s; }
+    .reel-card:hover .reel-play { transform: scale(1.1); background: var(--green); }
     .reel-play svg { width: 16px; height: 16px; fill: var(--bg); margin-left: 3px; }
     .reel-info { padding: 0.9rem; }
-    .reel-label { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--gold); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
+    .reel-label { font-family: var(--ff-mono); font-size: 0.65rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.3rem; }
     .reel-title { font-size: 0.85rem; font-weight: 500; line-height: 1.4; color: var(--cream); }
 
-    /* Instagram reel card for reels panel */
-    .reel-insta-thumb {
-      position: absolute; inset: 0;
-      background: linear-gradient(160deg, #405DE6 0%, #833AB4 40%, #E1306C 80%, #FD1D1D 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;
-    }
-    .reel-insta-thumb span { font-size: 2.2rem; }
-    .reel-insta-thumb small { font-family: var(--ff-mono); font-size: 0.6rem; color: rgba(255,255,255,0.9); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
-
+    /* Akki TV / Shorts Section Styling */
     #insta { padding-top: 5rem; }
     .insta-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
-    .insta-card { aspect-ratio: 1; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; position: relative; }
-    .insta-card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: var(--shadow); }
+    .insta-card { aspect-ratio: 1; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow: hidden; display: block; text-decoration: none; position: relative; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; }
+    .insta-card:hover { transform: translateY(-4px); border-color: var(--green); box-shadow: var(--shadow); }
+    .insta-card-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+    .insta-card:hover .insta-card-img { transform: scale(1.08); }
+    .insta-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 60%); }
+    .insta-card-content { position: absolute; bottom: 1rem; left: 1rem; right: 1rem; z-index: 2; }
+    .insta-card-cat { font-family: var(--ff-mono); font-size: 0.6rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 0.2rem; font-weight: 600; }
+    .insta-card-title { font-size: 0.85rem; font-weight: 600; color: var(--cream); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-height: 1.3; }
 
     #testimonials { padding-top: 7rem; }
     .testi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
     .testi-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem 1.8rem; position: relative; }
-    .testi-card::before { content: '\"'; position: absolute; top: 1rem; right: 1.5rem; font-size: 4rem; color: var(--gold-dim); font-family: var(--ff-head); line-height: 1; }
-    .testi-stars { color: var(--gold); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
+    .testi-card::before { content: '\"'; position: absolute; top: 1rem; right: 1.5rem; font-size: 4rem; color: var(--green-dim); font-family: var(--ff-head); line-height: 1; }
+    .testi-stars { color: var(--green); font-size: 0.9rem; margin-bottom: 1rem; letter-spacing: 0.1em; }
     .testi-text { font-size: 0.95rem; line-height: 1.7; font-style: italic; margin-bottom: 1.5rem; color: var(--text); opacity: 0.9; }
-    .testi-author { font-size: 0.85rem; font-weight: 600; color: var(--gold); }
+    .testi-author { font-size: 0.85rem; font-weight: 600; color: var(--green); }
     .testi-role { font-size: 0.75rem; color: var(--muted); margin-top: 0.2rem; }
 
     #connect { padding-top: 7rem; }
     .connect-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
     .social-links { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
     .social-link { display: flex; align-items: center; gap: 0.8rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; text-decoration: none; color: var(--text); font-size: 0.85rem; transition: all 0.3s; }
-    .social-link:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); box-shadow: var(--glow); }
+    .social-link:hover { border-color: var(--green); color: var(--green); transform: translateY(-2px); box-shadow: var(--glow); }
     .social-link .ico { font-size: 1.2rem; }
     .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
     .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
     .form-label { font-size: 0.82rem; color: var(--muted); font-weight: 500; }
     .form-input, .form-textarea { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.9rem 1.2rem; color: var(--text); font-family: var(--ff-body); font-size: 0.9rem; transition: border-color 0.3s, box-shadow 0.3s; outline: none; resize: none; }
-    .form-input:focus, .form-textarea:focus { border-color: var(--gold); box-shadow: 0 0 0 3px var(--gold-dim); }
+    .form-input:focus, .form-textarea:focus { border-color: var(--green); box-shadow: 0 0 0 3px var(--green-dim); }
     .form-textarea { min-height: 140px; }
-    .submit-btn { align-self: flex-start; padding: 0.85rem 2.5rem; background: var(--gold); color: var(--bg); border: none; border-radius: 100px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: var(--ff-body); }
-    .submit-btn:hover { background: var(--gold2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(212,175,55,0.3); }
+    .submit-btn { align-self: flex-start; padding: 0.85rem 2.5rem; background: var(--green); color: var(--bg); border: none; border-radius: 100px; font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.3s; font-family: var(--ff-body); }
+    .submit-btn:hover { background: var(--green2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(16,185,129,0.3); }
 
     footer { border-top: 1px solid var(--border); padding: 4rem 2.5rem; text-align: center; background: var(--bg2); margin-top: 4rem; }
-    .footer-name { font-family: var(--ff-head); font-size: 2rem; font-style: italic; color: var(--gold); margin-bottom: 0.8rem; }
+    .footer-name { font-family: var(--ff-head); font-size: 2rem; font-style: italic; color: var(--green); margin-bottom: 0.8rem; }
     .footer-tagline { font-size: 0.9rem; color: var(--muted); margin-bottom: 2.5rem; }
     .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.8rem; margin-bottom: 2.5rem; }
     .footer-link { font-size: 0.85rem; color: var(--muted); text-decoration: none; padding: 0.4rem 0.8rem; transition: color 0.2s; }
-    .footer-link:hover { color: var(--gold); }
+    .footer-link:hover { color: var(--green); }
     .footer-copy { font-size: 0.75rem; color: var(--muted); opacity: 0.7; }
 
     .modal-overlay { display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.9); place-items: center; backdrop-filter: blur(10px); }
@@ -266,11 +255,11 @@
     .modal-inner { width: 90vw; max-width: 1000px; aspect-ratio: 16/9; position: relative; }
     .modal-inner iframe { width: 100%; height: 100%; border: none; border-radius: var(--radius); box-shadow: var(--shadow); }
     .modal-close { position: absolute; top: -3rem; right: 0; color: var(--text); background: none; border: none; font-size: 2rem; cursor: pointer; padding: 0.5rem; line-height: 1; transition: color 0.2s; }
-    .modal-close:hover { color: var(--gold); }
+    .modal-close:hover { color: var(--green); }
 
     .latest-badge {
       position: absolute; top: 0.8rem; left: 0.8rem; z-index: 2;
-      background: var(--gold); color: var(--bg);
+      background: var(--green); color: var(--bg);
       font-family: var(--ff-mono); font-size: 0.65rem; font-weight: 700;
       padding: 0.3rem 0.7rem; border-radius: 100px;
       text-transform: uppercase; letter-spacing: 0.1em;
@@ -341,15 +330,15 @@
   <div>
     <p class="hero-eyebrow">🎙️ Voice Artist · Storyteller · Psychologist</p>
     <h1 class="hero-name">Aakanksha</h1>
-    <p class="hero-sub">Capturing life through sound, mind &amp; screen.</p>
-    <p class="hero-quote">"A voice that heals the silent — and brings <strong>untold stories</strong> to life."</p>
+    <p class="hero-sub">Bringing words to life through sound, mind, and screen.</p>
+    <p class="hero-quote">"I blend the art of voice acting with the science of human psychology to create deeply resonant, authentic audio experiences. I don't just speak—I connect."</p>
     <div class="hero-pills">
       <span class="hero-pill">🎤 Music · @negai24</span>
       <span class="hero-pill">🧠 Psychology · @chittavritti.echoes</span>
       <span class="hero-pill">🎬 Films · @akki__tv</span>
     </div>
     <div class="hero-btns">
-      <a href="#work" class="btn btn-gold">✦ See My Work</a>
+      <a href="#work" class="btn btn-green">✦ See My Work</a>
       <a href="https://linktr.ee/voiceactoraakanksha" target="_blank" class="btn btn-outline">All Links ↗</a>
     </div>
     <div class="hero-img-wrap">
@@ -360,14 +349,14 @@
   </div>
   <div class="hero-ticker">
     <div class="ticker-inner" id="ticker">
-      <span class="gold">Voice Actor✦</span><span>Dubbing Artist✦</span><span>Singer✦</span>
+      <span class="green">Voice Actor✦</span><span>Dubbing Artist✦</span><span>Singer✦</span>
       <span>Content Creator✦</span><span>MA Clinical Psychology✦</span><span>Art Therapy✦</span>
-      <span>Film Coordinator✦</span><span>Anchor✦</span><span class="gold">131 Projects Done So Far✦</span>
-      <span>OTT Platforms✦</span><span>BaalKatha (My Channel)✦</span><span class="gold">Emotional Content✦</span>
-      <span class="gold">Voice Actor✦</span><span>Dubbing Artist✦</span><span>Singer✦</span>
+      <span>Film Coordinator✦</span><span>Anchor✦</span><span class="green">131 Projects Done So Far✦</span>
+      <span>OTT Platforms✦</span><span>BaalKatha (My Channel)✦</span><span class="green">Emotional Content✦</span>
+      <span class="green">Voice Actor✦</span><span>Dubbing Artist✦</span><span>Singer✦</span>
       <span>Content Creator✦</span><span>MA Clinical Psychology✦</span><span>Art Therapy✦</span>
-      <span>Film Coordinator✦</span><span>Anchor✦</span><span class="gold">131 Projects Done So Far✦</span>
-      <span>OTT Platforms✦</span><span>BaalKatha (My Channel)✦</span><span class="gold">Emotional Content✦</span>
+      <span>Film Coordinator✦</span><span>Anchor✦</span><span class="green">131 Projects Done So Far✦</span>
+      <span>OTT Platforms✦</span><span>BaalKatha (My Channel)✦</span><span class="green">Emotional Content✦</span>
     </div>
   </div>
 </section>
@@ -379,13 +368,10 @@
   <div class="about-grid">
     <div>
       <p class="reveal reveal-delay-1" style="font-size:1.05rem; line-height:1.8; color:var(--text); opacity:0.85; margin-bottom:1.2rem;">
-        I'm Aakanksha. Voice artist. Dubbing professional. Singer. Film content creator. Anchor.
-        And someone who spent years studying the human mind — because every great performance starts with understanding people.
+        I'm Aakanksha. A professional voice artist, dubbing actor, singer, and content creator. I bring scripts to life by blending creative expression with a deep understanding of human behavior.
       </p>
       <p class="reveal reveal-delay-2" style="font-size:1.05rem; line-height:1.8; color:var(--text); opacity:0.85;">
-        With an MA in Clinical Psychology and training in Art Therapy, I bring depth that goes beyond the script.
-        My voice thrives in delivering emotional depth and complex feelings — whether it's an intense drama, a soothing story on my channel BaalKatha, or a vulnerable moment, I specialize in capturing raw, authentic emotion.
-        I always ask: <em style="color:var(--gold)">what does this feel like to a real person?</em>
+        With an MA in Clinical Psychology and specialized training in Art Therapy, my performances go beyond simply reading lines. I analyze the psychological depth of every character to deliver raw, authentic emotion. Whether it's an intense drama, a commercial campaign, or a soothing story on my channel BaalKatha, my goal is always to make the audience <em>feel</em>.
       </p>
       <div class="about-tags reveal reveal-delay-2">
         <span class="tag">🎓 MA Clinical Psychology</span>
@@ -495,44 +481,32 @@
   </div>
   <div class="portfolio-grid" id="portfolio-grid">
 
-    <!-- ══ LATEST INSTAGRAM REEL — DV3rbBkE8c4 (NEWEST, TOP) ══ -->
+    <!-- ══ LATEST INSTAGRAM REEL — DV3rbBkE8c4 (SEIKO COLLAB) ══ -->
     <div class="port-card" data-cat="insta">
       <div class="port-thumb">
-        <div class="latest-badge">✦ Latest</div>
-        <a href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" style="display:block;width:100%;height:100%;">
-          <div class="insta-reel-thumb">
-            <span class="insta-logo">📸</span>
-            <span class="insta-badge">Instagram Reel · @akki__tv</span>
-          </div>
-          <div class="port-overlay" style="background:rgba(0,0,0,0.2);">
+        <div class="latest-badge">✦ Latest Collab</div>
+        <a href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" style="display:block;width:100%;height:100%;position:relative;">
+          <!-- Fetch original thumbnail directly if accessible, otherwise fall back to elegant related image -->
+          <img src="https://www.instagram.com/p/DV3rbBkE8c4/media/?size=l" 
+               onerror="this.src='https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=800&auto=format&fit=crop'" 
+               alt="Seiko Brand Collaboration" 
+               style="width:100%; height:100%; object-fit:cover; position:absolute; inset:0;" />
+          <div class="port-overlay" style="background:rgba(0,0,0,0.3);">
             <div class="port-play" style="background:rgba(255,255,255,0.9);">
-              <svg viewBox="0 0 24 24" style="fill:#833AB4;"><path d="M8 5v14l11-7z"/></svg>
+              <svg viewBox="0 0 24 24" style="fill:#10b981;"><path d="M8 5v14l11-7z"/></svg>
             </div>
           </div>
         </a>
       </div>
       <div class="port-body">
-        <div class="port-platform">📸 Instagram Reel · Latest</div>
-        <div class="port-title">Latest Reel · @akki__tv</div>
-        <div class="port-desc">Fresh content — films, psychology &amp; stories that stay with you.</div>
+        <div class="port-platform">📸 Commercial Collab</div>
+        <div class="port-title">Seiko Brand Collaboration</div>
+        <div class="port-desc">Commercial content creation and voiceover for Seiko.</div>
         <a href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" class="port-cta">Watch on Instagram →</a>
       </div>
     </div>
 
-    <!-- ══ DUBBING YouTube videos ══ -->
-    <div class="port-card" data-cat="dubbing">
-      <div class="port-thumb" onclick="openModal('kLCsqW_Arv8')" style="cursor:pointer">
-        <img src="https://img.youtube.com/vi/kLCsqW_Arv8/maxresdefault.jpg" alt="Dubbing Work" loading="lazy" onerror="this.src='https://img.youtube.com/vi/kLCsqW_Arv8/hqdefault.jpg'"/>
-        <div class="port-overlay"><div class="port-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-      </div>
-      <div class="port-body">
-        <div class="port-platform">▶️ YouTube · Dubbing</div>
-        <div class="port-title">My Dubbing Portfolio</div>
-        <div class="port-desc">Professional character dubbing — emotional sync, range and depth.</div>
-        <span onclick="openModal('kLCsqW_Arv8')" class="port-cta">Watch Now →</span>
-      </div>
-    </div>
-
+    <!-- Second Video: YouTube Exact Title -->
     <div class="port-card" data-cat="dubbing">
       <div class="port-thumb" onclick="openModal('AdAghrjV27w')" style="cursor:pointer">
         <img src="https://img.youtube.com/vi/AdAghrjV27w/maxresdefault.jpg" alt="Ek duniya bina... aag ke" loading="lazy" onerror="this.src='https://img.youtube.com/vi/AdAghrjV27w/hqdefault.jpg'"/>
@@ -764,7 +738,7 @@
       <div class="port-body">
         <div class="port-platform">8️⃣ OTT Platform · Mythology</div>
         <div class="port-title">Mahabharat — Epic Mythology</div>
-        <div class="port-desc">Lending my voice to crucial characters in this mythological epic, exploring grief, complex emotions, and the consequences of a great war.</div>
+        <div class="port-desc">Lending my voice to crucial characters in this mythological epic.</div>
         <a href="https://play.eight.network/audio-stories/history-and-mythology/" target="_blank" class="port-cta">Listen ↗</a>
       </div>
     </div>
@@ -793,20 +767,6 @@
         <div class="port-title">Dad, Let Me Clean The House</div>
         <div class="port-desc">Family warmth brought to life through emotional voice sync.</div>
         <a href="https://tv.kukufm.com/show/dad-let-me-clean-the-house" target="_blank" class="port-cta">Watch ↗</a>
-      </div>
-    </div>
-
-    <!-- Psychology Podcast -->
-    <div class="port-card" data-cat="audio">
-      <div class="port-thumb">
-        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#0e1a0e 0%,#1a5c1a 100%);"></div>
-        <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;"><span style="font-size:3rem;filter:drop-shadow(0 2px 12px rgba(0,0,0,0.6));">🧠</span></div>
-      </div>
-      <div class="port-body">
-        <div class="port-platform">🧠 Psychology · Podcast</div>
-        <div class="port-title">Why You Feel Lost (Even When Life Looks Fine)</div>
-        <div class="port-desc">The science behind feeling lost even when everything looks fine.</div>
-        <a href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" target="_blank" class="port-cta">Listen on Spotify ↗</a>
       </div>
     </div>
 
@@ -923,78 +883,83 @@
   </div>
 </section>
 
-
-<!-- INSTAGRAM SECTION -->
+<!-- AKKI TV SECTION -->
 <section id="insta">
-  <p class="section-label reveal">📸 Instagram</p>
-  <h2 class="section-title reveal reveal-delay-1"><a href="https://www.instagram.com/akki__tv" target="_blank" style="color:var(--gold); text-decoration:none;">@akki__tv ↗</a></h2>
-  <p class="reveal reveal-delay-2" style="color:var(--muted); font-size:0.95rem; margin-bottom:2rem;">Films &amp; Series · Reels · Content</p>
+  <p class="section-label reveal">🎬 @akkki__tv</p>
+  <h2 class="section-title reveal reveal-delay-1"><a href="https://www.youtube.com/@akkki__tv" target="_blank" style="color:var(--green); text-decoration:none;">Akki TV ↗</a></h2>
+  <p class="reveal reveal-delay-2" style="color:var(--muted); font-size:0.95rem; margin-bottom:2rem;">Films &amp; Series · Content Creation</p>
+  
   <div class="insta-grid">
-
-    <!-- NEWEST — DV3rbBkE8c4 -->
-    <a href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" class="insta-card reveal" style="background:linear-gradient(135deg,#405DE6 0%,#833AB4 50%,#E1306C 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:0.6rem;right:0.6rem;background:var(--gold);color:var(--bg);font-family:var(--ff-mono);font-size:0.55rem;font-weight:700;padding:0.2rem 0.5rem;border-radius:100px;text-transform:uppercase;letter-spacing:0.1em;">✦ New</div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.8;">📸</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Latest Reel</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+    <!-- Populated with thumbnails fetched natively from YouTube videos -->
+    
+    <a href="https://www.youtube.com/watch?v=uLyAIz2ll0o" target="_blank" class="insta-card reveal">
+      <img src="https://img.youtube.com/vi/uLyAIz2ll0o/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/uLyAIz2ll0o/hqdefault.jpg'" class="insta-card-img" alt="Clock House Murders" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Review</div>
+        <div class="insta-card-title">Clock House Murders</div>
+      </div>
+    </a>
+    
+    <a href="https://www.youtube.com/watch?v=FYnQw5KBs6I" target="_blank" class="insta-card reveal reveal-delay-1">
+      <img src="https://img.youtube.com/vi/FYnQw5KBs6I/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/FYnQw5KBs6I/hqdefault.jpg'" class="insta-card-img" alt="Unko Sweater" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Cinema</div>
+        <div class="insta-card-title">Unko Sweater</div>
       </div>
     </a>
 
-    <a href="https://www.instagram.com/p/DWJwXlgERHw/" target="_blank" class="insta-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#0a1a2e 0%,#1a3a5c 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">🎬</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Reel</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+    <a href="https://www.youtube.com/watch?v=J5jn-vPyP3Q" target="_blank" class="insta-card reveal reveal-delay-2">
+      <img src="https://img.youtube.com/vi/J5jn-vPyP3Q/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/J5jn-vPyP3Q/hqdefault.jpg'" class="insta-card-img" alt="Chiraiya Explained" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Analysis</div>
+        <div class="insta-card-title">Chiraiya Explained</div>
       </div>
     </a>
-    <a href="https://www.instagram.com/reel/DVQ3qMqkwVN/" target="_blank" class="insta-card reveal reveal-delay-2" style="background:linear-gradient(135deg,#1a0e2e 0%,#3d1a6b 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">🎥</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Reel</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+
+    <a href="https://www.youtube.com/watch?v=sCkX4XJrxMU" target="_blank" class="insta-card reveal reveal-delay-3">
+      <img src="https://img.youtube.com/vi/sCkX4XJrxMU/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/sCkX4XJrxMU/hqdefault.jpg'" class="insta-card-img" alt="Dhurandhar 2 Review" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Review</div>
+        <div class="insta-card-title">Dhurandhar 2</div>
       </div>
     </a>
-    <a href="https://www.instagram.com/reel/DVMCyHak5Wm/" target="_blank" class="insta-card reveal reveal-delay-3" style="background:linear-gradient(135deg,#1a1a0a 0%,#3a3a1a 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">🎞️</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Reel</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+
+    <a href="https://www.youtube.com/watch?v=F7J9H3KyU7g" target="_blank" class="insta-card reveal">
+      <img src="https://img.youtube.com/vi/F7J9H3KyU7g/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/F7J9H3KyU7g/hqdefault.jpg'" class="insta-card-img" alt="Ikoku Nikki" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Anime</div>
+        <div class="insta-card-title">Ikoku Nikki Analysis</div>
       </div>
     </a>
-    <a href="https://www.instagram.com/reel/DVG8D7yE1fl/" target="_blank" class="insta-card reveal" style="background:linear-gradient(135deg,#2e0e0e 0%,#6b1a1a 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">🎬</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Reel</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+
+    <a href="https://www.youtube.com/watch?v=yA6dPbyWWu8" target="_blank" class="insta-card reveal reveal-delay-1">
+      <img src="https://img.youtube.com/vi/yA6dPbyWWu8/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/yA6dPbyWWu8/hqdefault.jpg'" class="insta-card-img" alt="ASSI Movie Review" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Review</div>
+        <div class="insta-card-title">ASSI Movie Review</div>
       </div>
     </a>
-    <a href="https://www.instagram.com/p/DVVp6C1E10x/" target="_blank" class="insta-card reveal reveal-delay-1" style="background:linear-gradient(135deg,#0a2e0a 0%,#1a5c1a 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">📸</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Post</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
+
+    <a href="https://www.youtube.com/watch?v=pNubeaJAnaU" target="_blank" class="insta-card reveal reveal-delay-2">
+      <img src="https://img.youtube.com/vi/pNubeaJAnaU/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/pNubeaJAnaU/hqdefault.jpg'" class="insta-card-img" alt="Trailer Breakdown" />
+      <div class="insta-card-overlay"></div>
+      <div class="insta-card-content">
+        <div class="insta-card-cat">Breakdown</div>
+        <div class="insta-card-title">Trailer Hidden Details</div>
       </div>
     </a>
-    <a href="https://www.instagram.com/p/DVeBOFtEwBz/" target="_blank" class="insta-card reveal reveal-delay-2" style="background:linear-gradient(135deg,#1a0e1a 0%,#4a1a4a 100%);">
-      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.8) 0%,transparent 60%);"></div>
-      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-60%);font-size:2.2rem;opacity:0.6;">✨</div>
-      <div style="position:absolute;bottom:1rem;left:1rem;right:1rem;">
-        <div style="font-family:var(--ff-mono);font-size:0.6rem;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;margin-bottom:0.2rem;">Post</div>
-        <div style="font-size:0.85rem;font-weight:600;color:var(--cream);">@akki__tv ↗</div>
-      </div>
-    </a>
-    <a href="https://www.instagram.com/akki__tv" target="_blank" class="insta-card reveal reveal-delay-3" style="border:1px dashed var(--border);background:var(--card);">
-      <div style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.5rem; transition: transform 0.3s;">
-        <div style="font-size:1.8rem;color:var(--gold);">+</div>
-        <div style="font-size:0.85rem;color:var(--gold);font-weight:600;">View All</div>
-        <div style="font-size:0.7rem;color:var(--muted);">@akki__tv</div>
+
+    <a href="https://www.youtube.com/@akkki__tv" target="_blank" class="insta-card reveal reveal-delay-3" style="border:1px dashed var(--border); background:var(--card);">
+      <div style="position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.5rem; transition:transform 0.3s;">
+        <div style="font-size:1.8rem; color:var(--green);">+</div>
+        <div style="font-size:0.85rem; color:var(--green); font-weight:600;">View All</div>
+        <div style="font-size:0.7rem; color:var(--muted);">@akkki__tv</div>
       </div>
     </a>
   </div>
@@ -1057,7 +1022,7 @@
     <div>
       <p class="section-label" style="margin-bottom:0.5rem;">Collaborate</p>
       <p class="reveal" style="font-family:var(--ff-head); font-size:1.6rem; font-style:italic; margin-bottom:1.5rem; color:var(--text);">
-        Got a project? <em style="color:var(--gold);">Let's talk.</em>
+        Got a project? <em style="color:var(--green);">Let's talk.</em>
       </p>
       <p class="reveal" style="color:var(--muted); font-size:0.9rem; margin-bottom:2rem; line-height:1.7;">
         Open for voice work, dubbing, anchoring, content creation, music collabs &amp; psychological consulting.
@@ -1084,7 +1049,7 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-name">Aakanksha</div>
-  <div class="footer-tagline">"Capturing life through sound, mind, and screen."</div>
+  <div class="footer-tagline">"Bringing words to life through sound, mind, and screen."</div>
   <div class="footer-links">
     <a href="#about" class="footer-link">About</a>
     <a href="#worlds" class="footer-link">Worlds</a>
@@ -1157,7 +1122,7 @@ function handleForm(e){
   e.preventDefault();
   const btn = e.target.querySelector('.submit-btn');
   btn.textContent = 'Sent! ✓';
-  btn.style.background = '#4caf50';
+  btn.style.background = '#10b981';
   setTimeout(() => {
     btn.textContent = 'Send Message ✦';
     btn.style.background = '';
@@ -1189,7 +1154,6 @@ const countObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 countEls.forEach(el => countObs.observe(el));
 
-// Correctly structured fallbacks with exact titles and IDs
 const FALLBACK_FILMS =[
   { id: 'uLyAIz2ll0o', title: 'This Murder Mystery Will Trap You Inside… (Clock House Murders)', cat: 'Mystery', date: 'April 2026' },
   { id: 'FYnQw5KBs6I', title: 'This Film Feels Like Someone You Lost… | Unko Sweater', cat: 'Cinema · Emotion', date: '' },
@@ -1214,7 +1178,6 @@ const FALLBACK_MUSIC =[
   { id: 'k-3id3H4sek', title: 'LOST - RM | COVER BY AK', cat: 'Cover · K-pop', date: '' },
   { id: 'REGtmGYz5ew', title: 'TOKYO - RM | COVER BY AAKANKSHA', cat: 'Cover · K-pop', date: '' },
   { id: 'qBfsBJIO8Dk', title: 'Finished Blue Box 💙 Had to sing Contrast by Tomoo 🎶', cat: 'Cover · Japanese', date: '' },
-  { id: '1ZLn-qi2S5g', title: '☔️', cat: 'Cover · Short', date: '' },
   { id: 'ynr7KEEaD-k', title: '幸せのレシピ (Shiawase no Recipe) - HIRAIDAI Cover', cat: 'Cover · Japanese', date: '' },
   { id: 'rsrmPjep_6Y', title: 'ONE OK ROCK - Stand Out Fit In COVER BY Aakanksha', cat: 'Cover · Japanese', date: '' },
   { id: 'Op3sLzlBOwY', title: 'Puppets Can’t Control You (Japanese Version) - ONE OK ROCK', cat: 'Cover · Japanese', date: '' }
@@ -1254,19 +1217,7 @@ function reelCardHTML(v, index){
     </div>`;
 }
 
-function extractVideoId(url){
-  const m = (url||'').match(/(?:v=|youtu\.be\/|\/embed\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
-  return m ? m[1] : null;
-}
-
-function formatDate(dateStr){
-  if(!dateStr) return '';
-  try{ return new Date(dateStr).toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'}); }
-  catch(e){ return ''; }
-}
-
 async function loadVideos(channelId, fallback, gridIds){
-  // We use the fallback directly to ensure a premium, instant experience with correct videos & titles
   gridIds.forEach(gridId => {
     const grid = qs('#' + gridId);
     if(!grid) return;
@@ -1274,26 +1225,24 @@ async function loadVideos(channelId, fallback, gridIds){
   });
 }
 
-// Instantiate the grids directly with the beautiful hardcoded data sets
 loadVideos('', FALLBACK_FILMS,['films-panel']);
-loadVideos('', FALLBACK_MUSIC, ['music-panel', 'covers-grid']);
+loadVideos('', FALLBACK_MUSIC,['music-panel', 'covers-grid']);
 
-// Populate the reels
 const reelsGrid = qs('#reels-grid-container');
 if(reelsGrid) {
   let reelsHtml = `
       <a href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" class="reel-card reveal" style="text-decoration:none;">
         <div class="reel-thumb">
-          <div class="latest-badge">✦ Latest</div>
-          <div class="reel-insta-thumb">
-            <span>📸</span>
-            <small>Instagram · @akki__tv</small>
-          </div>
+          <div class="latest-badge">✦ Collab</div>
+          <!-- Fetch original thumbnail directly if accessible, otherwise fall back to elegant related image -->
+          <img src="https://www.instagram.com/p/DV3rbBkE8c4/media/?size=l" 
+               onerror="this.src='https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=800&auto=format&fit=crop'" 
+               style="width:100%; height:100%; object-fit:cover;" alt="Seiko Brand Collab" />
           <div class="reel-overlay"><div class="reel-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
         </div>
         <div class="reel-info">
-          <div class="reel-label">Latest · Instagram</div>
-          <div class="reel-title">Latest Reel · @akki__tv</div>
+          <div class="reel-label">Latest</div>
+          <div class="reel-title">Seiko Brand Collaboration</div>
         </div>
       </a>
   `;
@@ -1309,9 +1258,11 @@ window.addEventListener('scroll', () => {
     if(window.scrollY >= s.offsetTop - 100) cur = s.id;
   });
   navLinks.forEach(a => {
-    a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--gold)' : '';
+    a.style.color = a.getAttribute('href') === '#'+cur ? 'var(--green)' : '';
   });
 }, { passive: true });
 </script>
 </body>
 </html>
+
+
