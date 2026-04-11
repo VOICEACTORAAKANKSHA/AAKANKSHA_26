@@ -371,7 +371,7 @@
         I'm Aakanksha. A professional voice artist, dubbing actor, singer, and content creator. I bring scripts to life by blending creative expression with a deep understanding of human behavior.
       </p>
       <p class="reveal reveal-delay-2" style="font-size:1.05rem; line-height:1.8; color:var(--text); opacity:0.85;">
-        With an MA in Clinical Psychology and specialized training in Art Therapy, my performances go beyond simply reading lines. I analyze the psychological depth of every character to deliver raw, authentic emotion. Whether it's an intense drama, a commercial campaign, or a soothing story on my channel BaalKatha, my goal is always to make the audience <em>feel</em>.
+        With an MA in Clinical Psychology and specialized training in Art Therapy, my performances go beyond simply reading lines. I analyze the psychological depth of every character to deliver raw, authentic emotion. Whether it's an intense drama, a commercial campaign, or an insightful film breakdown on my channel Akki TV, my goal is always to make the audience <em>feel</em>.
       </p>
       <div class="about-tags reveal reveal-delay-2">
         <span class="tag">🎓 MA Clinical Psychology</span>
@@ -771,6 +771,12 @@
     </div>
 
   </div><!-- /portfolio-grid -->
+
+  <div class="reveal" style="text-align:center; margin-top:4rem;">
+    <h3 style="font-family:var(--ff-head); font-size:2.2rem; font-style:italic; color:var(--green); font-weight:600; letter-spacing:0.02em;">And many more...</h3>
+    <p style="color:var(--muted); font-size:0.95rem; margin-top:0.5rem;">Explore my full body of work across various platforms.</p>
+  </div>
+
 </section>
 
 <div class="divider"></div>
@@ -893,6 +899,7 @@
     <!-- Populated with thumbnails fetched natively from YouTube videos -->
     
     <a href="https://www.youtube.com/watch?v=uLyAIz2ll0o" target="_blank" class="insta-card reveal">
+      <div class="latest-badge" style="font-size:0.55rem; top:0.6rem; left:0.6rem;">✦ Latest Video</div>
       <img src="https://img.youtube.com/vi/uLyAIz2ll0o/maxresdefault.jpg" onerror="this.src='https://img.youtube.com/vi/uLyAIz2ll0o/hqdefault.jpg'" class="insta-card-img" alt="Clock House Murders" />
       <div class="insta-card-overlay"></div>
       <div class="insta-card-content">
@@ -1183,10 +1190,12 @@ const FALLBACK_MUSIC =[
   { id: 'Op3sLzlBOwY', title: 'Puppets Can’t Control You (Japanese Version) - ONE OK ROCK', cat: 'Cover · Japanese', date: '' }
 ];
 
-function vidCardHTML(v){
+function vidCardHTML(v, index){
+  const badge = index === 0 ? `<div class="latest-badge" style="font-size:0.55rem; top:0.6rem; left:0.6rem;">✦ Latest</div>` : '';
   return `
     <div class="vid-card" onclick="openModal('${v.id}')">
       <div class="vid-thumb">
+        ${badge}
         <img src="https://img.youtube.com/vi/${v.id}/maxresdefault.jpg"
              alt="${v.title}" loading="lazy"
              onerror="this.src='https://img.youtube.com/vi/${v.id}/hqdefault.jpg'"/>
@@ -1221,7 +1230,7 @@ async function loadVideos(channelId, fallback, gridIds){
   gridIds.forEach(gridId => {
     const grid = qs('#' + gridId);
     if(!grid) return;
-    grid.innerHTML = fallback.slice(0, 12).map(v => vidCardHTML(v)).join('');
+    grid.innerHTML = fallback.slice(0, 12).map((v, i) => vidCardHTML(v, i)).join('');
   });
 }
 
