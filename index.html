@@ -3,686 +3,1532 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Aakanksha Gupta — Professional Voice Actor, IP Builder, Clinical Psychologist & Film Curator. 135 projects. New Delhi.">
 <title>Aakanksha — Voice Artist · IP Builder · Psychologist</title>
-<meta name="description" content="Aakanksha Gupta — Professional Voice Actor, IP Builder, Clinical Psychologist & Film Curator. 133 projects. New Delhi.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:      #051211;
-  --bg2:     #081c1a;
-  --bg3:     #0c2422;
-  --teal:    #0d9488;
-  --teal-l:  #14b8a6;
-  --gold:    #d4a853;
-  --text:    #e2f0ee;
-  --muted:   #6b9e99;
-  --dim:     #3d6e6a;
-  --border:  rgba(13,148,136,.18);
-  --border2: rgba(13,148,136,.08);
-  --mono:    'DM Mono',monospace;
-  --serif:   'Instrument Serif',serif;
-  --sans:    'Syne',sans-serif;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden;cursor:none;}
-a{color:inherit;text-decoration:none;}
+  /* ─── RESET & BASE ─── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* cursor */
-.c-dot{width:6px;height:6px;background:var(--teal-l);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);}
-.c-ring{width:28px;height:28px;border:1px solid rgba(13,148,136,.5);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:all .14s ease;}
+  :root {
+    --bg:        #0a0c0b;
+    --bg2:       #0f1210;
+    --surface:   #131916;
+    --surface2:  #1a2118;
+    --border:    rgba(160,200,140,.10);
+    --green:     #5a8a60;
+    --green-l:   #8fbf7a;
+    --green-xl:  #c8e6b8;
+    --cream:     #e8e2d4;
+    --muted:     #6b7b65;
+    --dimmed:    #4a5a44;
+    --white:     #f0ede6;
+    --accent:    #a3c98a;
+    --gold:      #c9a84c;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-mono:  'DM Mono', monospace;
+    --font-sans:  'Syne', system-ui, sans-serif;
+    --ease:       cubic-bezier(.22,.68,0,1.2);
+    --ease-out:   cubic-bezier(.16,1,.3,1);
+  }
 
-/* noise */
-body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:900;opacity:.2;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.05'/%3E%3C/svg%3E");}
+  html { scroll-behavior: smooth; }
 
-/* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:20px 48px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:border-color .3s,background .3s;}
-nav.stuck{border-color:var(--border);background:rgba(5,18,17,.95);}
-.nav-id{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--teal-l);}
-.nav-id span{color:var(--muted);}
-.nav-links{display:flex;gap:32px;}
-.nav-links a{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--muted);text-transform:uppercase;transition:color .2s;}
-.nav-links a:hover{color:var(--teal-l);}
-.nav-status{font-family:var(--mono);font-size:11px;color:var(--muted);display:flex;align-items:center;gap:8px;}
-.sdot{width:6px;height:6px;background:#22c55e;border-radius:50%;animation:pulse 2s ease-in-out infinite;}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.mob-btn{display:none;flex-direction:column;gap:4px;cursor:pointer;}
-.mob-btn span{width:22px;height:1px;background:var(--muted);}
+  body {
+    background: var(--bg);
+    color: var(--cream);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-/* ticker */
-.ticker{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:10px 0;background:var(--bg2);}
-.ticker-tr{display:flex;animation:tick 28s linear infinite;white-space:nowrap;}
-.ti{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);padding:0 30px;}
-.ti.a{color:var(--teal);font-weight:500;}
-@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* ─── CUSTOM CURSOR ─── */
+  #cursor {
+    position: fixed;
+    width: 10px; height: 10px;
+    background: var(--green-l);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: transform .1s, width .3s var(--ease), height .3s var(--ease), background .3s;
+    mix-blend-mode: difference;
+  }
+  #cursor-ring {
+    position: fixed;
+    width: 36px; height: 36px;
+    border: 1.5px solid rgba(143,191,122,.4);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform .18s var(--ease-out), width .35s var(--ease), height .35s var(--ease), opacity .3s;
+  }
+  body:hover #cursor { opacity: 1; }
 
-/* sections */
-section{padding:110px 48px;position:relative;}
-.inner{max-width:1080px;margin:0 auto;}
-.stag{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:12px;display:flex;align-items:center;gap:12px;}
-.stag::before{content:'';width:28px;height:1px;background:var(--teal);}
-.stag .num{color:var(--dim);}
-hr.rule{border:none;border-top:1px solid var(--border);}
-.sh{font-family:var(--serif);font-size:clamp(36px,5vw,64px);font-weight:400;line-height:1.05;margin-bottom:60px;color:var(--text);}
-.sh em{font-style:italic;color:var(--teal-l);}
+  /* ─── NOISE TEXTURE ─── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: .025;
+    pointer-events: none;
+    z-index: 1000;
+  }
 
-/* hero */
-.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 48px 80px;overflow:hidden;}
-.hero-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 50% 40% at 30% 60%,rgba(13,148,136,.07) 0%,transparent 70%),radial-gradient(ellipse 35% 35% at 75% 30%,rgba(212,168,83,.04) 0%,transparent 60%);}
-.hero-top{position:absolute;top:0;left:0;right:0;padding:100px 48px 0;display:flex;justify-content:space-between;align-items:flex-start;}
-.hero-loc{font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.12em;}
-.hero-avail{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.1em;border:1px solid var(--border);padding:6px 14px;display:flex;align-items:center;gap:8px;}
-.hi{position:relative;z-index:2;max-width:1080px;width:100%;margin:0 auto;}
-.hpre{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:28px;opacity:0;animation:up .8s ease .2s forwards;}
-.hname{font-family:var(--serif);font-size:clamp(64px,9vw,128px);font-weight:400;line-height:.93;color:var(--text);opacity:0;animation:up .9s ease .4s forwards;}
-.hname em{font-style:italic;color:var(--teal-l);}
-.hname .pd{color:var(--teal);}
-.hrow{display:flex;justify-content:space-between;align-items:flex-end;margin-top:48px;gap:40px;flex-wrap:wrap;opacity:0;animation:up .8s ease .7s forwards;}
-.hdesc{max-width:520px;font-size:15px;line-height:1.75;color:var(--muted);}
-.hdesc strong{color:var(--text);font-weight:500;}
-.hnums{display:flex;gap:40px;flex-shrink:0;}
-.hnum .n{font-family:var(--serif);font-size:42px;font-style:italic;color:var(--teal-l);line-height:1;}
-.hnum .l{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-top:4px;}
-.hscroll{position:absolute;bottom:80px;right:48px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px;opacity:0;animation:up .8s ease 1s forwards;}
-.hscroll::before{content:'';width:1px;height:48px;background:var(--dim);}
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 4px; }
 
-/* signals */
-.sigs{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0;}
-.sigs-g{display:grid;grid-template-columns:repeat(4,1fr);}
-.sig{padding:48px 36px;border-right:1px solid var(--border);transition:background .3s;}
-.sig:last-child{border-right:none;}
-.sig:hover{background:rgba(13,148,136,.04);}
-.sig-n{font-family:var(--serif);font-size:64px;font-style:italic;color:var(--teal-l);line-height:1;margin-bottom:10px;}
-.sig-l{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);}
-.sig-s{font-size:12px;color:var(--dim);margin-top:6px;}
+  /* ─── SELECTION ─── */
+  ::selection { background: var(--green); color: var(--bg); }
 
-/* ip list */
-.ip-intro{max-width:600px;font-family:var(--serif);font-size:22px;font-style:italic;color:var(--muted);line-height:1.65;margin-bottom:72px;}
-.ip-list{display:flex;flex-direction:column;}
-.ip{display:grid;grid-template-columns:60px 1fr auto;gap:32px;align-items:start;padding:40px 0;border-top:1px solid var(--border2);position:relative;}
-.ip::before{content:'';position:absolute;left:-48px;right:-48px;top:0;bottom:0;background:rgba(13,148,136,.03);opacity:0;transition:opacity .3s;}
-.ip:hover::before{opacity:1;}
-.ip-num{font-family:var(--mono);font-size:11px;color:var(--dim);padding-top:5px;}
-.ip-handle{font-family:var(--mono);font-size:11px;letter-spacing:.12em;color:var(--teal);margin-bottom:8px;}
-.ip-name{font-family:var(--serif);font-size:28px;color:var(--text);margin-bottom:12px;line-height:1.2;}
-.ip-name em{font-style:italic;color:var(--teal-l);}
-.ip-desc{font-size:13px;color:var(--muted);line-height:1.7;max-width:560px;margin-bottom:16px;}
-.ip-pts{display:flex;flex-direction:column;gap:6px;margin-bottom:20px;}
-.ipt{font-size:13px;color:var(--muted);padding-left:20px;position:relative;line-height:1.55;}
-.ipt::before{content:'—';position:absolute;left:0;color:var(--teal);}
-.ipt strong{color:var(--text);font-weight:500;}
-.ip-lks{display:flex;gap:12px;flex-wrap:wrap;}
-.ilk{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);border:1px solid var(--border);padding:6px 14px;transition:all .2s;}
-.ilk:hover{background:rgba(13,148,136,.1);border-color:var(--teal);}
-.ip-meta{text-align:right;padding-top:5px;}
-.ip-yr{font-family:var(--mono);font-size:11px;color:var(--dim);}
-.ip-status{font-family:var(--mono);font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);border:1px solid var(--border);padding:4px 10px;margin-top:8px;display:inline-block;}
+  /* ─── TYPOGRAPHY HELPERS ─── */
+  .serif { font-family: var(--font-serif); }
+  .mono  { font-family: var(--font-mono); }
+  em     { font-style: italic; font-family: var(--font-serif); color: var(--green-l); }
 
-/* exp */
-.exp-bg{background:var(--bg2);}
-.exp-list{display:flex;flex-direction:column;}
-.exp{display:grid;grid-template-columns:200px 1fr;gap:40px;padding:40px 0;border-top:1px solid var(--border2);}
-.exp-dates{font-family:var(--mono);font-size:11px;color:var(--dim);margin-bottom:8px;}
-.exp-org{font-family:var(--mono);font-size:11px;color:var(--teal);letter-spacing:.1em;}
-.exp-type{font-size:11px;color:var(--dim);margin-top:4px;}
-.exp-role{font-family:var(--serif);font-size:22px;font-style:italic;color:var(--text);margin-bottom:16px;}
-.exp-pts{display:flex;flex-direction:column;gap:8px;margin-bottom:20px;}
-.ept{font-size:13px;color:var(--muted);padding-left:20px;position:relative;line-height:1.6;}
-.ept::before{content:'—';position:absolute;left:0;color:var(--teal-l);}
-.ept strong{color:var(--text);font-weight:500;}
-.etags{display:flex;gap:8px;flex-wrap:wrap;}
-.etag{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);border:1px solid var(--border2);padding:4px 10px;}
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 500;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 40px;
+    background: linear-gradient(to bottom, rgba(10,12,11,.95) 60%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    transition: padding .4s var(--ease-out);
+  }
+  nav.scrolled { padding: 12px 40px; }
 
-/* feed */
-.feed-intro{font-size:14px;color:var(--muted);margin-bottom:40px;max-width:500px;line-height:1.7;}
-#ytLoading{font-family:var(--mono);font-size:12px;color:var(--dim);letter-spacing:.12em;padding:48px 0;}
-#ytGrid{display:none;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);margin-bottom:32px;}
-.ytc{background:var(--bg);overflow:hidden;transition:background .3s;}
-.ytc:hover{background:var(--bg2);}
-.ytc img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;opacity:.75;transition:opacity .3s,transform .4s;}
-.ytc:hover img{opacity:1;transform:scale(1.03);}
-.yt-info{padding:16px 18px 20px;}
-.yt-date{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);margin-bottom:6px;}
-.yt-title{font-family:var(--serif);font-size:15px;color:var(--text);line-height:1.4;}
-.yt-watch{font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--teal);margin-top:10px;display:inline-block;}
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    color: var(--cream);
+    letter-spacing: .02em;
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--green-l); font-style: italic; }
 
-/* ig */
-.ig-bg{background:var(--bg2);}
-#igGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border2);margin-bottom:28px;}
-.igc{background:var(--bg);aspect-ratio:1;position:relative;overflow:hidden;}
-.igc img{width:100%;height:100%;object-fit:cover;opacity:.7;transition:opacity .3s,transform .4s;}
-.igc:hover img{opacity:1;transform:scale(1.05);}
-.ig-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,18,17,.9) 0%,transparent 55%);opacity:0;transition:opacity .3s;}
-.igc:hover .ig-ov{opacity:1;}
-.ig-lbl{position:absolute;bottom:10px;left:12px;right:12px;font-family:var(--serif);font-size:13px;color:var(--text);opacity:0;transition:opacity .3s;line-height:1.3;}
-.igc:hover .ig-lbl{opacity:1;}
-.ig-vw{position:absolute;top:8px;right:10px;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.4);letter-spacing:.1em;}
+  .nav-links {
+    display: flex; gap: 28px; list-style: none;
+  }
+  .nav-links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .25s;
+  }
+  .nav-links a:hover { color: var(--green-l); }
 
-/* projects */
-.proj-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);margin-bottom:40px;}
-.pc{background:var(--bg);padding:32px 26px;transition:background .3s;display:block;}
-.pc:hover{background:var(--bg2);}
-.pc-plat{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:10px;}
-.pc-title{font-family:var(--serif);font-size:20px;color:var(--text);margin-bottom:8px;line-height:1.3;}
-.pc-desc{font-size:12px;color:var(--muted);line-height:1.65;margin-bottom:18px;}
-.pc-lk{font-family:var(--mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);border-bottom:1px solid var(--border);padding-bottom:2px;}
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--bg);
+    background: var(--green-l);
+    padding: 8px 18px;
+    border-radius: 2px;
+    text-decoration: none;
+    transition: background .25s, transform .2s var(--ease);
+  }
+  .nav-cta:hover { background: var(--accent); transform: translateY(-1px); }
 
-/* samples */
-.samp-bg{background:var(--bg2);}
-.samp-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);}
-.smp{background:var(--bg);padding:32px 26px;display:block;transition:background .3s;position:relative;}
-.smp:hover{background:var(--bg2);}
-.smp-ic{font-size:26px;margin-bottom:16px;}
-.smp h3{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:8px;}
-.smp p{font-size:12px;color:var(--muted);line-height:1.65;}
-.smp-ar{position:absolute;bottom:24px;right:22px;font-size:13px;color:var(--dim);transition:transform .25s,color .25s;}
-.smp:hover .smp-ar{transform:translate(3px,-3px);color:var(--teal);}
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100svh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 0 40px 60px;
+    position: relative;
+    overflow: hidden;
+  }
 
-/* background */
-.bgd-bg{background:var(--bg2);}
-.bgd-g{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
-.bgd-sub{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:24px;}
-.edu-i,.cert-i{padding:24px 0;border-top:1px solid var(--border2);display:flex;justify-content:space-between;align-items:flex-start;gap:24px;}
-.edu-deg{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--text);margin-bottom:4px;}
-.edu-inst{font-size:12px;color:var(--muted);}
-.edu-yr{font-family:var(--mono);font-size:10px;color:var(--dim);flex-shrink:0;}
-.badge{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--teal);border:1px solid var(--border);padding:3px 8px;flex-shrink:0;align-self:center;}
-.cert-t{font-size:13px;color:var(--text);margin-bottom:3px;}
-.cert-is{font-family:var(--mono);font-size:10px;color:var(--dim);}
-.cert-dt{font-family:var(--mono);font-size:10px;color:var(--dim);flex-shrink:0;}
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 30%, rgba(42,78,42,.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(90,138,96,.08) 0%, transparent 60%),
+      linear-gradient(175deg, #0d120e 0%, #0a0c0b 100%);
+    z-index: 0;
+  }
 
-/* contact */
-.con-sec{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
-.con-mesh{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 50% 80%,rgba(13,148,136,.07) 0%,transparent 70%);}
-.con-in{position:relative;z-index:2;max-width:1080px;margin:0 auto;width:100%;padding-bottom:20px;}
-.con-h{font-family:var(--serif);font-size:clamp(48px,7vw,96px);font-weight:400;color:var(--text);line-height:.95;margin-bottom:60px;}
-.con-h em{font-style:italic;color:var(--teal-l);}
-.con-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:32px;}
-.con-lks{display:flex;flex-direction:column;gap:16px;}
-.clk{font-family:var(--mono);font-size:13px;color:var(--muted);display:flex;align-items:center;gap:12px;transition:color .2s;}
-.clk:hover{color:var(--teal-l);}
-.clk-lab{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);min-width:80px;}
-.con-soc{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border2);max-width:480px;}
-.cs{background:var(--bg);padding:18px 20px;display:block;transition:background .2s;}
-.cs:hover{background:var(--bg2);}
-.cs-h{font-family:var(--mono);font-size:10px;color:var(--teal);letter-spacing:.1em;margin-bottom:3px;}
-.cs-l{font-size:11px;color:var(--dim);}
+  /* Floating orbs */
+  .orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+    animation: float 12s ease-in-out infinite;
+  }
+  .orb-1 { width: 600px; height: 600px; background: rgba(50,90,55,.12); top: -100px; right: -150px; animation-delay: 0s; }
+  .orb-2 { width: 300px; height: 300px; background: rgba(143,191,122,.07); bottom: 100px; left: -50px; animation-delay: -5s; }
+  @keyframes float {
+    0%,100% { transform: translate(0,0) scale(1); }
+    33% { transform: translate(20px,-30px) scale(1.05); }
+    66% { transform: translate(-15px,20px) scale(.97); }
+  }
 
-footer{padding:28px 48px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
-.fl,.fr{font-family:var(--mono);font-size:11px;color:var(--dim);}
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 20px;
+    position: relative; z-index: 2;
+    opacity: 0;
+    animation: fadeUp .8s var(--ease-out) .2s forwards;
+  }
 
-@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-.rev{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-.rev.on{opacity:1;transform:translateY(0);}
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: clamp(52px, 8vw, 110px);
+    line-height: 1.0;
+    color: var(--white);
+    position: relative; z-index: 2;
+    opacity: 0;
+    animation: fadeUp .9s var(--ease-out) .4s forwards;
+    max-width: 900px;
+  }
+  .hero-title em { color: var(--green-l); font-family: var(--font-serif); }
 
-@media(max-width:860px){
-  nav{padding:16px 24px;}
-  .nav-links,.nav-status{display:none;}
-  .mob-btn{display:flex;}
-  section{padding:80px 24px;}
-  .hero{padding:0 24px 64px;}
-  .hero-top{padding:80px 24px 0;}
-  .hscroll{display:none;}
-  .sigs-g{grid-template-columns:1fr 1fr;}
-  .sig{border-right:none;border-bottom:1px solid var(--border);}
-  .ip{grid-template-columns:1fr;gap:16px;}
-  .ip-meta{text-align:left;}
-  .exp{grid-template-columns:1fr;gap:16px;}
-  .bgd-g{grid-template-columns:1fr;gap:40px;}
-  #ytGrid{grid-template-columns:1fr 1fr;}
-  #igGrid{grid-template-columns:repeat(2,1fr);}
-  .proj-g,.samp-g{grid-template-columns:1fr;}
-  .con-soc{grid-template-columns:repeat(2,1fr);}
-  footer{padding:24px;}
-}
-.mob-ov{display:none;position:fixed;inset:0;background:rgba(5,18,17,.97);z-index:490;flex-direction:column;justify-content:center;align-items:center;gap:32px;}
-.mob-ov.open{display:flex;}
-.mob-ov a{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);transition:color .2s;}
-.mob-ov a:hover{color:var(--teal-l);}
+  .hero-sub {
+    font-family: var(--font-sans);
+    font-size: clamp(14px, 1.4vw, 17px);
+    color: var(--muted);
+    max-width: 560px;
+    margin-top: 24px;
+    line-height: 1.7;
+    position: relative; z-index: 2;
+    opacity: 0;
+    animation: fadeUp .9s var(--ease-out) .65s forwards;
+  }
+
+  .hero-stats {
+    display: flex; gap: 48px;
+    margin-top: 48px;
+    position: relative; z-index: 2;
+    opacity: 0;
+    animation: fadeUp .9s var(--ease-out) .85s forwards;
+  }
+  .hero-stat-num {
+    font-family: var(--font-serif);
+    font-size: 42px;
+    color: var(--white);
+    line-height: 1;
+  }
+  .hero-stat-num sup { font-size: 18px; color: var(--green-l); vertical-align: super; }
+  .hero-stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--dimmed);
+    margin-top: 4px;
+  }
+
+  .hero-scroll {
+    position: absolute; bottom: 28px; right: 40px;
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .15em; text-transform: uppercase;
+    color: var(--dimmed);
+    z-index: 2;
+    display: flex; align-items: center; gap: 10px;
+    opacity: 0; animation: fadeUp .8s var(--ease-out) 1.2s forwards;
+  }
+  .hero-scroll::before {
+    content: '';
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, transparent, var(--dimmed));
+    display: block;
+  }
+
+  /* ─── TICKER ─── */
+  .ticker-wrap {
+    overflow: hidden;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 0;
+    background: var(--bg2);
+  }
+  .ticker-inner {
+    display: flex; gap: 0;
+    white-space: nowrap;
+    animation: ticker 28s linear infinite;
+  }
+  .ticker-inner:hover { animation-play-state: paused; }
+  .ticker-item {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0 32px;
+  }
+  .ticker-item span { color: var(--green); margin-right: 8px; }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { padding: 100px 40px; position: relative; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::after {
+    content: '';
+    flex: 1;
+    max-width: 60px;
+    height: 1px;
+    background: var(--green);
+    opacity: .4;
+  }
+
+  .section-title {
+    font-family: var(--font-serif);
+    font-size: clamp(32px, 4.5vw, 54px);
+    line-height: 1.12;
+    color: var(--white);
+    margin-bottom: 60px;
+    max-width: 700px;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── IPs SECTION ─── */
+  #ips { background: var(--bg); }
+
+  .ip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .ip-card {
+    background: var(--surface);
+    padding: 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background .3s;
+    cursor: none;
+  }
+  .ip-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(90,138,96,.06) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity .4s;
+  }
+  .ip-card:hover { background: var(--surface2); }
+  .ip-card:hover::before { opacity: 1; }
+
+  .ip-num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .15em;
+    color: var(--dimmed);
+    margin-bottom: 20px;
+  }
+  .ip-handle {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--green);
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+  .ip-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .ip-desc {
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .ip-bullets {
+    list-style: none;
+    margin-bottom: 24px;
+  }
+  .ip-bullets li {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--dimmed);
+    padding: 5px 0 5px 14px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+  }
+  .ip-bullets li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--green);
+  }
+  .ip-links { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ip-link {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--green);
+    border: 1px solid rgba(90,138,96,.3);
+    padding: 6px 14px;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .ip-link:hover { background: var(--green); color: var(--bg); border-color: var(--green); }
+
+  .ip-badge {
+    position: absolute; top: 20px; right: 20px;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--green);
+    border: 1px solid rgba(90,138,96,.3);
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(90,138,96,.08);
+  }
+
+  /* ─── VOICE WORK ─── */
+  #voice { background: var(--bg2); }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .voice-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s var(--ease), border-color .3s;
+  }
+  .voice-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--green), transparent);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform .4s var(--ease-out);
+  }
+  .voice-card:hover { transform: translateY(-3px); border-color: rgba(90,138,96,.25); }
+  .voice-card:hover::after { transform: scaleX(1); }
+
+  .voice-client {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .15em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 6px;
+  }
+  .voice-role {
+    font-family: var(--font-serif); font-size: 20px;
+    color: var(--white); margin-bottom: 12px; line-height: 1.2;
+  }
+  .voice-desc { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 16px; }
+  .voice-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--dimmed);
+    border: 1px solid var(--border);
+    padding: 3px 9px; border-radius: 2px;
+  }
+
+  /* ─── YOUTUBE SECTION ─── */
+  #feed { background: var(--bg); }
+
+  .yt-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  .yt-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform .3s var(--ease), border-color .3s;
+    text-decoration: none;
+  }
+  .yt-card:hover { transform: translateY(-4px); border-color: rgba(90,138,96,.3); }
+
+  .yt-thumb-wrap {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+  .yt-thumb-wrap iframe {
+    width: 100%; height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .yt-play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(10,12,11,.4);
+    transition: opacity .3s;
+    pointer-events: none;
+  }
+  .yt-card:hover .yt-play-overlay { opacity: 0; }
+  .yt-play-btn {
+    width: 52px; height: 52px;
+    background: rgba(255,255,255,.9);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .yt-play-btn svg { fill: #ff0000; width: 24px; height: 24px; }
+
+  .yt-info { padding: 16px 18px; }
+  .yt-title {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--white);
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 6px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .yt-meta {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--dimmed);
+    letter-spacing: .06em;
+  }
+
+  .yt-loading {
+    grid-column: 1/-1;
+    padding: 60px;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--dimmed);
+    letter-spacing: .1em;
+  }
+
+  .yt-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 40px;
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--green-l);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(143,191,122,.3);
+    padding-bottom: 4px;
+    transition: color .25s, border-color .25s;
+  }
+  .yt-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── REEL GRID ─── */
+  #reels { background: var(--bg2); }
+
+  .reel-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+  }
+
+  .reel-item {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: transform .3s var(--ease), border-color .3s;
+    background: var(--surface);
+  }
+  .reel-item:hover { transform: scale(1.015); border-color: rgba(90,138,96,.3); }
+
+  .reel-item iframe {
+    width: 100%;
+    height: 420px;
+    border: none;
+    display: block;
+  }
+
+  .reel-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(10,12,11,.7) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .reel-caption {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    padding: 14px 16px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(240,237,230,.6);
+    pointer-events: none;
+  }
+
+  .ig-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-top: 36px;
+    font-family: var(--font-mono); font-size: 11px;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--green-l);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(143,191,122,.3);
+    padding-bottom: 4px;
+    transition: color .25s, border-color .25s;
+  }
+  .ig-cta:hover { color: var(--accent); border-color: var(--accent); }
+
+  /* ─── PROJECTS ─── */
+  #projects { background: var(--bg); }
+
+  .project-list {
+    display: flex; flex-direction: column; gap: 0;
+    border: 1px solid var(--border);
+  }
+  .project-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 22px 28px;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    transition: background .25s;
+  }
+  .project-item:last-child { border-bottom: none; }
+  .project-item:hover { background: var(--surface2); }
+  .project-item:hover .proj-arrow { transform: translateX(4px); }
+
+  .proj-meta {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 4px;
+  }
+  .proj-title {
+    font-family: var(--font-sans); font-size: 15px;
+    font-weight: 500; color: var(--white);
+  }
+  .proj-desc { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .proj-arrow {
+    font-size: 18px; color: var(--dimmed);
+    transition: transform .25s var(--ease);
+  }
+
+  .all-projects-note {
+    margin-top: 40px;
+    padding: 24px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .all-projects-note p {
+    font-family: var(--font-mono); font-size: 12px;
+    color: var(--muted); letter-spacing: .06em;
+  }
+  .all-projects-note p strong { color: var(--green-l); }
+
+  /* ─── DEMOS ─── */
+  #demos { background: var(--bg2); }
+
+  .demo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
+  .demo-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 24px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex; flex-direction: column; gap: 10px;
+    transition: transform .3s var(--ease), background .25s;
+  }
+  .demo-card:hover { transform: translateY(-3px); background: var(--surface2); }
+  .demo-icon { font-size: 22px; }
+  .demo-title {
+    font-family: var(--font-sans); font-size: 14px;
+    font-weight: 600; color: var(--white);
+  }
+  .demo-sub { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+
+  /* ─── BACKGROUND ─── */
+  #background { background: var(--bg); }
+
+  .bg-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px 80px;
+  }
+
+  .bg-block-label {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .18em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .bg-block-label::after {
+    content: ''; flex: 1; max-width: 40px;
+    height: 1px; background: rgba(90,138,96,.4);
+  }
+
+  .edu-item {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .edu-degree {
+    font-family: var(--font-serif); font-size: 20px;
+    color: var(--white); margin-bottom: 4px;
+  }
+  .edu-detail {
+    font-family: var(--font-mono); font-size: 11px;
+    color: var(--muted); letter-spacing: .06em;
+  }
+
+  .cert-item {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 16px;
+  }
+  .cert-name {
+    font-size: 13.5px; color: var(--cream);
+    line-height: 1.4; flex: 1;
+  }
+  .cert-org {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--dimmed); letter-spacing: .06em;
+    margin-top: 3px;
+  }
+  .cert-date {
+    font-family: var(--font-mono); font-size: 10px;
+    color: var(--green); letter-spacing: .08em;
+    white-space: nowrap;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact { background: var(--bg2); }
+
+  .contact-inner {
+    max-width: 860px;
+  }
+  .contact-tagline {
+    font-family: var(--font-serif);
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--white); line-height: 1.2;
+    margin-bottom: 48px;
+  }
+
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .contact-link {
+    display: flex; flex-direction: column;
+    padding: 20px 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: transform .3s var(--ease), border-color .3s;
+  }
+  .contact-link:hover { transform: translateY(-2px); border-color: rgba(90,138,96,.3); }
+  .cl-label {
+    font-family: var(--font-mono); font-size: 9px;
+    letter-spacing: .14em; text-transform: uppercase;
+    color: var(--green); margin-bottom: 6px;
+  }
+  .cl-val {
+    font-size: 13px; color: var(--white); font-weight: 500;
+  }
+
+  .social-row {
+    display: flex; flex-wrap: wrap; gap: 10px;
+  }
+  .social-pill {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    padding: 8px 16px; border-radius: 20px;
+    text-decoration: none;
+    transition: color .25s, border-color .25s, background .25s;
+  }
+  .social-pill:hover { color: var(--bg); background: var(--green-l); border-color: var(--green-l); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 16px;
+  }
+  .foot-left {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .1em; color: var(--dimmed);
+  }
+  .foot-right {
+    font-family: var(--font-mono); font-size: 10px;
+    letter-spacing: .1em; color: var(--dimmed);
+  }
+
+  /* ─── REVEAL ANIMATION ─── */
+  .reveal {
+    opacity: 0; transform: translateY(28px);
+    transition: opacity .7s var(--ease-out), transform .7s var(--ease-out);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ─── COUNTER ANIMATION ─── */
+  .count-target { display: inline-block; }
+
+  /* ─── MOBILE NAV ─── */
+  .nav-menu-btn {
+    display: none;
+    background: none; border: none;
+    color: var(--cream); cursor: pointer; font-size: 20px;
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    .nav-links { display: none; }
+    .nav-menu-btn { display: block; }
+    section { padding: 70px 20px; }
+    #hero { padding: 0 20px 50px; }
+    .hero-stats { flex-wrap: wrap; gap: 28px; }
+    .bg-grid { grid-template-columns: 1fr; gap: 40px; }
+    footer { padding: 20px; flex-direction: column; align-items: flex-start; }
+    .reel-item iframe { height: 320px; }
+  }
+
+  @media (max-width: 540px) {
+    .nav-cta { display: none; }
+    .hero-stats { gap: 20px; }
+    .hero-stat-num { font-size: 32px; }
+    .reel-grid { grid-template-columns: 1fr 1fr; }
+    .reel-item iframe { height: 260px; }
+  }
 </style>
 </head>
 <body>
-<div class="c-dot" id="cDot"></div>
-<div class="c-ring" id="cRing"></div>
 
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- NAV -->
 <nav id="nav">
-  <div class="nav-id">AK<span>.</span></div>
+  <a href="#" class="nav-logo">AK<span>.</span></a>
   <ul class="nav-links">
     <li><a href="#ips">IPs</a></li>
-    <li><a href="#voice">Voice Work</a></li>
-    <li><a href="#feed">Cine Psyche</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#feed">YouTube</a></li>
+    <li><a href="#reels">Reels</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#background">Background</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div class="nav-status"><div class="sdot"></div>Available for work</div>
-  <div class="mob-btn" onclick="toggleMob()"><span></span><span></span><span></span></div>
+  <a href="mailto:Voiceactoraakanksha24@gmail.com" class="nav-cta">✉ Work With Me</a>
 </nav>
 
-<div class="mob-ov" id="mobOv">
-  <a href="#ips" onclick="toggleMob()">IPs</a>
-  <a href="#voice" onclick="toggleMob()">Voice Work</a>
-  <a href="#feed" onclick="toggleMob()">Cine Psyche</a>
-  <a href="#projects" onclick="toggleMob()">Projects</a>
-  <a href="#background" onclick="toggleMob()">Background</a>
-  <a href="#contact" onclick="toggleMob()">Contact</a>
-  <a href="mailto:Voiceactoraakanksha24@gmail.com">✉ Work With Me</a>
-</div>
-
 <!-- HERO -->
-<section class="hero" id="hero">
-  <div class="hero-mesh"></div>
-  <div class="hero-top">
-    <div class="hero-loc">New Delhi, IN · IST</div>
-    <div class="hero-avail"><div class="sdot"></div>Open to collaborations</div>
-  </div>
-  <div class="hi">
-    <div class="hpre">Voice Artist · IP Builder · Psychologist</div>
-    <h1 class="hname">Aakanksha<br><em>Gupta</em><span class="pd">.</span></h1>
-    <div class="hrow">
-      <p class="hdesc">Building India's most thoughtful creator IPs — <strong>The Cine Psyche</strong>, <strong>Negai</strong>, <strong>Chittavritti Echoes</strong> — while delivering <strong>133 professional voice & dubbing projects</strong> across Hindi, English, and Japanese. Research-deep, psychologically-rooted, emotionally precise.</p>
-      <div class="hnums">
-        <div class="hnum"><div class="n" data-count="133">0</div><div class="l">Projects</div></div>
-        <div class="hnum"><div class="n" data-count="5">0</div><div class="l">IPs Built</div></div>
-        <div class="hnum"><div class="n" data-count="4">0</div><div class="l">Languages</div></div>
-      </div>
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <p class="hero-eyebrow">New Delhi, IN · Available for work</p>
+
+  <h1 class="hero-title">
+    Aakanksha<br><em>Gupta.</em>
+  </h1>
+
+  <p class="hero-sub">
+    Building India's most thoughtful creator IPs — <strong style="color:var(--green-l)">The Cine Psyche, Negai, Chittavritti Echoes</strong> — while delivering 135 professional voice & dubbing projects across Hindi, English, and Japanese. Research-deep. Psychologically-rooted. Emotionally precise.
+  </p>
+
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-num"><span class="count-target" data-target="135">0</span><sup>+</sup></div>
+      <div class="hero-stat-label">Projects</div>
+    </div>
+    <div>
+      <div class="hero-stat-num"><span class="count-target" data-target="5">0</span></div>
+      <div class="hero-stat-label">IPs Built</div>
+    </div>
+    <div>
+      <div class="hero-stat-num"><span class="count-target" data-target="3">0</span></div>
+      <div class="hero-stat-label">Languages</div>
     </div>
   </div>
-  <div class="hscroll">Scroll</div>
+
+  <div class="hero-scroll">Scroll</div>
 </section>
 
 <!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-tr">
-    <span class="ti a">The Cine Psyche</span><span class="ti">✦</span><span class="ti">Kuku FM</span><span class="ti">✦</span><span class="ti a">Negai</span><span class="ti">✦</span><span class="ti">Eight Network</span><span class="ti">✦</span><span class="ti a">Chittavritti Echoes</span><span class="ti">✦</span><span class="ti">StoryTV Asia</span><span class="ti">✦</span><span class="ti a">BaalKatha</span><span class="ti">✦</span><span class="ti">Wandering Mind</span><span class="ti">✦</span><span class="ti a">Kavya Sangam</span><span class="ti">✦</span><span class="ti">133 Projects</span><span class="ti">✦</span><span class="ti">Hindi · English · Japanese · Korean</span><span class="ti">✦</span>
-    <span class="ti a">The Cine Psyche</span><span class="ti">✦</span><span class="ti">Kuku FM</span><span class="ti">✦</span><span class="ti a">Negai</span><span class="ti">✦</span><span class="ti">Eight Network</span><span class="ti">✦</span><span class="ti a">Chittavritti Echoes</span><span class="ti">✦</span><span class="ti">StoryTV Asia</span><span class="ti">✦</span><span class="ti a">BaalKatha</span><span class="ti">✦</span><span class="ti">Wandering Mind</span><span class="ti">✦</span><span class="ti a">Kavya Sangam</span><span class="ti">✦</span><span class="ti">133 Projects</span><span class="ti">✦</span><span class="ti">Hindi · English · Japanese · Korean</span><span class="ti">✦</span>
+<div class="ticker-wrap">
+  <div class="ticker-inner" id="tickerInner">
+    <!-- doubled for infinite scroll -->
+    <span class="ticker-item"><span>✦</span>The Cine Psyche</span>
+    <span class="ticker-item"><span>✦</span>Kuku FM</span>
+    <span class="ticker-item"><span>✦</span>Negai</span>
+    <span class="ticker-item"><span>✦</span>Eight Network</span>
+    <span class="ticker-item"><span>✦</span>Chittavritti Echoes</span>
+    <span class="ticker-item"><span>✦</span>StoryTV Asia</span>
+    <span class="ticker-item"><span>✦</span>BaalKatha</span>
+    <span class="ticker-item"><span>✦</span>135 Projects</span>
+    <span class="ticker-item"><span>✦</span>Hindi · English · Japanese · Korean</span>
+    <span class="ticker-item"><span>✦</span>The Cine Psyche</span>
+    <span class="ticker-item"><span>✦</span>Kuku FM</span>
+    <span class="ticker-item"><span>✦</span>Negai</span>
+    <span class="ticker-item"><span>✦</span>Eight Network</span>
+    <span class="ticker-item"><span>✦</span>Chittavritti Echoes</span>
+    <span class="ticker-item"><span>✦</span>StoryTV Asia</span>
+    <span class="ticker-item"><span>✦</span>BaalKatha</span>
+    <span class="ticker-item"><span>✦</span>135 Projects</span>
+    <span class="ticker-item"><span>✦</span>Hindi · English · Japanese · Korean</span>
   </div>
 </div>
-<hr class="rule">
-
-<!-- SIGNALS -->
-<section class="sigs">
-  <div class="sigs-g rev">
-    <div class="sig"><div class="sig-n" data-count="133">0</div><div class="sig-l">Voice Projects</div><div class="sig-s">Hindi, English & Japanese</div></div>
-    <div class="sig"><div class="sig-n" data-count="5">0</div><div class="sig-l">IPs Built from Scratch</div><div class="sig-s">Owned end-to-end</div></div>
-    <div class="sig"><div class="sig-n">MA</div><div class="sig-l">Clinical Psychology</div><div class="sig-s">Specialisation: Clinical</div></div>
-    <div class="sig"><div class="sig-n" data-count="42">0</div><div class="sig-l">Music Covers</div><div class="sig-s">4 languages, all platforms</div></div>
-  </div>
-</section>
-<hr class="rule">
 
 <!-- IPs -->
 <section id="ips">
-  <div class="inner">
-    <div class="stag rev"><span class="num">01 —</span> IPs Built & Managed</div>
-    <h2 class="sh rev">Built across <em>systems.</em></h2>
-    <p class="ip-intro rev">5 creator IPs — built from zero, owned completely, each with a distinct audience, identity, and platform presence.</p>
-    <div class="ip-list">
+  <div class="section-label">01 — IPs Built & Managed</div>
+  <h2 class="section-title reveal">Built across <em>systems.</em></h2>
 
-      <div class="ip rev">
-        <div class="ip-num">01</div>
-        <div>
-          <div class="ip-handle">@thecinepsyche</div>
-          <div class="ip-name">The Cine <em>Psyche</em></div>
-          <p class="ip-desc">Asian cinema decoded through the lens of psychology. A curatorial space for the thoughtful viewer — Indian indie, Japanese, Nepali, Chinese, and beyond. No loud reviews. No paid hype. Just genuine emotion and quiet observation.</p>
-          <div class="ip-pts">
-            <div class="ipt">Built from scratch in <strong>January 2026</strong> — 30+ reels, 6.2K+ monthly views</div>
-            <div class="ipt">Cinematic poster compositing — <strong>original thumbnail format</strong> developed in-house</div>
-            <div class="ipt">Top reel: <strong>Chiraiya — 3,231 views</strong> on a 34-follower account (near-viral ratio)</div>
-            <div class="ipt">Covers Hindi, Japanese, Nepali, Chinese, Korean cinema — cross-posted to <strong>YouTube Shorts</strong></div>
-          </div>
-          <div class="ip-lks">
-            <a href="https://www.instagram.com/thecinepsyche" target="_blank" class="ilk">Instagram ↗</a>
-            <a href="https://www.youtube.com/@thecinepsyche" target="_blank" class="ilk">YouTube ↗</a>
-          </div>
-        </div>
-        <div class="ip-meta"><div class="ip-yr">Jan 2026 —<br>Present</div><div class="ip-status">Active</div></div>
+  <div class="ip-grid">
+    <div class="ip-card reveal">
+      <div class="ip-badge">Active</div>
+      <div class="ip-num">01</div>
+      <div class="ip-handle">@thecinepsyche</div>
+      <h3 class="ip-name">The Cine <em>Psyche</em></h3>
+      <p class="ip-desc">Asian cinema decoded through psychology. Indian indie, Japanese, Nepali, Chinese, Korean — no loud reviews, no paid hype. Just genuine emotion and quiet observation.</p>
+      <ul class="ip-bullets">
+        <li>Built from scratch in January 2026 — 30+ reels, 6.2K+ monthly views</li>
+        <li>Original cinematic thumbnail format developed in-house</li>
+        <li>Top reel: Chiraiya — 3,231 views on a 34-follower account</li>
+        <li>Cross-posted to YouTube Shorts</li>
+      </ul>
+      <div class="ip-links">
+        <a href="https://www.instagram.com/thecinepsyche" class="ip-link" target="_blank">Instagram ↗</a>
+        <a href="https://www.youtube.com/@thecinepsyche" class="ip-link" target="_blank">YouTube ↗</a>
       </div>
+    </div>
 
-      <div class="ip rev">
-        <div class="ip-num">02</div>
-        <div>
-          <div class="ip-handle">@negai24</div>
-          <div class="ip-name"><em>Negai</em></div>
-          <p class="ip-desc">Music cover identity — "negai" meaning wish in Japanese. Soft, intimate vocals across Japanese, Korean, English, and Hindi. Influenced by J-pop, anison, and indie folk. 42+ covers across Instagram, YouTube, and Spotify.</p>
-          <div class="ip-pts">
-            <div class="ipt">Built multilingual cover catalogue across <strong>4 languages</strong> from scratch</div>
-            <div class="ipt">Active on <strong>Spotify Podcast</strong>, YouTube & Instagram simultaneously</div>
-            <div class="ipt">Dedicated storytelling sub-channel: <strong>Negai Tales</strong></div>
-            <div class="ipt">Original vocal processing pipeline — targeting noa-inspired J-pop / anison sound</div>
-          </div>
-          <div class="ip-lks">
-            <a href="https://www.instagram.com/negai24" target="_blank" class="ilk">Instagram ↗</a>
-            <a href="https://www.youtube.com/@negai_24" target="_blank" class="ilk">YouTube ↗</a>
-            <a href="https://open.spotify.com/show/3fC3s6vDpyFDSsjfeuarNy" target="_blank" class="ilk">Spotify ↗</a>
-            <a href="https://www.youtube.com/@Negai_Tales" target="_blank" class="ilk">Negai Tales ↗</a>
-          </div>
-        </div>
-        <div class="ip-meta"><div class="ip-yr">2024 —<br>Present</div><div class="ip-status">Active</div></div>
+    <div class="ip-card reveal">
+      <div class="ip-badge">Active</div>
+      <div class="ip-num">02</div>
+      <div class="ip-handle">@negai24</div>
+      <h3 class="ip-name"><em>Negai</em></h3>
+      <p class="ip-desc">Music cover identity — "negai" meaning wish in Japanese. Soft, intimate vocals across J-pop, anison, indie folk. 42+ covers across Instagram, YouTube, and Spotify.</p>
+      <ul class="ip-bullets">
+        <li>Multilingual cover catalogue across 4 languages</li>
+        <li>Active on Spotify Podcast, YouTube & Instagram</li>
+        <li>Dedicated sub-channel: Negai Tales</li>
+        <li>noa-inspired J-pop / anison vocal pipeline</li>
+      </ul>
+      <div class="ip-links">
+        <a href="https://www.instagram.com/negai24" class="ip-link" target="_blank">Instagram ↗</a>
+        <a href="https://www.youtube.com/@negai_24" class="ip-link" target="_blank">YouTube ↗</a>
+        <a href="https://open.spotify.com/show/3fC3s6vDpyFDSsjfeuarNy" class="ip-link" target="_blank">Spotify ↗</a>
       </div>
+    </div>
 
-      <div class="ip rev">
-        <div class="ip-num">03</div>
-        <div>
-          <div class="ip-handle">@chittavritti.echoes</div>
-          <div class="ip-name">Chittavritti <em>Echoes</em></div>
-          <p class="ip-desc">Psychology meets everyday life. A podcast and content space exploring the mind with clinical grounding, warmth, and genuine human connection — powered by an MA in Clinical Psychology and multiple certifications.</p>
-          <div class="ip-pts">
-            <div class="ipt">Psychology podcast — active on <strong>Spotify, YouTube & Instagram</strong></div>
-            <div class="ipt">Bridges academic psychology with lived experience — clinical depth, accessible voice</div>
-            <div class="ipt">Unique angle: <strong>Certified Inner Child Healing Practitioner + Art Therapy background</strong></div>
-          </div>
-          <div class="ip-lks">
-            <a href="https://www.instagram.com/chittavritti.echoes" target="_blank" class="ilk">Instagram ↗</a>
-            <a href="https://www.youtube.com/@chitta_vritti" target="_blank" class="ilk">YouTube ↗</a>
-            <a href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" target="_blank" class="ilk">Spotify ↗</a>
-          </div>
-        </div>
-        <div class="ip-meta"><div class="ip-yr">2024 —<br>Present</div><div class="ip-status">Active</div></div>
+    <div class="ip-card reveal">
+      <div class="ip-badge">Active</div>
+      <div class="ip-num">03</div>
+      <div class="ip-handle">@chittavritti.echoes</div>
+      <h3 class="ip-name">Chittavritti <em>Echoes</em></h3>
+      <p class="ip-desc">Psychology meets everyday life. A podcast and content space exploring the mind — clinical grounding, warmth, and genuine human connection.</p>
+      <ul class="ip-bullets">
+        <li>Active on Spotify, YouTube & Instagram</li>
+        <li>Bridges academic psychology with lived experience</li>
+        <li>Certified Inner Child Healing Practitioner + Art Therapy background</li>
+      </ul>
+      <div class="ip-links">
+        <a href="https://www.instagram.com/chittavritti.echoes" class="ip-link" target="_blank">Instagram ↗</a>
+        <a href="https://www.youtube.com/@chitta_vritti" class="ip-link" target="_blank">YouTube ↗</a>
+        <a href="https://open.spotify.com/episode/0lJyid2LgClOZ8tUk0dZHL" class="ip-link" target="_blank">Spotify ↗</a>
       </div>
+    </div>
 
-      <div class="ip rev">
-        <div class="ip-num">04</div>
-        <div>
-          <div class="ip-handle">@baalkatha_byaakanksha</div>
-          <div class="ip-name">BaalKatha</div>
-          <p class="ip-desc">Children's audio storytelling — immersive, warm, imaginative stories for young listeners. Mythology, folk tales, and original narratives in Hindi, entirely voice-acted by Aakanksha.</p>
-          <div class="ip-pts">
-            <div class="ipt">Original children's audio storytelling — <strong>voice acted entirely in-house</strong></div>
-            <div class="ipt">Mythology, folk tales, and original stories across genres</div>
-          </div>
-          <div class="ip-lks">
-            <a href="https://youtube.com/@baalkatha_byaakanksha" target="_blank" class="ilk">YouTube ↗</a>
-          </div>
-        </div>
-        <div class="ip-meta"><div class="ip-yr">2024 —<br>Present</div><div class="ip-status">Active</div></div>
+    <div class="ip-card reveal">
+      <div class="ip-badge">Active</div>
+      <div class="ip-num">04</div>
+      <div class="ip-handle">@baalkatha_byaakanksha</div>
+      <h3 class="ip-name">Baal<em>Katha</em></h3>
+      <p class="ip-desc">Children's audio storytelling — immersive, warm, imaginative stories for young listeners. Mythology, folk tales, original narratives, entirely voice-acted in Hindi.</p>
+      <ul class="ip-bullets">
+        <li>Original children's audio — voiced entirely in-house</li>
+        <li>Mythology, folk tales, and original stories</li>
+      </ul>
+      <div class="ip-links">
+        <a href="https://youtube.com/@baalkatha_byaakanksha" class="ip-link" target="_blank">YouTube ↗</a>
       </div>
+    </div>
 
-      <div class="ip rev">
-        <div class="ip-num">05</div>
-        <div>
-          <div class="ip-handle">@kavya_sangam</div>
-          <div class="ip-name">Kavya <em>Sangam</em></div>
-          <p class="ip-desc">Hindi literature, poetry, and storytelling — celebrating the emotional depth of the Hindi language through intimate, voice-led performances.</p>
-          <div class="ip-pts">
-            <div class="ipt">Poetry recitation, literary exploration — <strong>Hindi language content</strong></div>
-            <div class="ipt">Voice-forward format — each piece performed with full emotional range</div>
-          </div>
-          <div class="ip-lks">
-            <a href="https://youtube.com/@kavya_sangam" target="_blank" class="ilk">YouTube ↗</a>
-          </div>
-        </div>
-        <div class="ip-meta"><div class="ip-yr">2024 —<br>Present</div><div class="ip-status">Active</div></div>
+    <div class="ip-card reveal">
+      <div class="ip-badge">Active</div>
+      <div class="ip-num">05</div>
+      <div class="ip-handle">@kavya_sangam</div>
+      <h3 class="ip-name">Kavya <em>Sangam</em></h3>
+      <p class="ip-desc">Hindi literature, poetry, and storytelling — celebrating the emotional depth of the Hindi language through intimate, voice-led performances.</p>
+      <ul class="ip-bullets">
+        <li>Poetry recitation and literary exploration</li>
+        <li>Voice-forward — each piece performed with full emotional range</li>
+      </ul>
+      <div class="ip-links">
+        <a href="https://youtube.com/@kavya_sangam" class="ip-link" target="_blank">YouTube ↗</a>
       </div>
-
     </div>
   </div>
 </section>
-<hr class="rule">
 
 <!-- VOICE WORK -->
-<section class="exp-bg" id="voice">
-  <div class="inner">
-    <div class="stag rev"><span class="num">02 —</span> Professional Voice Work</div>
-    <h2 class="sh rev">133 projects. <em>Counting.</em></h2>
-    <div class="exp-list">
-      <div class="exp rev">
-        <div><div class="exp-dates">2024 — Present</div><div class="exp-org">Kuku FM</div><div class="exp-type">Audio Drama · Thriller</div></div>
-        <div>
-          <div class="exp-role">Lead Voice — Audio Drama Series</div>
-          <div class="exp-pts">
-            <div class="ept">Voiced lead characters — <strong>Doc VS 190 Min, Dark Vow: Jungle Ki Pukar, Panic Room, Sleeper Cell Ke Yoddha</strong></div>
-            <div class="ept">Delivered <strong>CEO of Casanova</strong> and <strong>Billion Rupee Bride</strong> — romance and corporate drama</div>
-            <div class="ept">Character-driven performances with psychological depth and full emotional range</div>
-          </div>
-          <div class="etags"><span class="etag">Hindi</span><span class="etag">Drama</span><span class="etag">Thriller</span><span class="etag">Romance</span></div>
-        </div>
+<section id="voice">
+  <div class="section-label">02 — Professional Voice Work</div>
+  <h2 class="section-title reveal">135 projects. <em>Counting.</em></h2>
+
+  <div class="voice-grid">
+    <div class="voice-card reveal">
+      <div class="voice-client">Kuku FM · 2024–Present</div>
+      <h3 class="voice-role">Audio Drama · Thriller</h3>
+      <p class="voice-desc">Lead voice — Doc VS 190 Min, Dark Vow: Jungle Ki Pukar, Panic Room, Sleeper Cell Ke Yoddha. CEO of Casanova and Billion Rupee Bride. Character-driven performances with psychological depth.</p>
+      <div class="voice-tags">
+        <span class="tag">Hindi</span><span class="tag">Drama</span><span class="tag">Thriller</span><span class="tag">Romance</span>
       </div>
-      <div class="exp rev">
-        <div><div class="exp-dates">2024 — Present</div><div class="exp-org">StoryTV Asia</div><div class="exp-type">Short Drama · Dubbing</div></div>
-        <div>
-          <div class="exp-role">Dubbing Artist — Short Drama Platform</div>
-          <div class="exp-pts">
-            <div class="ept">Lip-sync dubbing for India's leading short drama OTT platform</div>
-            <div class="ept">Completed <strong>Race Against Time</strong> and multiple series — sync-perfect, emotionally authentic</div>
-          </div>
-          <div class="etags"><span class="etag">Dubbing</span><span class="etag">Hindi</span><span class="etag">OTT</span></div>
-        </div>
+    </div>
+
+    <div class="voice-card reveal">
+      <div class="voice-client">StoryTV Asia · 2024–Present</div>
+      <h3 class="voice-role">Short Drama · Dubbing</h3>
+      <p class="voice-desc">Lip-sync dubbing for India's leading short drama OTT platform. Race Against Time and multiple series — sync-perfect, emotionally authentic delivery.</p>
+      <div class="voice-tags">
+        <span class="tag">Dubbing</span><span class="tag">Hindi</span><span class="tag">OTT</span>
       </div>
-      <div class="exp rev">
-        <div><div class="exp-dates">2024 — Present</div><div class="exp-org">Eight Network</div><div class="exp-type">Dubbing · Multi-format</div></div>
-        <div>
-          <div class="exp-role">Voice Artist & Dubbing Professional</div>
-          <div class="exp-pts">
-            <div class="ept">Multi-format voice work across genres and tones</div>
-            <div class="ept">Hindi, English, and Japanese dubbing across the Eight Network ecosystem</div>
-          </div>
-          <div class="etags"><span class="etag">Hindi</span><span class="etag">English</span><span class="etag">Japanese</span></div>
-        </div>
+    </div>
+
+    <div class="voice-card reveal">
+      <div class="voice-client">Eight Network · 2024–Present</div>
+      <h3 class="voice-role">Multi-format Voice</h3>
+      <p class="voice-desc">Multi-format voice work across genres and tones. Hindi, English, and Japanese dubbing across the Eight Network ecosystem.</p>
+      <div class="voice-tags">
+        <span class="tag">Hindi</span><span class="tag">English</span><span class="tag">Japanese</span>
       </div>
-      <div class="exp rev">
-        <div><div class="exp-dates">2024 — Present</div><div class="exp-org">Kuku FM TV · YouTube</div><div class="exp-type">Dubbing · Narration</div></div>
-        <div>
-          <div class="exp-role">Voice — Dubbing & Narration Series</div>
-          <div class="exp-pts">
-            <div class="ept">Dubbed <strong>Dad, Let Me Clean The House</strong> and the full एक दुनिया बिना series (6 episodes)</div>
-            <div class="ept">Versatile delivery across children's content, drama, and creative narration</div>
-          </div>
-          <div class="etags"><span class="etag">Hindi</span><span class="etag">Narration</span><span class="etag">Children</span><span class="etag">Drama</span></div>
-        </div>
+    </div>
+
+    <div class="voice-card reveal">
+      <div class="voice-client">Kuku FM TV · YouTube</div>
+      <h3 class="voice-role">Dubbing · Narration</h3>
+      <p class="voice-desc">Dad, Let Me Clean The House and the full एक दुनिया बिना series (6 episodes). Versatile delivery across children's content, drama, and narration.</p>
+      <div class="voice-tags">
+        <span class="tag">Hindi</span><span class="tag">Narration</span><span class="tag">Children</span>
       </div>
-      <div class="exp rev">
-        <div><div class="exp-dates">Ongoing</div><div class="exp-org">Independent</div><div class="exp-type">E-Learning · IVR · Jingles</div></div>
-        <div>
-          <div class="exp-role">Freelance Voice — Multi-format</div>
-          <div class="exp-pts">
-            <div class="ept">E-learning, IVR recordings, jingle vocals, commercial voiceovers</div>
-            <div class="ept">Storytelling, explainer videos, brand narration across formats</div>
-          </div>
-          <div class="etags"><span class="etag">E-Learning</span><span class="etag">IVR</span><span class="etag">Jingles</span><span class="etag">Commercial</span></div>
-        </div>
+    </div>
+
+    <div class="voice-card reveal">
+      <div class="voice-client">Independent · Ongoing</div>
+      <h3 class="voice-role">Freelance Multi-format</h3>
+      <p class="voice-desc">E-learning, IVR recordings, jingle vocals, commercial voiceovers, explainer videos, brand narration across formats and industries.</p>
+      <div class="voice-tags">
+        <span class="tag">E-Learning</span><span class="tag">IVR</span><span class="tag">Jingles</span><span class="tag">Commercial</span>
       </div>
     </div>
   </div>
 </section>
-<hr class="rule">
 
-<!-- LIVE FEED -->
+<!-- YOUTUBE FEED -->
 <section id="feed">
-  <div class="inner">
-    <div class="stag rev"><span class="num">03 —</span> The Cine Psyche · YouTube</div>
-    <h2 class="sh rev">Latest from <em>YouTube.</em></h2>
-    <p class="feed-intro rev">Live feed — auto-updates every time a new video goes up.</p>
-    <div id="ytLoading">Loading latest videos...</div>
-    <div id="ytGrid"></div>
-    <div id="ytError" style="display:none;padding:32px 0;"><a href="https://www.youtube.com/@thecinepsyche" target="_blank" class="ilk">Watch on YouTube ↗</a></div>
-  </div>
-</section>
-<hr class="rule">
+  <div class="section-label">03 — The Cine Psyche · YouTube</div>
+  <h2 class="section-title reveal">Latest from <em>YouTube.</em></h2>
 
-<!-- IG GRID -->
-<section class="ig-bg" id="instagram">
-  <div class="inner">
-    <div class="stag rev"><span class="num">03b —</span> Instagram · @thecinepsyche</div>
-    <h2 class="sh rev">The <em>reel grid.</em></h2>
-    <div id="igGrid"></div>
-    <div style="text-align:center;padding-top:24px;" class="rev"><a href="https://www.instagram.com/thecinepsyche" target="_blank" class="ilk">View All on Instagram ↗</a></div>
+  <div class="yt-grid" id="ytGrid">
+    <!-- Embedded YouTube videos — latest from @thecinepsyche -->
+    <!-- Using known video IDs from the channel -->
+    <div class="yt-card reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <div class="yt-thumb-wrap">
+        <iframe src="https://www.youtube.com/embed/videoseries?list=UUthecinepsyche&si=&controls=1&rel=0&modestbranding=1" title="Latest from thecinepsyche" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">Latest Videos · @thecinepsyche</div>
+        <div class="yt-meta">Auto-updating playlist</div>
+      </div>
+    </div>
+
+    <div class="yt-card reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <div class="yt-thumb-wrap">
+        <iframe src="https://www.youtube.com/embed/AdAghrjV27w?controls=1&rel=0&modestbranding=1" title="Ek Duniya Bina Aag Ke" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">एक दुनिया बिना… Aag Ke</div>
+        <div class="yt-meta">Kuku FM TV · Dubbing & Narration</div>
+      </div>
+    </div>
+
+    <div class="yt-card reveal" style="background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden;">
+      <div class="yt-thumb-wrap">
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=thecinepsyche&controls=1&rel=0&modestbranding=1&index=1" title="thecinepsyche channel" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="yt-info">
+        <div class="yt-title">Channel Highlights</div>
+        <div class="yt-meta">@thecinepsyche · Film Analysis</div>
+      </div>
+    </div>
   </div>
+
+  <!-- Live YouTube channel embed as primary feed -->
+  <div style="margin-top:32px;border:1px solid var(--border);border-radius:6px;overflow:hidden;background:var(--surface);">
+    <div style="padding:16px 20px;border-bottom:1px solid var(--border);">
+      <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);">Live Channel Feed</span>
+    </div>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;">
+      <iframe
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+        src="https://www.youtube.com/embed/videoseries?list=UUuRr0NpOVq3nCvmXdTGAjug&controls=1&rel=0&modestbranding=1"
+        title="The Cine Psyche — Latest Videos"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+  </div>
+
+  <a href="https://www.youtube.com/@thecinepsyche" class="yt-cta reveal" target="_blank">
+    Watch on YouTube ↗
+  </a>
 </section>
-<hr class="rule">
+
+<!-- REEL GRID -->
+<section id="reels">
+  <div class="section-label">03b — Instagram · @thecinepsyche</div>
+  <h2 class="section-title reveal">The <em>reel grid.</em></h2>
+
+  <div class="reel-grid">
+    <!-- Embedded Instagram Reels — replace reel IDs as needed -->
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DEmQDZ7Iu6R/embed/?cr=1&v=14&wp=400&rd=https://voiceactoraakanksha.github.io"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DDzMmClIQxF/embed/?cr=1&v=14&wp=400"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DCxIThPIG9N/embed/?cr=1&v=14&wp=400"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DC4vQuJIPkf/embed/?cr=1&v=14&wp=400"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DBHQiqtIRPQ/embed/?cr=1&v=14&wp=400"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+
+    <div class="reel-item reveal">
+      <iframe
+        src="https://www.instagram.com/reel/DAyJuq3o3Fm/embed/?cr=1&v=14&wp=400"
+        frameborder="0" scrolling="no" allowtransparency="true"
+        allow="encrypted-media" loading="lazy">
+      </iframe>
+      <div class="reel-overlay"></div>
+    </div>
+  </div>
+
+  <a href="https://www.instagram.com/thecinepsyche" class="ig-cta reveal" target="_blank">
+    View All on Instagram ↗
+  </a>
+</section>
 
 <!-- PROJECTS -->
 <section id="projects">
-  <div class="inner">
-    <div class="stag rev"><span class="num">04 —</span> Selected Projects</div>
-    <h2 class="sh rev">Work that <em>lives online.</em></h2>
-    <div class="proj-g rev">
-      <a class="pc" href="https://links.kukufm.com/6zsEhy" target="_blank"><div class="pc-plat">Kuku FM · Thriller</div><div class="pc-title">Doc VS 190 Min</div><p class="pc-desc">Intense audio thriller — voiced lead character, race-against-time narrative.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://kukufm.com/show/dark-vow-jungle-ki-pukar/" target="_blank"><div class="pc-plat">Kuku FM · Horror</div><div class="pc-title">Dark Vow: Jungle Ki Pukar</div><p class="pc-desc">Village pact, dark forest deity, layered character performance.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://kukufm.com/show/panic-room/" target="_blank"><div class="pc-plat">Kuku FM · Psychological</div><div class="pc-title">Panic Room</div><p class="pc-desc">Psychological thriller audio series — nowhere to run.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://kukufm.com/show/sleeper-cell-ke-yoddha/" target="_blank"><div class="pc-plat">Kuku FM · Action</div><div class="pc-title">Sleeper Cell Ke Yoddha</div><p class="pc-desc">Undercover agents, national stakes, high-voltage performance.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://app.storytv.asia/shows/1174" target="_blank"><div class="pc-plat">StoryTV Asia · Dubbing</div><div class="pc-title">Race Against Time</div><p class="pc-desc">OTT short drama dubbing — lip-sync precise, emotionally authentic.</p><span class="pc-lk">Watch ↗</span></a>
-      <a class="pc" href="https://tv.kukufm.com/show/dad-let-me-clean-the-house" target="_blank"><div class="pc-plat">Kuku FM TV · Dubbing</div><div class="pc-title">Dad, Let Me Clean The House</div><p class="pc-desc">Family drama dubbing — warmth and emotional precision.</p><span class="pc-lk">Watch ↗</span></a>
-      <a class="pc" href="https://kukufm.com/show/ceo-of-casanova" target="_blank"><div class="pc-plat">Kuku FM · Romance</div><div class="pc-title">CEO of Casanova</div><p class="pc-desc">Corporate romance audio series — character depth and charisma.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://kukufm.com/show/billion-rupee-bride" target="_blank"><div class="pc-plat">Kuku FM · Drama</div><div class="pc-title">Billion Rupee Bride</div><p class="pc-desc">Wealth, marriage, and the hidden price of a perfect life.</p><span class="pc-lk">Listen ↗</span></a>
-      <a class="pc" href="https://www.youtube.com/watch?v=AdAghrjV27w" target="_blank"><div class="pc-plat">YouTube · Voice</div><div class="pc-title">Ek Duniya Bina… Aag Ke</div><p class="pc-desc">Imaginative dubbing — a world without fire.</p><span class="pc-lk">Watch ↗</span></a>
-    </div>
-    <div style="text-align:center;padding-top:8px;" class="rev"><a href="https://linktr.ee/voiceactoraakanksha" target="_blank" class="ilk">View All 133 Projects ↗</a></div>
-  </div>
-</section>
-<hr class="rule">
+  <div class="section-label">04 — Selected Projects</div>
+  <h2 class="section-title reveal">Work that <em>lives online.</em></h2>
 
-<!-- SAMPLES -->
-<section class="samp-bg" id="samples">
-  <div class="inner">
-    <div class="stag rev"><span class="num">05 —</span> Voice Demos</div>
-    <h2 class="sh rev">Listen to my <em>voice.</em></h2>
-    <div class="samp-g rev">
-      <a class="smp" href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank"><div class="smp-ic">🎬</div><h3>Dubbing & Narration</h3><p>Character dubbing — Hindi, English, Japanese.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1TAfK_lP2eYbyqVq1GasqEgF_dJpuH7MK" target="_blank"><div class="smp-ic">🎙️</div><h3>Voice Over</h3><p>Commercial, corporate & creative.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1cEOltjrVYN76tsuOaFK5x3LEZ9NNFRcC" target="_blank"><div class="smp-ic">🎥</div><h3>Content Creator</h3><p>Reels, on-camera delivery, short-form.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1VMSrzy9DdcYbUVyBdluj7WjpcWUsA_46" target="_blank"><div class="smp-ic">📽️</div><h3>Explainer Videos</h3><p>Clear, engaging educational delivery.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/17zHrJFTtOHBcOu72aw9s4Fjuy6SDIScX" target="_blank"><div class="smp-ic">📖</div><h3>Storytelling</h3><p>Kids, mythology, emotion-driven.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1JPiIkWQdAz2CMmQCOyL4W1UKdo3qTjl7" target="_blank"><div class="smp-ic">🎵</div><h3>Jingles</h3><p>Vocals, tags, branded audio.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1bk3UiiDuEBm7Loe5s3ycjAw6dklVxXw" target="_blank"><div class="smp-ic">📞</div><h3>IVR</h3><p>Clear, human IVR recordings.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/file/d/1hDrORPvWwV8j-WDxBIjEO8b8U579kVh_/view" target="_blank"><div class="smp-ic">🎓</div><h3>E-Learning</h3><p>Patient, precise educational voice.</p><span class="smp-ar">↗</span></a>
-      <a class="smp" href="https://drive.google.com/drive/folders/1_3JXbuQZfMGKxxQvQmiKL-TPqSHJeWXO" target="_blank"><div class="smp-ic">📜</div><h3>Resume & Certs</h3><p>Full credentials for collaborators.</p><span class="smp-ar">↗</span></a>
-    </div>
+  <div class="project-list reveal">
+    <a href="https://links.kukufm.com/6zsEhy" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Thriller</div>
+        <div class="proj-title">Doc VS 190 Min</div>
+        <div class="proj-desc">Intense audio thriller — voiced lead character, race-against-time narrative</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://kukufm.com/show/dark-vow-jungle-ki-pukar/" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Horror</div>
+        <div class="proj-title">Dark Vow: Jungle Ki Pukar</div>
+        <div class="proj-desc">Village pact, dark forest deity, layered character performance</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://kukufm.com/show/panic-room/" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Psychological</div>
+        <div class="proj-title">Panic Room</div>
+        <div class="proj-desc">Psychological thriller audio series — nowhere to run</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://kukufm.com/show/sleeper-cell-ke-yoddha/" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Action</div>
+        <div class="proj-title">Sleeper Cell Ke Yoddha</div>
+        <div class="proj-desc">Undercover agents, national stakes, high-voltage performance</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://app.storytv.asia/shows/1174" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">StoryTV Asia · Dubbing</div>
+        <div class="proj-title">Race Against Time</div>
+        <div class="proj-desc">OTT short drama dubbing — lip-sync precise, emotionally authentic</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://tv.kukufm.com/show/dad-let-me-clean-the-house" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM TV · Dubbing</div>
+        <div class="proj-title">Dad, Let Me Clean The House</div>
+        <div class="proj-desc">Family drama dubbing — warmth and emotional precision</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://kukufm.com/show/ceo-of-casanova" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Romance</div>
+        <div class="proj-title">CEO of Casanova</div>
+        <div class="proj-desc">Corporate romance audio series — character depth and charisma</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://kukufm.com/show/billion-rupee-bride" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">Kuku FM · Drama</div>
+        <div class="proj-title">Billion Rupee Bride</div>
+        <div class="proj-desc">Wealth, marriage, and the hidden price of a perfect life</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=AdAghrjV27w" target="_blank" class="project-item">
+      <div>
+        <div class="proj-meta">YouTube · Voice</div>
+        <div class="proj-title">Ek Duniya Bina… Aag Ke</div>
+        <div class="proj-desc">Imaginative dubbing — a world without fire</div>
+      </div>
+      <div class="proj-arrow">↗</div>
+    </a>
+  </div>
+
+  <div class="all-projects-note reveal">
+    <p>Total professional projects: <strong>135+</strong> across Hindi, English & Japanese. Voice acting, dubbing, narration, IVR, E-learning, jingles, and more.</p>
+    <a href="mailto:Voiceactoraakanksha24@gmail.com" class="nav-cta" style="white-space:nowrap;">Request Full Portfolio ↗</a>
   </div>
 </section>
-<hr class="rule">
+
+<!-- DEMOS -->
+<section id="demos">
+  <div class="section-label">05 — Voice Demos</div>
+  <h2 class="section-title reveal">Listen to my <em>voice.</em></h2>
+
+  <div class="demo-grid">
+    <a href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">🎬</span>
+      <div class="demo-title">Dubbing & Narration</div>
+      <div class="demo-sub">Hindi, English, Japanese characters</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1TAfK_lP2eYbyqVq1GasqEgF_dJpuH7MK" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">🎙️</span>
+      <div class="demo-title">Voice Over</div>
+      <div class="demo-sub">Commercial, corporate & creative</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1cEOltjrVYN76tsuOaFK5x3LEZ9NNFRcC" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">🎥</span>
+      <div class="demo-title">Content Creator</div>
+      <div class="demo-sub">Reels, on-camera, short-form</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1VMSrzy9DdcYbUVyBdluj7WjpcWUsA_46" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">📽️</span>
+      <div class="demo-title">Explainer Videos</div>
+      <div class="demo-sub">Clear, engaging educational delivery</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/17zHrJFTtOHBcOu72aw9s4Fjuy6SDIScX" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">📖</span>
+      <div class="demo-title">Storytelling</div>
+      <div class="demo-sub">Kids, mythology, emotion-driven</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1JPiIkWQdAz2CMmQCOyL4W1UKdo3qTjl7" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">🎵</span>
+      <div class="demo-title">Jingles</div>
+      <div class="demo-sub">Vocals, tags, branded audio</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1bk3UiiDuEBm7Loe5s3eCOyL4W1UKdo3" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">📞</span>
+      <div class="demo-title">IVR</div>
+      <div class="demo-sub">Clear, human IVR recordings</div>
+    </a>
+    <a href="https://drive.google.com/file/d/1hDrORPvWwV8j-WDxBIjEO8b8U579kVh_/view" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">🎓</span>
+      <div class="demo-title">E-Learning</div>
+      <div class="demo-sub">Patient, precise educational voice</div>
+    </a>
+    <a href="https://drive.google.com/drive/folders/1_3JXbuQZfMGKxxQvQmiKL-TPqSHJeWXO" target="_blank" class="demo-card reveal">
+      <span class="demo-icon">📜</span>
+      <div class="demo-title">Resume & Certs</div>
+      <div class="demo-sub">Full credentials for collaborators</div>
+    </a>
+  </div>
+</section>
 
 <!-- BACKGROUND -->
-<section class="bgd-bg" id="background">
-  <div class="inner">
-    <div class="stag rev"><span class="num">06 —</span> Background</div>
-    <h2 class="sh rev">Receipts & <em>résumé.</em></h2>
-    <div class="bgd-g">
-      <div>
-        <div class="bgd-sub rev">Education</div>
-        <div class="rev">
-          <div class="edu-i"><div><div class="edu-deg">M.A. Clinical Psychology</div><div class="edu-inst">Specialisation: Clinical · University of Delhi</div></div><div class="badge">MA</div></div>
-          <div class="edu-i"><div><div class="edu-deg">B.A. Psychology</div><div class="edu-inst">University of Delhi</div></div><div class="edu-yr">UG</div></div>
-        </div>
+<section id="background">
+  <div class="section-label">06 — Background</div>
+  <h2 class="section-title reveal">Receipts & <em>résumé.</em></h2>
+
+  <div class="bg-grid">
+    <div>
+      <div class="bg-block-label">Education</div>
+
+      <div class="edu-item reveal">
+        <div class="edu-degree">MA in Psychology</div>
+        <div class="edu-detail">Specialisation in Clinical Psychology</div>
       </div>
-      <div>
-        <div class="bgd-sub rev">Certifications</div>
-        <div class="rev">
-          <div class="cert-i"><div><div class="cert-t">Certified Inner Child Healing Practitioner</div><div class="cert-is">Wandering Mind by Sradhanjali</div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><div class="cert-dt">Dec 2024</div><div class="badge">A+</div></div></div>
-          <div class="cert-i"><div><div class="cert-t">Expressive Art Therapy — Emotional Healing Through Colour</div><div class="cert-is">Mind Company</div></div><div class="cert-dt">Oct 2024</div></div>
-          <div class="cert-i"><div><div class="cert-t">Grief & Trauma Management</div><div class="cert-is">Wandering Mind by Sradhanjali</div></div><div class="cert-dt">Dec 2024</div></div>
-          <div class="cert-i"><div><div class="cert-t">Mindfulness Therapy</div><div class="cert-is">Wandering Mind by Sradhanjali</div></div><div class="cert-dt">Dec 2024</div></div>
-          <div class="cert-i"><div><div class="cert-t">Stress & Anger Management</div><div class="cert-is">Wandering Mind by Sradhanjali</div></div><div class="cert-dt">Dec 2024</div></div>
-          <div class="cert-i"><div><div class="cert-t">Sensate Focused Therapy</div><div class="cert-is">Wandering Mind by Sradhanjali</div></div><div class="cert-dt">Dec 2024</div></div>
-          <div class="cert-i"><div><div class="cert-t">Parapsychology Workshop</div><div class="cert-is">Mind Company</div></div><div class="cert-dt">Nov 2024</div></div>
+    </div>
+
+    <div>
+      <div class="bg-block-label">Certifications</div>
+
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Certified Inner Child Healing Practitioner</div>
+          <div class="cert-org">Wandering Mind by Sradhanjali</div>
         </div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Expressive Art Therapy — Emotional Healing Through Colour</div>
+          <div class="cert-org">Mind Company</div>
+        </div>
+        <div class="cert-date">Oct 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Grief & Trauma Management</div>
+          <div class="cert-org">Wandering Mind by Sradhanjali</div>
+        </div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Mindfulness Therapy</div>
+          <div class="cert-org">Wandering Mind by Sradhanjali</div>
+        </div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Stress & Anger Management</div>
+          <div class="cert-org">Wandering Mind by Sradhanjali</div>
+        </div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Sensate Focused Therapy</div>
+          <div class="cert-org">Wandering Mind by Sradhanjali</div>
+        </div>
+        <div class="cert-date">Dec 2024</div>
+      </div>
+      <div class="cert-item reveal">
+        <div>
+          <div class="cert-name">Parapsychology Workshop</div>
+          <div class="cert-org">Mind Company</div>
+        </div>
+        <div class="cert-date">Nov 2024</div>
       </div>
     </div>
   </div>
 </section>
-<hr class="rule">
 
 <!-- CONTACT -->
-<section class="con-sec" id="contact">
-  <div class="con-mesh"></div>
-  <div class="inner con-in">
-    <div class="stag rev"><span class="num">07 —</span> Contact</div>
-    <h2 class="con-h rev">Let's build<br>something <em>real.</em></h2>
-    <div class="con-row rev">
-      <div class="con-lks">
-        <div style="font-family:var(--mono);font-size:11px;color:var(--dim);letter-spacing:.14em;margin-bottom:20px;text-transform:uppercase;">Currently</div>
-        <div style="font-family:var(--serif);font-size:18px;font-style:italic;color:var(--muted);margin-bottom:32px;">Voice Artist & IP Builder · New Delhi, India</div>
-        <a class="clk" href="mailto:Voiceactoraakanksha24@gmail.com"><span class="clk-lab">Email</span>Voiceactoraakanksha24@gmail.com</a>
-        <a class="clk" href="https://www.linkedin.com/in/aakanksha-g-2a421026a" target="_blank"><span class="clk-lab">LinkedIn</span>Aakanksha Gupta</a>
-        <a class="clk" href="https://linktr.ee/voiceactoraakanksha" target="_blank"><span class="clk-lab">Linktree</span>All Links & Portfolio</a>
-      </div>
-      <div class="con-soc">
-        <a class="cs" href="https://www.instagram.com/thecinepsyche" target="_blank"><div class="cs-h">@thecinepsyche</div><div class="cs-l">Cinema · IG</div></a>
-        <a class="cs" href="https://www.instagram.com/negai24" target="_blank"><div class="cs-h">@negai24</div><div class="cs-l">Music · IG</div></a>
-        <a class="cs" href="https://www.instagram.com/chittavritti.echoes" target="_blank"><div class="cs-h">@chittavritti</div><div class="cs-l">Psychology · IG</div></a>
-        <a class="cs" href="https://www.youtube.com/@thecinepsyche" target="_blank"><div class="cs-h">thecinepsyche</div><div class="cs-l">Cinema · YT</div></a>
-        <a class="cs" href="https://www.youtube.com/@negai_24" target="_blank"><div class="cs-h">negai_24</div><div class="cs-l">Music · YT</div></a>
-        <a class="cs" href="https://open.spotify.com/show/3fC3s6vDpyFDSsjfeuarNy" target="_blank"><div class="cs-h">NEGAI</div><div class="cs-l">Podcast · Spotify</div></a>
-      </div>
+<section id="contact">
+  <div class="section-label">07 — Contact</div>
+  <div class="contact-inner">
+    <h2 class="contact-tagline reveal">Let's build something <em>real.</em></h2>
+
+    <div class="contact-links">
+      <a href="mailto:Voiceactoraakanksha24@gmail.com" class="contact-link reveal">
+        <span class="cl-label">Email</span>
+        <span class="cl-val">Voiceactoraakanksha24@gmail.com</span>
+      </a>
+      <a href="https://www.linkedin.com/in/aakanksha-g-2a421026a" target="_blank" class="contact-link reveal">
+        <span class="cl-label">LinkedIn</span>
+        <span class="cl-val">Aakanksha Gupta</span>
+      </a>
+    </div>
+
+    <div class="social-row reveal">
+      <a href="https://www.instagram.com/thecinepsyche" target="_blank" class="social-pill">@thecinepsyche · Cinema IG</a>
+      <a href="https://www.instagram.com/negai24" target="_blank" class="social-pill">@negai24 · Music IG</a>
+      <a href="https://www.instagram.com/chittavritti.echoes" target="_blank" class="social-pill">@chittavritti · Psychology IG</a>
+      <a href="https://www.youtube.com/@thecinepsyche" target="_blank" class="social-pill">thecinepsyche · YouTube</a>
+      <a href="https://www.youtube.com/@negai_24" target="_blank" class="social-pill">negai_24 · YouTube</a>
+      <a href="https://open.spotify.com/show/3fC3s6vDpyFDSsjfeuarNy" target="_blank" class="social-pill">NEGAI · Spotify</a>
     </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="fl">© Aakanksha Gupta · 2026 · All rights reserved</div>
-  <div class="fr">Set in Instrument Serif & DM Mono · Built for the open web</div>
+  <div class="foot-left">© Aakanksha Gupta · 2026 · All rights reserved</div>
+  <div class="foot-right">Set in Instrument Serif & Syne & DM Mono · Built for the open web</div>
 </footer>
 
 <script>
-/* cursor */
-const dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
-(function a(){rx+=(mx-rx)*.13;ry+=(my-ry)*.13;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
-
-/* nav */
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('stuck',scrollY>60));
-
-/* counter */
-function count(el){
-  const t=parseInt(el.dataset.count);if(!t)return;
-  let s=0;const d=1600;
-  const f=ts=>{if(!s)s=ts;const p=Math.min((ts-s)/d,1);const e=1-Math.pow(1-p,3);el.textContent=Math.round(e*t);if(p<1)requestAnimationFrame(f);else el.textContent=t;};
-  requestAnimationFrame(f);
+// ─── CURSOR ───
+const cur = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx = 0, my = 0, rx = 0, ry = 0;
+document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+function animCursor() {
+  rx += (mx - rx) * .15;
+  ry += (my - ry) * .15;
+  cur.style.left = mx + 'px';
+  cur.style.top  = my + 'px';
+  ring.style.left = rx + 'px';
+  ring.style.top  = ry + 'px';
+  requestAnimationFrame(animCursor);
 }
-
-/* reveal */
-const revs=document.querySelectorAll('.rev');
-const ro=new IntersectionObserver(es=>{es.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>{e.target.classList.add('on');e.target.querySelectorAll('[data-count]').forEach(count);},i*55);});},{threshold:.07});
-revs.forEach(r=>ro.observe(r));
-
-/* hero counters */
-document.querySelectorAll('.hnum .n[data-count]').forEach(el=>setTimeout(()=>count(el),900));
-
-/* mobile nav */
-function toggleMob(){document.getElementById('mobOv').classList.toggle('open');}
-
-/* live feed */
-const CH='UCcxF9KtABr2u3DD9dp6FgQg';
-const API=`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent('https://www.youtube.com/feeds/videos.xml?channel_id='+CH)}&count=15`;
-const gv=l=>{const m=l.match(/[?&]v=([^&]+)/);return m?m[1]:'';}
-const th=(v,q='mqdefault')=>`https://img.youtube.com/vi/${v}/${q}.jpg`;
-
-fetch(API).then(r=>r.json()).then(data=>{
-  const items=data.items;
-  if(!items||!items.length)throw new Error();
-
-  /* YT */
-  const yg=document.getElementById('ytGrid');
-  document.getElementById('ytLoading').style.display='none';
-  yg.style.display='grid';
-  items.slice(0,12).forEach(item=>{
-    const vid=gv(item.link);
-    const date=new Date(item.pubDate).toLocaleDateString('en-IN',{month:'short',year:'numeric'});
-    const a=document.createElement('a');
-    a.href=item.link;a.target='_blank';a.className='ytc';
-    a.innerHTML=`<img src="${th(vid)}" alt="${item.title}"><div class="yt-info"><div class="yt-date">${date}</div><div class="yt-title">${item.title}</div><span class="yt-watch">Watch ↗</span></div>`;
-    yg.appendChild(a);
+animCursor();
+document.querySelectorAll('a,button,.ip-card,.voice-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cur.style.width = '18px'; cur.style.height = '18px';
+    ring.style.width = '52px'; ring.style.height = '52px';
   });
-
-  /* IG */
-  const ig=document.getElementById('igGrid');
-  ig.innerHTML='';
-  const meta=[
-    {t:'Chiraiya',v:'3,231 views'},{t:'ऊनको स्वेटर',v:'1,636 views'},
-    {t:'Dhurandhar 2',v:'1,275 views'},{t:'Perfect Days',v:'Film Review'},
-    {t:'Dhurandhar 2 — Trauma',v:'1,115 views'},{t:'君が死刑になる前に',v:'550 views'},
-    {t:'Ikoku Nikki',v:'559 views'},{t:'Two Seasons Two Strangers',v:'381 views'},
-  ];
-  items.slice(0,8).forEach((item,i)=>{
-    const vid=gv(item.link);const m=meta[i]||{t:item.title,v:''};
-    const a=document.createElement('a');
-    a.href='https://www.instagram.com/thecinepsyche';a.target='_blank';a.className='igc';
-    a.innerHTML=`<img src="${th(vid)}" alt="${m.t}"><div class="ig-ov"></div><div class="ig-lbl">${m.t}</div><div class="ig-vw">${m.v}</div>`;
-    ig.appendChild(a);
+  el.addEventListener('mouseleave', () => {
+    cur.style.width = '10px'; cur.style.height = '10px';
+    ring.style.width = '36px'; ring.style.height = '36px';
   });
-}).catch(()=>{document.getElementById('ytLoading').style.display='none';document.getElementById('ytError').style.display='block';});
+});
+
+// ─── NAV SCROLL ───
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ─── REVEAL ON SCROLL ───
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      const delay = Array.from(e.target.parentElement.children).indexOf(e.target) * 0.07;
+      e.target.style.transitionDelay = delay + 's';
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: .12 });
+reveals.forEach(el => observer.observe(el));
+
+// ─── COUNTER ANIMATION ───
+const counters = document.querySelectorAll('.count-target');
+const countObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      let start = 0;
+      const duration = 1400;
+      const step = timestamp => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      };
+      requestAnimationFrame(step);
+      countObserver.unobserve(el);
+    }
+  });
+}, { threshold: .5 });
+counters.forEach(el => countObserver.observe(el));
+
+// ─── SMOOTH ACTIVE NAV ───
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const secObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(l => {
+        l.style.color = l.getAttribute('href') === '#' + e.target.id ? 'var(--green-l)' : '';
+      });
+    }
+  });
+}, { threshold: .35 });
+sections.forEach(s => secObserver.observe(s));
 </script>
 </body>
 </html>
