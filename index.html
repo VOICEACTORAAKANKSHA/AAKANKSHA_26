@@ -198,66 +198,16 @@ section{scroll-margin-top:88px}
   flex-wrap:wrap;
   gap:8px;
 }
-.work-directory-links a,.archive-link{
-  display:inline-flex;
-  align-items:center;
-  min-height:36px;
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:8px 11px;
-  color:var(--ink);
-  text-decoration:none;
-  font:500 10px/1.2 var(--mono);
-  transition:transform .18s ease,border-color .18s ease,background .18s ease;
-}
-.work-directory-links a:hover,.archive-link:hover{
+.work-directory-links a,.work-directory-links a:hover,.archive-link:hover{
   transform:translateY(-1px);
   border-color:rgba(214,143,151,.5);
   background:rgba(214,143,151,.06);
 }
-.archive-wrap{display:grid;gap:12px;margin-top:20px}
-.work-archive{
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:rgba(255,255,255,.012);
-  overflow:hidden;
-}
-.work-archive summary{
-  cursor:pointer;
-  list-style:none;
-  padding:17px 18px;
-  color:var(--ink);
-  font:500 12px var(--mono);
-  display:flex;
-  justify-content:space-between;
-  gap:14px;
-  align-items:center;
-}
-.work-archive summary::-webkit-details-marker{display:none}
-.work-archive summary:after{content:"＋";color:var(--rose);font-size:16px}
-.work-archive[open] summary:after{content:"−"}
-.work-archive summary span{
-  color:var(--dim);
-  font-size:9px;
-  letter-spacing:.05em;
-  text-transform:uppercase;
-}
-.archive-grid{
-  display:grid;
-  grid-template-columns:repeat(5,minmax(0,1fr));
-  gap:8px;
-  padding:0 18px 18px;
-}
-.archive-grid-wide{grid-template-columns:repeat(3,minmax(0,1fr))}
-.archive-link{justify-content:center;border-radius:10px}
 @media(max-width:900px){
   .work-directory-grid{grid-template-columns:1fr}
-  .archive-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
+  }
 @media(max-width:600px){
-  .archive-grid,.archive-grid-wide{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .work-archive summary{align-items:flex-start;flex-direction:column}
-}
+  .archive-grid,}
 
 
 /* V11 restored original portfolio links */
@@ -548,8 +498,8 @@ section{scroll-margin-top:88px}
   <div class="wrap">
     <div class="kicker">05 — Work links</div>
     <div class="section-head">
-      <h2>Published work &amp; <em style="color:var(--rose2)">complete portfolio links.</em></h2>
-      <p class="section-note">Individual published credits from the original portfolio, plus current demos, creator channels and work archives.</p>
+      <h2>Published work &amp; <em style="color:var(--rose2)">professional links.</em></h2>
+      <p class="section-note">Published credits, voice samples, creator channels and professional resources.</p>
     </div>
 
     <div class="directory-heading">
@@ -699,85 +649,6 @@ section{scroll-margin-top:88px}
 <a class="archive-link" href="https://x.com/negai_24" target="_blank" rel="noopener">Negai24 · X ↗</a>
         </div>
       </article>
-    </div>
-
-    <div class="archive-wrap">
-      <details class="work-archive">
-        <summary>Earlier creator archive <span>9 original portfolio links</span></summary>
-        <div class="archive-grid archive-grid-wide">
-          <a class="archive-link" href="https://www.instagram.com/akki__tv" target="_blank" rel="noopener">@akki__tv · Instagram ↗</a>
-<a class="archive-link" href="https://www.youtube.com/@akkki__tv" target="_blank" rel="noopener">@akkki__tv · YouTube ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DV3rbBkE8c4/" target="_blank" rel="noopener">@akki__tv · Reel / Post 01 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWJwXlgERHw/" target="_blank" rel="noopener">@akki__tv · Reel / Post 02 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/reel/DVQ3qMqkwVN/" target="_blank" rel="noopener">@akki__tv · Reel / Post 03 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/reel/DVMCyHak5Wm/" target="_blank" rel="noopener">@akki__tv · Reel / Post 04 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/reel/DVG8D7yE1fl/" target="_blank" rel="noopener">@akki__tv · Reel / Post 05 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVVp6C1E10x/" target="_blank" rel="noopener">@akki__tv · Post 06 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVeBOFtEwBz/" target="_blank" rel="noopener">@akki__tv · Post 07 ↗</a>
-        </div>
-      </details>
-
-      <details class="work-archive">
-        <summary>CinePsyche · Instagram archive <span>all supplied Reel links</span></summary>
-        <div class="archive-grid" id="cinepsyche-instagram-archive">
-          <a class="archive-link" href="https://www.instagram.com/p/DdO1U4iBO9l/" target="_blank" rel="noopener">Reel 01 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DdEiGJIBAGP/" target="_blank" rel="noopener">Reel 02 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/Dc6fVJpxLpG/" target="_blank" rel="noopener">Reel 03 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DctAObHRnox/" target="_blank" rel="noopener">Reel 04 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/Db8kH_Lxuzb/" target="_blank" rel="noopener">Reel 05 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/Dbtate0zSrs/" target="_blank" rel="noopener">Reel 06 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DbgTVJcxw_A/" target="_blank" rel="noopener">Reel 07 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DbOZDLXxR41/" target="_blank" rel="noopener">Reel 08 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/Da-v9YsxT5B/" target="_blank" rel="noopener">Reel 09 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DaS8orxRo6m/" target="_blank" rel="noopener">Reel 10 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DaLgUNfz9Um/" target="_blank" rel="noopener">Reel 11 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DaDkqnMRnbd/" target="_blank" rel="noopener">Reel 12 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZ8FmjZzRdI/" target="_blank" rel="noopener">Reel 13 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZkgXtzMbeQ/" target="_blank" rel="noopener">Reel 14 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZfI8W6R72K/" target="_blank" rel="noopener">Reel 15 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZSRhrIxcBO/" target="_blank" rel="noopener">Reel 16 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZNI6CaRWAF/" target="_blank" rel="noopener">Reel 17 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DZFdMQURJSJ/" target="_blank" rel="noopener">Reel 18 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DY7FJoARPCh/" target="_blank" rel="noopener">Reel 19 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYwzmDlxnnz/" target="_blank" rel="noopener">Reel 20 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYroCiuRi5y/" target="_blank" rel="noopener">Reel 21 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYevm7_RGNS/" target="_blank" rel="noopener">Reel 22 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYZs5-RxVRr/" target="_blank" rel="noopener">Reel 23 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYUfN_pR6PN/" target="_blank" rel="noopener">Reel 24 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DYFHq5Fx16p/" target="_blank" rel="noopener">Reel 25 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DX66fl3xHUQ/" target="_blank" rel="noopener">Reel 26 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DX1onZThwQK/" target="_blank" rel="noopener">Reel 27 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DXhJemxk57R/" target="_blank" rel="noopener">Reel 28 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DXO_vpIkVqn/" target="_blank" rel="noopener">Reel 29 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWokX8zEW7W/" target="_blank" rel="noopener">Reel 30 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWb1UbHh5AL/" target="_blank" rel="noopener">Reel 31 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWUG79UhOKI/" target="_blank" rel="noopener">Reel 32 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWJwXlgERHw/" target="_blank" rel="noopener">Reel 33 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DWEsgjyhfo0/" target="_blank" rel="noopener">Reel 34 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DV3yG7Tj42v/" target="_blank" rel="noopener">Reel 35 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVwEctpkcUw/" target="_blank" rel="noopener">Reel 36 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVlyGBMk42m/" target="_blank" rel="noopener">Reel 37 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVQ3qMqkwVN/" target="_blank" rel="noopener">Reel 38 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DVMCyHak5Wm/" target="_blank" rel="noopener">Reel 39 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DUlN-D7E9V1/" target="_blank" rel="noopener">Reel 40 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DUTSbTRE2J6/" target="_blank" rel="noopener">Reel 41 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DUDnzByE3em/" target="_blank" rel="noopener">Reel 42 ↗</a>
-<a class="archive-link" href="https://www.instagram.com/p/DTvZtmxk63K/" target="_blank" rel="noopener">Reel 43 ↗</a>
-        </div>
-      </details>
-
-      <details class="work-archive">
-        <summary>CinePsyche · YouTube Shorts archive <span>direct Short links</span></summary>
-        <div class="archive-grid archive-grid-wide" id="cinepsyche-youtube-archive">
-          <a class="archive-link" href="https://www.youtube.com/shorts/yA6dPbyWWu8" target="_blank" rel="noopener">Nemuru Baka ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/J5jn-vPyP3Q" target="_blank" rel="noopener">One Mistake Can Ruin Everything ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/Wh0k-aHQ6sc" target="_blank" rel="noopener">Dead Poets Society · Carpe Diem ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/C1WdbMpY-SU" target="_blank" rel="noopener">CinePsyche Short ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/2MihnPvbpAg" target="_blank" rel="noopener">CinePsyche Short ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/CKlatbCA_aE" target="_blank" rel="noopener">CinePsyche Short ↗</a>
-<a class="archive-link" href="https://www.youtube.com/shorts/zI3Vakae9A0" target="_blank" rel="noopener">CinePsyche Short ↗</a>
-        </div>
-      </details>
     </div>
   </div>
 </section>
