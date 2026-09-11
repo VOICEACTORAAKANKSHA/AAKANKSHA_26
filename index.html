@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Aakanksha Gupta — Voice Actor, Dubbing Artist and Content Creator based in New Delhi. 147+ projects across Hindi, English and Japanese, plus original creator brands in film, psychology and music.">
+<meta name="description" content="Aakanksha Gupta — New Delhi-based Voice Actor, Dubbing Artist and Content Creator with 147+ professional projects across Hindi, English and Japanese. Voice demos, dubbing work, narration and creator-led film content.">
 <meta name="theme-color" content="#0b090d">
+<meta property="og:title" content="Aakanksha Gupta — Voice Actor · Dubbing Artist · Content Creator">
+<meta property="og:description" content="147+ professional projects across voice, dubbing, narration and creator-led storytelling.">
+<meta property="og:type" content="website">
 <title>Aakanksha Gupta — Voice Actor · Dubbing Artist · Content Creator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +70,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
 .video-subhead h3{font:700 30px var(--serif);margin:0}.video-subhead p{max-width:540px;margin:0;color:var(--muted);font-size:14px}
 .video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .video-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
-.video-frame{aspect-ratio:9/16;background:#050406;position:relative}.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-frame{aspect-ratio:9/16;background:#050406;position:relative}.video-frame iframe,.video-frame img{width:100%;height:100%;border:0;display:block;object-fit:cover}
 .video-info{padding:14px 15px 16px}.video-label{font:500 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--rose);margin-bottom:7px}.video-title{font:600 15px/1.35 var(--serif);color:var(--ink)}
 .insta-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.insta-embed{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;min-height:560px}.insta-embed iframe{width:100%;height:100%;min-height:560px;border:0;display:block}
 .catalog-note{margin-top:18px;color:var(--dim);font:400 10px var(--mono);line-height:1.7}
@@ -113,6 +116,28 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
   .hero-photo{max-width:100%}.hero-photo .photo-note{left:12px}
 }
 
+/* V5 refinement */
+:focus-visible{outline:2px solid var(--rose2);outline-offset:4px;border-radius:8px}
+.btn,.links a,.contactrow a,.video-card{transition:transform .18s ease,border-color .18s ease,background .18s ease}
+.btn:hover,.links a:hover,.contactrow a:hover{transform:translateY(-1px)}
+.video-card{text-decoration:none;display:block}
+.video-card:hover{transform:translateY(-3px);border-color:rgba(214,143,151,.55)}
+.video-frame img{transition:transform .25s ease,filter .25s ease}
+.video-card:hover .video-frame img{transform:scale(1.02);filter:brightness(1.04)}
+.play-cue{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.35))}
+.play-cue span{display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:rgba(11,9,13,.82);border:1px solid rgba(255,255,255,.18);font-size:18px;padding-left:3px}
+.role-facts{display:grid;grid-template-columns:1fr;gap:12px;margin-top:18px}
+.role-fact{border-top:1px solid var(--line);padding-top:12px}
+.role-fact small{display:block;font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:5px}
+.role-fact span{color:var(--muted);font-size:14px}
+.selected-work-label{font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:18px}
+.contact-intro{color:var(--muted);max-width:680px;margin-top:-6px}
+.additional-skills{margin-top:18px;color:var(--dim);font:400 11px/1.7 var(--mono)}
+.insta-grid{grid-template-columns:repeat(3,1fr)}
+@media(max-width:1000px){.insta-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.insta-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
 </style>
 </head>
 <body>
@@ -120,7 +145,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
   <div class="wrap nav">
     <a class="logo" href="#top">AK<em>.</em></a>
     <div class="navlinks">
-      <a href="#voice">Voice</a><a href="#creator">Creator</a><a href="#cinepsyche-work">Videos</a><a href="#demos">Demos</a><a href="#about">About</a>
+      <a href="#voice">Voice</a><a href="#creator">Creator</a><a href="#cinepsyche-work">CinePsyche</a><a href="#demos">Demos</a><a href="#about">About</a>
       <a class="hire" href="mailto:Voiceactoraakanksha24@gmail.com">Work with me</a>
     </div>
   </div>
@@ -130,23 +155,23 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
 <section class="hero">
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">New Delhi · Voice · Screen · Story</div>
+      <div class="eyebrow">New Delhi · Hindi · English · Japanese</div>
       <h1>Aakanksha <em>Gupta.</em></h1>
       <div class="roles">Voice Actor · Dubbing Artist · Content Creator</div>
-      <p class="hero-copy">I work where voice, performance and storytelling meet — from character dubbing and narration to on-camera short-form content, high-retention scripting, research and creator-led film analysis. <strong>147+ professional projects</strong> and counting.</p>
+      <p class="hero-copy">Voice, dubbing and story-led performance across audio, screen and creator media. My work spans character dubbing, narration, commercial voiceover, on-camera content and short-form scripting — with <strong>147+ professional projects</strong> completed.</p>
       <div class="actions">
-        <a class="btn primary" href="#cinepsyche-work">Watch creator work ↘</a>
-        <a class="btn secondary" href="#demos">Hear my voice ↘</a>
-        <a class="btn secondary" href="mailto:Voiceactoraakanksha24@gmail.com">Book / collaborate ↗</a>
+        <a class="btn primary" href="#demos">Hear voice demos ↘</a>
+        <a class="btn secondary" href="#cinepsyche-work">Watch creator work ↘</a>
+        <a class="btn secondary" href="mailto:Voiceactoraakanksha24@gmail.com">Work with me ↗</a>
       </div>
       <div class="stats">
         <div class="stat"><b>147+</b><span>Professional projects</span></div>
         <div class="stat"><b>3</b><span>Voice languages</span></div>
         <div class="stat"><b>3</b><span>Active creator brands</span></div>
-        <div class="stat"><b>4</b><span>Music languages</span></div>
+        <div class="stat"><b>M.A.</b><span>Psychology</span></div>
       </div>
       <div class="client-strip" aria-label="Selected platforms and clients">
-        <span>Kuku FM</span><span>StoryTV Asia</span><span>Eight Network</span><span>Creator-led media</span><span>Podcasting</span>
+        <span>Kuku FM</span><span>StoryTV Asia</span><span>Eight Network</span>
       </div>
     </div>
     <div class="hero-photo">
@@ -161,7 +186,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     <div class="kicker">01 — Professional voice work</div>
     <div class="section-head">
       <h2>Performance first. <em style="color:var(--rose2)">Precision always.</em></h2>
-      <p class="section-note">Dubbing, character work, narration, commercial VO and long-form audio — with a psychology-informed approach to emotion, intent and character.</p>
+      <p class="section-note">Dubbing, character work, narration, commercial VO and long-form audio — with close attention to timing, intent, emotional continuity and character.</p>
     </div>
     <div class="grid services">
       <div class="card"><span class="tag">Dubbing</span><h3>Lip-sync & character</h3><p>Emotionally grounded dubbing for short drama, OTT-style verticals and character-led storytelling.</p></div>
@@ -183,7 +208,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     <div class="kicker">02 — Content creator</div>
     <div class="section-head">
       <h2>I don’t just perform stories. <em style="color:var(--rose2)">I build them.</em></h2>
-      <p class="section-note">Strategy, research, scripting, on-camera delivery, voice, editing direction and platform-native storytelling across my own creator brands.</p>
+      <p class="section-note">Original creator work across film analysis, psychology-led audio and multilingual music content.</p>
     </div>
     <div class="grid creator-grid">
       <article class="card creator">
@@ -229,234 +254,115 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     </div>
 
     <div class="creator-proof-grid">
-      <div class="creator-proof"><b>On-camera storytelling</b><p>Hosting and presenting for Reels, Shorts, creator-led explainers and narrative content.</p></div>
-      <div class="creator-proof"><b>Research + scripting</b><p>High-retention hooks, film research, emotional structure and platform-native short-form writing.</p></div>
-      <div class="creator-proof"><b>AI-assisted workflow</b><p>Uses modern AI tools for research, ideation, repurposing and faster content development — with human editorial judgment.</p></div>
-      <div class="creator-proof"><b>Voice-led formats</b><p>Podcast hosting, narration, dubbing and audio-first storytelling backed by performance experience.</p></div>
+      <div class="creator-proof"><b>Research + scripting</b><p>Film research, hooks, narrative structure and concise short-form writing.</p></div>
+      <div class="creator-proof"><b>On-camera + voice</b><p>Presenter-led Reels, Shorts, narration and voice-first storytelling.</p></div>
+      <div class="creator-proof"><b>Short-form strategy</b><p>Platform-aware pacing, retention thinking and content packaging.</p></div>
+      <div class="creator-proof"><b>Cross-format storytelling</b><p>Film, podcast, music and branded formats shaped around audience context.</p></div>
     </div>
   </div>
 </section>
-
 
 <section id="cinepsyche-work">
   <div class="wrap">
     <div class="kicker">03 — The CinePsyche · Creator Showcase</div>
     <div class="section-head">
       <h2>Films, psychology, and the <em style="color:var(--rose2)">human truth underneath.</em></h2>
-      <p class="section-note">Film psychology, emotional storytelling and short-form analysis across Instagram Reels and YouTube Shorts.</p>
+      <p class="section-note">Film psychology and emotional storytelling for short-form audiences, with research, scripting, on-camera delivery and voiceover handled in-house.</p>
     </div>
 
-    <div class="video-subhead">
-      <h3>Highest-performing</h3>
-      <p><strong>Krishnavataram</strong> is the strongest tracked CinePsyche Reel so far.</p>
-    </div>
+    <div class="selected-work-label">Selected performance</div>
     <div class="featured-performance">
       <article class="performance-card hero-performer">
         <div class="performance-rank">Highest performing · @thecinepsyche</div>
         <h3>Krishnavataram</h3>
-        <div class="platform-stats">
+        <div class="platform-stats" style="grid-template-columns:1fr">
           <div class="platform-stat"><b>5,651</b><span>Instagram views</span></div>
-          <div class="platform-stat"><b>338</b><span>YouTube views</span></div>
         </div>
         <div class="engagement-line">202 likes · 11 reposts · 17 shares · 13 saves · 5 comments on Instagram</div>
         <div class="links" style="margin-top:16px">
           <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">Open Instagram ↗</a>
-          <a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">Open YouTube Shorts ↗</a>
+
         </div>
       </article>
       <div class="featured-copy">
-        <div class="live-badge">Creator proof</div>
-        <h3>Film analysis built for retention, not just review.</h3>
-        <p>The CinePsyche combines film-specific storytelling, psychology-informed insight, research, scripting, on-camera delivery and voice-led narration.</p>
-        <div class="mini-proof">Creator · Researcher · Scriptwriter · On-camera presenter · Voice artist · Short-form strategist</div>
+        <div class="live-badge">The CinePsyche</div>
+        <h3>Film analysis with a clear creator voice.</h3>
+        <p>Short-form work designed to make a film-specific observation land quickly, without reducing the film to a plot summary.</p>
+        <div class="role-facts">
+          <div class="role-fact"><small>My role</small><span>Research · Scriptwriting · On-camera · Voiceover · Short-form strategy</span></div>
+          <div class="role-fact"><small>Focus</small><span>Indian and Asian cinema · Psychology-informed storytelling · Gen Z &amp; millennial audiences</span></div>
+        </div>
       </div>
     </div>
 
-
     <div class="video-subhead">
-      <h3>Recent YouTube Shorts</h3>
-      <p>Selected CinePsyche Shorts using the direct video links provided for this portfolio.</p>
+      <h3>Selected YouTube Shorts</h3>
     </div>
     <div class="video-grid">
-      <article class="video-card">
+      <a class="video-card" href="https://www.youtube.com/shorts/yA6dPbyWWu8" target="_blank" rel="noopener">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/TAKSSQYvnOI?rel=0&modestbranding=1"
-            title="The CinePsyche Short — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/yA6dPbyWWu8/hqdefault.jpg" alt="Nemuru Baka — The CinePsyche" loading="lazy">
+          <div class="play-cue"><span>▶</span></div>
         </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">The CinePsyche Short</div>
-        </div>
-      </article>
-      <article class="video-card">
+        <div class="video-info"><div class="video-label">Japanese cinema</div><div class="video-title">Nemuru Baka</div></div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/shorts/J5jn-vPyP3Q" target="_blank" rel="noopener">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/yA6dPbyWWu8?rel=0&modestbranding=1"
-            title="Nemuru Baka — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/J5jn-vPyP3Q/hqdefault.jpg" alt="One Mistake Can Ruin Everything — The CinePsyche" loading="lazy">
+          <div class="play-cue"><span>▶</span></div>
         </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">Nemuru Baka</div>
-        </div>
-      </article>
-      <article class="video-card">
+        <div class="video-info"><div class="video-label">Drama · redemption</div><div class="video-title">One Mistake Can Ruin Everything</div></div>
+      </a>
+      <a class="video-card" href="https://www.youtube.com/shorts/Wh0k-aHQ6sc" target="_blank" rel="noopener">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/J5jn-vPyP3Q?rel=0&modestbranding=1"
-            title="One Mistake Can Ruin Everything — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
+          <img src="https://img.youtube.com/vi/Wh0k-aHQ6sc/hqdefault.jpg" alt="Dead Poets Society — The CinePsyche" loading="lazy">
+          <div class="play-cue"><span>▶</span></div>
         </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">One Mistake Can Ruin Everything</div>
-        </div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/Wh0k-aHQ6sc?rel=0&modestbranding=1"
-            title="Dead Poets Society | Carpe Diem — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">Dead Poets Society | Carpe Diem</div>
-        </div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/C1WdbMpY-SU?rel=0&modestbranding=1"
-            title="The CinePsyche Short — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">The CinePsyche Short</div>
-        </div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/2MihnPvbpAg?rel=0&modestbranding=1"
-            title="The CinePsyche Short — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">The CinePsyche Short</div>
-        </div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/CKlatbCA_aE?rel=0&modestbranding=1"
-            title="The CinePsyche Short — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">The CinePsyche Short</div>
-        </div>
-      </article>
-      <article class="video-card">
-        <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/zI3Vakae9A0?rel=0&modestbranding=1"
-            title="The CinePsyche Short — @thecinepsyche"
-            loading="lazy"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen></iframe>
-        </div>
-        <div class="video-info">
-          <div class="video-label">YouTube · CinePsyche</div>
-          <div class="video-title">The CinePsyche Short</div>
-        </div>
-      </article>
-    </div>
+        <div class="video-info"><div class="video-label">Cinema</div><div class="video-title">Dead Poets Society · Carpe Diem</div></div>
+      </a>
+</div>
     <div class="links" style="margin-top:20px;margin-bottom:38px">
-      <a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">View all @thecinepsyche Shorts ↗</a>
+      <a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">View all CinePsyche Shorts ↗</a>
     </div>
 <div class="video-subhead">
       <h3>Recent Instagram Reels</h3>
-      <p>Selected recent CinePsyche work from the direct post links supplied for this portfolio.</p>
+      
     </div>
     <div class="insta-grid">
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/DdO1U4iBO9l/embed/?cr=1&v=14&wp=500"
-          title="Newest supplied @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/DdEiGJIBAGP/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/Dc6fVJpxLpG/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/DctAObHRnox/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/Db8kH_Lxuzb/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
       <div class="insta-embed">
         <iframe src="https://www.instagram.com/p/Dbtate0zSrs/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/DbgTVJcxw_A/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/DbOZDLXxR41/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/Da-v9YsxT5B/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/DaS8orxRo6m/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/DaLgUNfz9Um/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
-          scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
-      </div>
-      <div class="insta-embed">
-        <iframe src="https://www.instagram.com/p/DaDkqnMRnbd/embed/?cr=1&v=14&wp=500"
-          title="Recent @thecinepsyche Instagram Reel"
+          title="@thecinepsyche Instagram Reel"
           scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe>
       </div>
     </div>
     <div class="links" style="margin-top:20px">
       <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">View the full Reel archive on Instagram ↗</a>
     </div>
-
-    <div class="catalog-note">Performance numbers are portfolio snapshots and may continue to grow over time.</div>
   </div>
 </section>
 
@@ -465,7 +371,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     <div class="kicker">04 — Portfolio & demos</div>
     <div class="section-head">
       <h2>Pick the work <em style="color:var(--rose2)">you need.</em></h2>
-      <p class="section-note">Direct folders for casting teams, producers, creative teams and collaborators.</p>
+      <p class="section-note">Direct samples for casting teams, producers, creative teams and collaborators.</p>
     </div>
     <div class="grid demo-grid">
       <a class="card demo" href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank" rel="noopener"><small>Voice</small><h3>Dubbing & Narration</h3><p>Hindi, English & Japanese character work.</p></a>
@@ -486,18 +392,18 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     <div class="two">
       <div class="card about">
         <h2 style="font-size:46px">Voice craft with a <em style="color:var(--rose2)">human lens.</em></h2>
-        <p>I’m a New Delhi-based <strong>Voice Actor, Dubbing Artist and Content Creator</strong> with <strong>147+ completed professional projects</strong>. My work spans performance, on-camera content, creator strategy, high-retention scriptwriting, research, podcasting and music-led storytelling.</p>
-        <p>I also hold an <strong>M.A. in Psychology with a specialisation in Clinical Psychology</strong>. That background informs how I approach character motivation, emotional subtext and psychologically grounded storytelling — without replacing the craft itself.</p>
+        <p>I’m a New Delhi-based <strong>Voice Actor, Dubbing Artist and Content Creator</strong> with <strong>147+ completed professional projects</strong>. My work spans character performance, narration, commercial voiceover, on-camera content, scriptwriting and creator-led storytelling.</p>
+        <p>I hold an <strong>M.A. in Psychology with a specialisation in Clinical Psychology</strong>. It informs how I read character motivation, emotional subtext and human behaviour while keeping performance and storytelling at the centre.</p>
       </div>
       <div class="card">
         <span class="tag">Capabilities</span>
         <div class="pills">
           <span class="pill">Hindi VO</span><span class="pill">English VO</span><span class="pill">Japanese VO</span>
           <span class="pill">Lip-sync dubbing</span><span class="pill">Character voice</span><span class="pill">Narration</span>
-          <span class="pill">Scriptwriting</span><span class="pill">Content creation</span><span class="pill">Podcast hosting</span>
-          <span class="pill">On-camera delivery</span><span class="pill">Film research</span><span class="pill">Short-form strategy</span>
-          <span class="pill">AI-assisted content workflow</span><span class="pill">Anchoring / hosting</span><span class="pill">Singing</span><span class="pill">Film coordination</span>
+          <span class="pill">Commercial VO</span><span class="pill">Scriptwriting</span><span class="pill">Content creation</span>
+          <span class="pill">On-camera delivery</span><span class="pill">Film research</span><span class="pill">Podcast hosting</span>
         </div>
+        <div class="additional-skills">Also: short-form strategy · anchoring / hosting · singing · film coordination</div>
       </div>
     </div>
   </div>
@@ -507,24 +413,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
   <div class="wrap">
     <div class="contactbox">
       <div class="kicker">06 — Contact</div>
-      <h2>Need a voice, a creator, or someone who can understand the story <em style="color:var(--rose2)">before performing it?</em></h2>
+      <h2>Have a character, campaign or story that needs the <em style="color:var(--rose2)">right voice?</em></h2>
+      <p class="contact-intro">For voice acting, dubbing, narration, creator collaborations and script-led content, reach out directly.</p>
       <div class="contactrow">
-        <a href="mailto:Voiceactoraakanksha24@gmail.com">Email me ↗</a>
+        <a href="mailto:Voiceactoraakanksha24@gmail.com">Email ↗</a>
         <a href="https://www.linkedin.com/in/aakanksha-g-2a421026a" target="_blank" rel="noopener">LinkedIn ↗</a>
-        <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">@thecinepsyche ↗</a>
-        <a href="https://www.instagram.com/negai24/" target="_blank" rel="noopener">@negai24 ↗</a>
-        <a href="https://www.instagram.com/chittavritti.echoes/" target="_blank" rel="noopener">@chittavritti.echoes ↗</a>
-        <a href="https://www.youtube.com/@thecinepsyche" target="_blank" rel="noopener">CinePsyche YouTube ↗</a>
-        <a href="https://www.youtube.com/@negai_24" target="_blank" rel="noopener">Negai YouTube ↗</a>
-        <a href="https://www.youtube.com/@chitta_vritti" target="_blank" rel="noopener">Chitta Vritti YouTube ↗</a>
+        <a href="https://drive.google.com/drive/folders/15Xs1rFNFtFSRxVflxvfviCA8VlySeOxT" target="_blank" rel="noopener">Voice demos ↗</a>
+        <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">The CinePsyche ↗</a>
       </div>
     </div>
   </div>
 </section>
 </main>
 <footer><div class="wrap foot"><span>© Aakanksha Gupta · 2026</span><span>Voice Actor · Dubbing Artist · Content Creator</span></div></footer>
-
-
 
 </body>
 </html>
