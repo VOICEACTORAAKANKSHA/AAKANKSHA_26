@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Aakanksha Gupta — Voice Actor, Dubbing Artist and Content Creator based in New Delhi. 141+ projects across Hindi, English and Japanese, plus original creator brands in film, psychology and music.">
+<meta name="description" content="Aakanksha Gupta — Voice Actor, Dubbing Artist and Content Creator based in New Delhi. 147+ projects across Hindi, English and Japanese, plus original creator brands in film, psychology and music.">
 <meta name="theme-color" content="#0b090d">
 <title>Aakanksha Gupta — Voice Actor · Dubbing Artist · Content Creator</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +74,45 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
 @media(max-width:1000px){.performance-grid{grid-template-columns:repeat(3,1fr)}.video-grid,.insta-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.performance-grid,.video-grid,.insta-grid{grid-template-columns:1fr}.performance-card.hero-performer{grid-column:span 1}.video-subhead{display:block}.video-subhead p{margin-top:8px}.insta-embed{min-height:620px}.insta-embed iframe{min-height:620px}}
 
+/* 2026 portfolio refresh */
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(260px,.65fr);gap:56px;align-items:center}
+.hero-photo{position:relative;max-width:390px;justify-self:end}
+.hero-photo:before{content:"";position:absolute;inset:-14px;border:1px solid rgba(214,143,151,.25);border-radius:28px;transform:rotate(3deg)}
+.hero-photo img{position:relative;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center top;border-radius:24px;border:1px solid var(--line);display:block;filter:saturate(.92) contrast(1.02)}
+.hero-photo .photo-note{position:absolute;left:-22px;bottom:22px;background:rgba(11,9,13,.92);border:1px solid var(--line);border-radius:999px;padding:9px 13px;font:500 10px var(--mono);letter-spacing:.06em;color:var(--rose2);backdrop-filter:blur(12px)}
+.client-strip{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.client-strip span{border:1px solid var(--line);border-radius:999px;padding:7px 10px;font:400 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+.creator-proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.creator-proof{padding:20px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.018)}
+.creator-proof b{display:block;font:700 18px/1.2 var(--serif);margin-bottom:8px}
+.creator-proof p{font-size:13px;color:var(--muted);margin:0}
+.live-badge{display:inline-flex;align-items:center;gap:7px;font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rose2);margin-bottom:10px}
+.live-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 4px rgba(214,143,151,.09)}
+.youtube-live-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.yt-auto-card{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.yt-auto-card:first-child{border-color:rgba(214,143,151,.58)}
+.yt-auto-card iframe{width:100%;aspect-ratio:9/16;border:0;display:block;background:#050406}
+.yt-auto-info{padding:14px}
+.yt-auto-info small{display:block;font:500 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--rose);margin-bottom:6px}
+.yt-auto-info strong{display:block;font:600 15px/1.35 var(--serif)}
+.yt-auto-info time{display:block;font:400 9px var(--mono);color:var(--dim);margin-top:8px}
+.auto-status{grid-column:1/-1;border:1px dashed var(--line);border-radius:14px;padding:22px;color:var(--muted);font-size:14px}
+.featured-performance{display:grid;grid-template-columns:1.1fr .9fr;gap:18px;margin:22px 0 46px}
+.featured-performance .performance-card{height:100%}
+.featured-copy{background:linear-gradient(145deg,rgba(214,143,151,.08),rgba(157,139,193,.06));border:1px solid var(--line);border-radius:16px;padding:26px}
+.featured-copy h3{font:700 29px/1.1 var(--serif);margin-bottom:12px}
+.featured-copy p{color:var(--muted);margin-bottom:14px}
+.featured-copy .mini-proof{font:400 10px/1.7 var(--mono);color:var(--dim)}
+@media(max-width:1000px){
+  .hero-grid{grid-template-columns:1fr}.hero-photo{justify-self:start;max-width:320px}
+  .creator-proof-grid,.youtube-live-grid{grid-template-columns:repeat(2,1fr)}
+  .featured-performance{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .creator-proof-grid,.youtube-live-grid{grid-template-columns:1fr}
+  .hero-photo{max-width:100%}.hero-photo .photo-note{left:12px}
+}
+
 </style>
 </head>
 <body>
@@ -89,21 +128,30 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
 
 <main id="top">
 <section class="hero">
-  <div class="wrap">
-    <div class="eyebrow">New Delhi · Voice · Screen · Story</div>
-    <h1>Aakanksha <em>Gupta.</em></h1>
-    <div class="roles">Voice Actor · Dubbing Artist · Content Creator</div>
-    <p class="hero-copy">I work where voice, performance and storytelling meet — from character dubbing and narration to short-form content, scriptwriting and creator-led film analysis. 141+ professional projects across Hindi, English and Japanese.</p>
-    <div class="actions">
-      <a class="btn primary" href="#demos">Hear my voice ↘</a>
-      <a class="btn secondary" href="#creator">See creator work ↘</a>
-      <a class="btn secondary" href="mailto:Voiceactoraakanksha24@gmail.com">Book / collaborate ↗</a>
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">New Delhi · Voice · Screen · Story</div>
+      <h1>Aakanksha <em>Gupta.</em></h1>
+      <div class="roles">Voice Actor · Dubbing Artist · Content Creator</div>
+      <p class="hero-copy">I work where voice, performance and storytelling meet — from character dubbing and narration to on-camera short-form content, high-retention scripting, research and creator-led film analysis. <strong>147+ professional projects</strong> and counting.</p>
+      <div class="actions">
+        <a class="btn primary" href="#cinepsyche-work">Watch creator work ↘</a>
+        <a class="btn secondary" href="#demos">Hear my voice ↘</a>
+        <a class="btn secondary" href="mailto:Voiceactoraakanksha24@gmail.com">Book / collaborate ↗</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>147+</b><span>Professional projects</span></div>
+        <div class="stat"><b>3</b><span>Voice languages</span></div>
+        <div class="stat"><b>3</b><span>Active creator brands</span></div>
+        <div class="stat"><b>4</b><span>Music languages</span></div>
+      </div>
+      <div class="client-strip" aria-label="Selected platforms and clients">
+        <span>Kuku FM</span><span>StoryTV Asia</span><span>Eight Network</span><span>Creator-led media</span><span>Podcasting</span>
+      </div>
     </div>
-    <div class="stats">
-      <div class="stat"><b>141+</b><span>Voice & dubbing projects</span></div>
-      <div class="stat"><b>3</b><span>Primary voice languages</span></div>
-      <div class="stat"><b>3</b><span>Active creator brands</span></div>
-      <div class="stat"><b>4</b><span>Languages performed in music</span></div>
+    <div class="hero-photo">
+      <img src="https://raw.githubusercontent.com/VOICEACTORAAKANKSHA/AAKANKSHA_26/main/images/aakanksha.jpg" alt="Aakanksha Gupta — Voice Actor, Dubbing Artist and Content Creator" loading="eager">
+      <div class="photo-note">On-camera · Voice · Storytelling</div>
     </div>
   </div>
 </section>
@@ -179,42 +227,81 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
       <a href="https://youtube.com/@baalkatha_byaakanksha" target="_blank" rel="noopener">BaalKatha · YouTube ↗</a>
       <a href="https://youtube.com/@kavya_sangam" target="_blank" rel="noopener">Kavya Sangam · YouTube ↗</a>
     </div>
+
+    <div class="creator-proof-grid">
+      <div class="creator-proof"><b>On-camera storytelling</b><p>Hosting and presenting for Reels, Shorts, creator-led explainers and narrative content.</p></div>
+      <div class="creator-proof"><b>Research + scripting</b><p>High-retention hooks, film research, emotional structure and platform-native short-form writing.</p></div>
+      <div class="creator-proof"><b>AI-assisted workflow</b><p>Uses modern AI tools for research, ideation, repurposing and faster content development — with human editorial judgment.</p></div>
+      <div class="creator-proof"><b>Voice-led formats</b><p>Podcast hosting, narration, dubbing and audio-first storytelling backed by performance experience.</p></div>
+    </div>
   </div>
 </section>
 
 
 <section id="cinepsyche-work">
   <div class="wrap">
-    <div class="kicker">03 — The CinePsyche · Reel & Shorts Showcase</div>
+    <div class="kicker">03 — The CinePsyche · Creator Showcase</div>
     <div class="section-head">
-      <h2>The work should <em style="color:var(--rose2)">speak before the résumé does.</em></h2>
-      <p class="section-note">Published short-form work only. Top-performing pieces lead the section, followed by the latest/live video catalogue across YouTube Shorts and Instagram Reels.</p>
+      <h2>Performance first. Then <em style="color:var(--rose2)">what I’m publishing now.</em></h2>
+      <p class="section-note">The ordering is intentional: the highest-performing CinePsyche work leads, followed by the newest published work across YouTube and Instagram.</p>
     </div>
 
-    <div class="video-subhead"><h3>Cross-platform top performers</h3><p>Ranked by your tracked Instagram performance, with YouTube views shown alongside wherever we have the matching channel data. This makes the creator proof genuinely cross-platform.</p></div>
-    <div class="performance-grid">
+    <div class="video-subhead">
+      <h3>#1 · Highest-performing work</h3>
+      <p>Krishnavataram is pinned first as the strongest tracked CinePsyche performer.</p>
+    </div>
+    <div class="featured-performance">
       <article class="performance-card hero-performer">
-        <div class="performance-rank">01 · Highest performing</div>
+        <div class="performance-rank">Highest performing · @thecinepsyche</div>
         <h3>Krishnavataram</h3>
-        <div class="platform-stats"><div class="platform-stat"><b>5,651</b><span>Instagram views</span></div><div class="platform-stat"><b>338</b><span>YouTube views</span></div></div>
+        <div class="platform-stats">
+          <div class="platform-stat"><b>5,651</b><span>Instagram views</span></div>
+          <div class="platform-stat"><b>338</b><span>YouTube views</span></div>
+        </div>
         <div class="engagement-line">202 likes · 11 reposts · 17 shares · 13 saves · 5 comments on Instagram</div>
-        <div class="links" style="margin-top:16px"><a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">YouTube Shorts ↗</a></div>
+        <div class="links" style="margin-top:16px">
+          <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">Open Instagram ↗</a>
+          <a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">Open YouTube Shorts ↗</a>
+        </div>
       </article>
-      <article class="performance-card"><div class="performance-rank">02</div><h3>Arrogance and Virtue</h3><div class="platform-stats"><div class="platform-stat"><b>4,587</b><span>Instagram</span></div><div class="platform-stat"><b>159</b><span>YouTube</span></div></div></article>
-      <article class="performance-card"><div class="performance-rank">03</div><h3>Kataomoi Sekai</h3><div class="platform-stats"><div class="platform-stat"><b>4,278</b><span>Instagram</span></div><div class="platform-stat"><b>54</b><span>YouTube</span></div></div></article>
-      <article class="performance-card"><div class="performance-rank">04</div><h3>First Kiss</h3><div class="platform-stats"><div class="platform-stat"><b>4,008</b><span>Instagram</span></div><div class="platform-stat"><b>485</b><span>YouTube</span></div></div></article>
-      <article class="performance-card"><div class="performance-rank">05</div><h3>Chiraiya</h3><div class="performance-views">3,886<span>Instagram views</span></div></article>
-      <article class="performance-card"><div class="performance-rank">06</div><h3>Balan: The Boy</h3><div class="platform-stats"><div class="platform-stat"><b>2,980</b><span>Instagram</span></div><div class="platform-stat"><b>205</b><span>YouTube</span></div></div></article>
+      <div class="featured-copy">
+        <div class="live-badge">Creator proof</div>
+        <h3>Film analysis built for retention, not just review.</h3>
+        <p>The CinePsyche combines film-specific storytelling, psychology-informed insight, research, scripting, on-camera delivery and voice-led narration.</p>
+        <div class="mini-proof">Creator · Researcher · Scriptwriter · On-camera presenter · Voice artist · Short-form strategist</div>
+      </div>
     </div>
 
-    <div class="video-subhead"><h3>YouTube Shorts</h3><p><strong>A Life of Illusions</strong> is surfaced first as the latest published CinePsyche Short before Babita Singh Reporting, followed by the published catalogue already tied to your portfolio.</p></div>
-    <div class="video-grid"><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/t8EtotCPAkU?rel=0&modestbranding=1" title="A Life of Illusions — The CinePsyche" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Latest published · YouTube Short</div><div class="video-title">A Life of Illusions</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/pNubeaJAnaU?rel=0&modestbranding=1" title="Laalo — ₹50 Lakh to ₹100 Crore" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Published · Film</div><div class="video-title">Laalo — ₹50 Lakh to ₹100 Crore</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/yA6dPbyWWu8?rel=0&modestbranding=1" title="Nemuru Baka" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Japanese Cinema</div><div class="video-title">Nemuru Baka</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/sCkX4XJrxMU?rel=0&modestbranding=1" title="Inside Mayasabha" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Cinema · Mystery</div><div class="video-title">Inside Mayasabha</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/F7J9H3KyU7g?rel=0&modestbranding=1" title="Unreal: Fujouri Zakkaten" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Japanese Cinema</div><div class="video-title">Unreal: Fujouri Zakkaten</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/uLyAIz2ll0o?rel=0&modestbranding=1" title="All the Long Nights Explained" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Japanese Cinema</div><div class="video-title">All the Long Nights Explained</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/FYnQw5KBs6I?rel=0&modestbranding=1" title="You Were Never “Too Sensitive”" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Cinema · Emotion</div><div class="video-title">You Were Never “Too Sensitive”</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/J5jn-vPyP3Q?rel=0&modestbranding=1" title="One Mistake Can Ruin Everything" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Drama · Redemption</div><div class="video-title">One Mistake Can Ruin Everything</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/C1WdbMpY-SU?rel=0&modestbranding=1" title="CinePsyche Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Short-form</div><div class="video-title">CinePsyche Short</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/Wh0k-aHQ6sc?rel=0&modestbranding=1" title="Dead Poets Society | Carpe Diem" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Cinema</div><div class="video-title">Dead Poets Society | Carpe Diem</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/PaiRofXhlE0?rel=0&modestbranding=1" title="Pyaasa (1957) | Being Unseen" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Cinema</div><div class="video-title">Pyaasa (1957) | Being Unseen</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/mOmc7mX1RY0?rel=0&modestbranding=1" title="Comparison Is Exhausting" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Psychology</div><div class="video-title">Comparison Is Exhausting</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/tDJHV1W1G5k?rel=0&modestbranding=1" title="You’re Not Too Late" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Emotion</div><div class="video-title">You’re Not Too Late</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/6tyQKmcnuSs?rel=0&modestbranding=1" title="This Indian Horror Film Won’t Scare You" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Horror</div><div class="video-title">This Indian Horror Film Won’t Scare You</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/2MihnPvbpAg?rel=0&modestbranding=1" title="The CinePsyche Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Current channel</div><div class="video-title">The CinePsyche Short</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/4h2xqustlhI?rel=0&modestbranding=1" title="The CinePsyche Video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Current channel</div><div class="video-title">The CinePsyche Video</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/Gpx2p3oJpFM?rel=0&modestbranding=1" title="The CinePsyche Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Current channel</div><div class="video-title">The CinePsyche Short</div></div></article><article class="video-card"><div class="video-frame"><iframe src="https://www.youtube.com/embed/c4DJ3O8hBfs?rel=0&modestbranding=1" title="The CinePsyche Short" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="video-info"><div class="video-label">Current channel</div><div class="video-title">The CinePsyche Short</div></div></article></div>
-    <div class="links" style="margin-top:20px"><a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">View all @thecinepsyche Shorts ↗</a></div>
+    <div class="video-subhead">
+      <h3>Latest · YouTube</h3>
+      <p>This feed now loads directly from <strong>@thecinepsyche</strong> and stays in newest-to-oldest order automatically, so the portfolio does not freeze on old Shorts again.</p>
+    </div>
+    <div id="ytLatestGrid" class="youtube-live-grid">
+      <div class="auto-status">Loading the newest CinePsyche uploads from YouTube…</div>
+    </div>
+    <div class="links" style="margin-top:20px">
+      <a href="https://www.youtube.com/@thecinepsyche/shorts" target="_blank" rel="noopener">View all latest YouTube Shorts ↗</a>
+    </div>
 
-    <div class="video-subhead"><h3>Instagram Reels</h3><p><strong>A Life of Illusions</strong> leads as the latest published Reel. The live CinePsyche embeds already associated with your portfolio follow underneath.</p></div>
-    <div class="insta-grid"><div class="insta-embed"><iframe src="https://www.instagram.com/reel/DQk2dKUk8dX/embed/?cr=1&v=14&wp=500" title="A Life of Illusions — The CinePsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DaS8orxRo6m/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DWUG79UhOKI/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DYUfN_pR6PN/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DYFHq5Fx16p/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DX66fl3xHUQ/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DX1onZThwQK/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DXrY1p5hz33/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DXhJemxk57R/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DXO_vpIkVqn/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DXCIq66B1UV/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DWokX8zEW7W/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div><div class="insta-embed"><iframe src="https://www.instagram.com/p/DWb1UbHh5AL/embed/?cr=1&v=14&wp=500" title="The CinePsyche Instagram reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div></div>
-    <div class="links" style="margin-top:20px"><a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">Open @thecinepsyche on Instagram ↗</a></div>
-    <div class="catalog-note">Babita Singh Reporting is intentionally excluded because it has not been published yet. Krishnavataram is featured as the current highest-performing CinePsyche piece. Performance counts are portfolio snapshots and can naturally change as reels continue to receive views.</div>
+    <div class="video-subhead">
+      <h3>Latest · Instagram</h3>
+      <p>The newest available CinePsyche Reel embeds are shown first, with the live profile one click away for the current grid.</p>
+    </div>
+    <div class="insta-grid">
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DaS8orxRo6m/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DYUfN_pR6PN/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DYFHq5Fx16p/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DX66fl3xHUQ/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DX1onZThwQK/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DXrY1p5hz33/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DXhJemxk57R/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+      <div class="insta-embed"><iframe src="https://www.instagram.com/p/DXO_vpIkVqn/embed/?cr=1&v=14&wp=500" title="Recent @thecinepsyche Instagram Reel" scrolling="no" allowtransparency="true" allow="encrypted-media" loading="lazy"></iframe></div>
+    </div>
+    <div class="links" style="margin-top:20px">
+      <a href="https://www.instagram.com/thecinepsyche/" target="_blank" rel="noopener">View current @thecinepsyche Reels ↗</a>
+    </div>
+
+    <div class="catalog-note">Babita Singh Reporting is not included because it has not been published yet. Krishnavataram remains pinned as the current highest-performing tracked piece. YouTube is loaded from the channel feed so future uploads can surface automatically.</div>
   </div>
 </section>
 
@@ -244,7 +331,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
     <div class="two">
       <div class="card about">
         <h2 style="font-size:46px">Voice craft with a <em style="color:var(--rose2)">human lens.</em></h2>
-        <p>I’m a New Delhi-based <strong>Voice Actor, Dubbing Artist and Content Creator</strong>. My work spans performance, creator strategy, scriptwriting and podcasting.</p>
+        <p>I’m a New Delhi-based <strong>Voice Actor, Dubbing Artist and Content Creator</strong> with <strong>147+ completed professional projects</strong>. My work spans performance, on-camera content, creator strategy, high-retention scriptwriting, research, podcasting and music-led storytelling.</p>
         <p>I also hold an <strong>M.A. in Psychology with a specialisation in Clinical Psychology</strong>. That background informs how I approach character motivation, emotional subtext and psychologically grounded storytelling — without replacing the craft itself.</p>
       </div>
       <div class="card">
@@ -254,6 +341,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
           <span class="pill">Lip-sync dubbing</span><span class="pill">Character voice</span><span class="pill">Narration</span>
           <span class="pill">Scriptwriting</span><span class="pill">Content creation</span><span class="pill">Podcast hosting</span>
           <span class="pill">On-camera delivery</span><span class="pill">Film research</span><span class="pill">Short-form strategy</span>
+          <span class="pill">AI-assisted content workflow</span><span class="pill">Anchoring / hosting</span><span class="pill">Singing</span><span class="pill">Film coordination</span>
         </div>
       </div>
     </div>
@@ -280,5 +368,55 @@ footer{border-top:1px solid var(--line);padding:26px 0;color:var(--dim);font:400
 </section>
 </main>
 <footer><div class="wrap foot"><span>© Aakanksha Gupta · 2026</span><span>Voice Actor · Dubbing Artist · Content Creator</span></div></footer>
+
+<script>
+(function(){
+  const CHANNEL_ID = "UCEx-L9Yxpn8vxeYo4zsN80w";
+  const grid = document.getElementById("ytLatestGrid");
+  if(!grid) return;
+
+  const fallback = [
+    {id:"2MihnPvbpAg", title:"The CinePsyche Short"},
+    {id:"4h2xqustlhI", title:"The CinePsyche Video"},
+    {id:"Gpx2p3oJpFM", title:"The CinePsyche Short"},
+    {id:"c4DJ3O8hBfs", title:"The CinePsyche Short"}
+  ];
+
+  const escapeHtml = (s="") => s.replace(/[&<>"']/g, m => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
+  const videoId = (url="") => {
+    const m = url.match(/(?:v=|youtu\.be\/|\/shorts\/)([A-Za-z0-9_-]{11})/);
+    return m ? m[1] : null;
+  };
+  const render = (items, live=true) => {
+    grid.innerHTML = items.slice(0,8).map((item,i) => {
+      const id = item.id || videoId(item.link || "");
+      if(!id) return "";
+      const title = escapeHtml(item.title || "The CinePsyche");
+      const date = item.pubDate ? new Date(item.pubDate).toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"}) : "";
+      return `<article class="yt-auto-card">
+        <iframe src="https://www.youtube.com/embed/${id}?rel=0&modestbranding=1" title="${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <div class="yt-auto-info">
+          <small>${i===0 && live ? "Latest published · YouTube" : "Recent · YouTube"}</small>
+          <strong>${title}</strong>
+          ${date ? `<time>${date}</time>` : ""}
+        </div>
+      </article>`;
+    }).join("");
+  };
+
+  const feed = encodeURIComponent(`https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`);
+  fetch(`https://api.rss2json.com/v1/api.json?rss_url=${feed}`, {cache:"no-store"})
+    .then(r => {
+      if(!r.ok) throw new Error("Feed unavailable");
+      return r.json();
+    })
+    .then(data => {
+      if(data.status !== "ok" || !data.items || !data.items.length) throw new Error("Feed empty");
+      render(data.items.map(x => ({id: videoId(x.link || x.guid || ""), title:x.title, link:x.link, pubDate:x.pubDate})), true);
+    })
+    .catch(() => render(fallback, false));
+})();
+</script>
+
 </body>
 </html>
